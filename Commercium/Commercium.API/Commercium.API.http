@@ -1,0 +1,6 @@
+@Commercium.API_HostAddress = http://localhost:5009
+
+GET {{Commercium.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
