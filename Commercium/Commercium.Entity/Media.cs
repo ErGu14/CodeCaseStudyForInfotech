@@ -1,4 +1,6 @@
-﻿using Commercium.Shared.Enums;
+﻿using Commercium.Entity.Businness;
+using Commercium.Entity.User;
+using Commercium.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +16,11 @@ namespace Commercium.Entity
         public MediaType MediaType { get; set; } // Medya türü (Resim, video, vs.)
         public DateTime DateUploaded { get; set; }
 
-        public Product Product { get; set; }
-        public Service Service { get; set; }
+        
+        public Product? Product { get; set; }
+        public Service? Service { get; set; }
+        public Message? Message { get; set; }  
     }
+
 
 }

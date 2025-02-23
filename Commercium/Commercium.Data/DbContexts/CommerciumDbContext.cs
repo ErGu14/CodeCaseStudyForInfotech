@@ -1,5 +1,9 @@
 ﻿using Commercium.Entity;
-using Commercium.Entity.Account;
+using Commercium.Entity.Businness;
+using Commercium.Entity.Search;
+using Commercium.Entity.Tags;
+using Commercium.Entity.User;
+using Commercium.Entity.User.Account;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -25,11 +29,17 @@ namespace Commercium.Data.DbContexts
         public DbSet<BusinessProfileTag> BusinessProfileTags { get; set; }
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Conversation> Conversations { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Media> Media { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<SearchHistory> SearchHistories { get; set; }
+        public DbSet<SearchResult> SearchResults { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceTag> ServiceTags { get; set; }
         public DbSet<Tag> Tags { get; set; }
@@ -37,6 +47,7 @@ namespace Commercium.Data.DbContexts
         public DbSet<UserProfileCustomization> UserProfileCustomizations { get; set; }
 
         #endregion
+
         #region OnModelCreating
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -146,10 +157,3 @@ namespace Commercium.Data.DbContexts
 
     }
 }
-
-
-
-
-
-
-

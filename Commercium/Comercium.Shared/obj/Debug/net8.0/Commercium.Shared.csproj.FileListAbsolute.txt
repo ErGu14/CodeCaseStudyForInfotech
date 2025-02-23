@@ -1,0 +1,13 @@
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\Commercium.Shared.csproj.AssemblyReference.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\Commercium.Shared.GeneratedMSBuildEditorConfig.editorconfig
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\Commercium.Shared.AssemblyInfoInputs.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\Commercium.Shared.AssemblyInfo.cs
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\Commercium.Shared.csproj.CoreCompileInputs.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\Commercium.Shared.sourcelink.json
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\bin\Debug\net8.0\Commercium.Shared.deps.json
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\bin\Debug\net8.0\Commercium.Shared.dll
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\bin\Debug\net8.0\Commercium.Shared.pdb
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\Commercium.Shared.dll
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\refint\Commercium.Shared.dll
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\Commercium.Shared.pdb
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Comercium.Shared\obj\Debug\net8.0\ref\Commercium.Shared.dll

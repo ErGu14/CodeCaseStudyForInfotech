@@ -1,0 +1,16 @@
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\Commercium.Entity.csproj.AssemblyReference.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\Commercium.Entity.GeneratedMSBuildEditorConfig.editorconfig
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\Commercium.Entity.AssemblyInfoInputs.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\Commercium.Entity.AssemblyInfo.cs
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\Commercium.Entity.csproj.CoreCompileInputs.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\Commercium.Entity.sourcelink.json
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\bin\Debug\net8.0\Commercium.Entity.deps.json
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\bin\Debug\net8.0\Commercium.Entity.dll
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\bin\Debug\net8.0\Commercium.Entity.pdb
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\bin\Debug\net8.0\Commercium.Shared.dll
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\bin\Debug\net8.0\Commercium.Shared.pdb
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\Commerci.8DF0114C.Up2Date
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\Commercium.Entity.dll
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\refint\Commercium.Entity.dll
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\Commercium.Entity.pdb
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Entity\obj\Debug\net8.0\ref\Commercium.Entity.dll

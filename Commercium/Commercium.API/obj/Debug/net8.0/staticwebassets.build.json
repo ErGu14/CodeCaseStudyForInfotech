@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "CDI8PjvOQWLo0xgc5sM1AsSkhyelupUZl1KmHctI+SY=",
+  "Source": "Commercium.API",
+  "BasePath": "_content/Commercium.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
