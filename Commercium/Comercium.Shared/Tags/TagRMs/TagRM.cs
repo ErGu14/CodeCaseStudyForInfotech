@@ -1,4 +1,5 @@
 ﻿using Commercium.Shared.Businness.BusinessProfileTagRMs;
+using Commercium.Shared.Tags.ProductTagRMs;
 using Commercium.Shared.Tags.ServiceTagRMs;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,11 @@ namespace Commercium.Shared.Tags.TagRMs
     {
         public int TagId { get; set; }
         public string Name { get; set; }
-        public IEnumerable<ProductTagRMs.ProductTagRM> ProductTags { get; set; }
+
+        // Tag ile ilişkili ürünler, hizmetler ve işletme profilleri
+        public IEnumerable<ProductTagRM> ProductTags { get; set; }
         public IEnumerable<ServiceTagRM> ServiceTags { get; set; }
         public IEnumerable<BusinessProfileTagRM> BusinessProfileTags { get; set; }
     }
+
 }

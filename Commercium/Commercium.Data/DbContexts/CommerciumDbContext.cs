@@ -31,7 +31,7 @@ namespace Commercium.Data.DbContexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Conversation> Conversations { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
-        public DbSet<Media> Media { get; set; }
+    
         public DbSet<Message> Messages { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Product> Products { get; set; }

@@ -9,12 +9,13 @@ namespace Commercium.Entity.User
 {
     public class UserFollow
     {
-        public string FollowerId { get; set; }  // Takip eden kullanıcının ID'si
-        public AppUser Follower { get; set; }  // Takip eden kullanıcı
+        public string FollowerId { get; set; }  // Takip eden kullanıcı ID'si
+        public AppUser Follower { get; set; }   // Takip eden kullanıcı bilgisi
 
-        public string FollowedId { get; set; }  // Takip edilen kullanıcının ID'si
-        public AppUser Followed { get; set; }  // Takip edilen kullanıcı
+        public string FollowedId { get; set; }  // Takip edilen kullanıcı ID'si
+        public AppUser Followed { get; set; }   // Takip edilen kullanıcı bilgisi
     }
+
 
 
 }

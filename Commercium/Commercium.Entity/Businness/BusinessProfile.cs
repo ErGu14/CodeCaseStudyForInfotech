@@ -18,6 +18,7 @@ namespace Commercium.Entity.Businness
         public int ClickCount { get; set; }  // Tıklanma sayısı
         public int LikeCount { get; set; }   // Beğenilme sayısı
 
+        public string OwnerId { get; set; }
         public AppUser Owner { get; set; }
         public ICollection<Product> Products { get; set; }
         public ICollection<Service> Services { get; set; }

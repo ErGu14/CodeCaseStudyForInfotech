@@ -16,6 +16,7 @@ namespace Commercium.Shared.Businness.ServiceRMs
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int ClickCount { get; set; }
+        public int ViewCount { get; set; }
         public int LikeCount { get; set; }
         public BusinessProfileRM BusinessProfile { get; set; }
         public IEnumerable<ReviewRM> Reviews { get; set; }

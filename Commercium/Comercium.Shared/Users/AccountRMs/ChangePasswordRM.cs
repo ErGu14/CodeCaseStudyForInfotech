@@ -9,6 +9,7 @@ namespace Commercium.Shared.Users.AccountRMs
 {
     public class ChangePasswordRM
     {
+        public string UserId { get; set; }
         [Required(ErrorMessage = "Mevcut şifrenizi girmeniz gerekmektedir.")]
         public string CurrentPassword { get; set; }
 

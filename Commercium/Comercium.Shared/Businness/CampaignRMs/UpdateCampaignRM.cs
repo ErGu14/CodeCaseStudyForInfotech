@@ -24,7 +24,9 @@ namespace Commercium.Shared.Businness.CampaignRMs
         [Range(0, 100, ErrorMessage = "İndirim yüzdesi 0 ile 100 arasında olmalıdır.")]
         public decimal? DiscountPercentage { get; set; }
 
-        public IEnumerable<int>? ProductIds { get; set; }
+        public IEnumerable<int>? ProductIds { get; set; }  // Kampanyaya dahil edilen ürünlerin ID'leri
     }
+
+
 
 }

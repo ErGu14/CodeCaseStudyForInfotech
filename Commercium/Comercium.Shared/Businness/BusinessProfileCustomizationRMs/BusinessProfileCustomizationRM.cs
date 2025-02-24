@@ -11,11 +11,12 @@ namespace Commercium.Shared.Businness.BusinessProfileCustomizationRMs
     public class BusinessProfileCustomizationRM
     {
         public int BusinessProfileCustomizationId { get; set; }
-        public string CustomProfileImage { get; set; }
-        public string CustomBackgroundImage { get; set; }
-        public string CustomDescription { get; set; }
+        public string CustomProfileImage { get; set; }  // İşletme profil resmi
+        public string CustomBackgroundImage { get; set; }  // İşletme arka plan resmi
+        public string CustomDescription { get; set; }  // İşletme açıklaması
 
         public int BusinessProfileId { get; set; }
         public BusinessProfileRM BusinessProfile { get; set; }
     }
+
 }

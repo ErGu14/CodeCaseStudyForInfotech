@@ -21,7 +21,7 @@ namespace Commercium.Shared.ReturnRMs
             return new ReturnRM<T> { Data = data, StatusCode = StatusCode };
         }
 
-        public static ReturnRM<T> Success(int StatusCode)
+        public static ReturnRM<T> Success(double averageRating, int StatusCode)
         {
             return new ReturnRM<T> { Data = default(T), StatusCode = StatusCode };
         }

@@ -19,6 +19,8 @@ namespace Commercium.Shared.Businness.BusinessProfileRMs
         public string Location { get; set; }
 
         public int ClickCount { get; set; }
+        public int ViewCount { get; set; }
+
         public int LikeCount { get; set; }
 
         public string OwnerId { get; set; }

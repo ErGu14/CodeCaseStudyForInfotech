@@ -9,6 +9,7 @@ namespace Commercium.Shared.Users.AccountRMs
 {
     public class ChangeEmailRM
     {
+        public string UserId { get; set; }
         [Required(ErrorMessage = "Mevcut e-posta adresini girmeniz gerekmektedir.")]
         [EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
         public string CurrentEmail { get; set; }

@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62047248-8F73-4AA9-891D-23D6078A0DA5}|Commercium.API\\Commercium.API.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\commercium\\commercium.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62047248-8F73-4AA9-891D-23D6078A0DA5}|Commercium.API\\Commercium.API.csproj|solutionrelative:commercium.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D221575-FC73-4A75-8361-3422CC72A7A1}|Commercium.Service\\Commercium.Service.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\commercium\\commercium.service\\interfaces\\iuserfollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D221575-FC73-4A75-8361-3422CC72A7A1}|Commercium.Service\\Commercium.Service.csproj|solutionrelative:commercium.service\\interfaces\\iuserfollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A11D1D71-BE8E-49FB-9CE0-7844EBB36B52}|Commercium.Data\\Commercium.Data.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\commercium\\commercium.data\\classes\\genericmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A11D1D71-BE8E-49FB-9CE0-7844EBB36B52}|Commercium.Data\\Commercium.Data.csproj|solutionrelative:commercium.data\\classes\\genericmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D221575-FC73-4A75-8361-3422CC72A7A1}|Commercium.Service\\Commercium.Service.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\commercium\\commercium.service\\classes\\userfollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D221575-FC73-4A75-8361-3422CC72A7A1}|Commercium.Service\\Commercium.Service.csproj|solutionrelative:commercium.service\\classes\\userfollowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\Program.cs",
+              "RelativeDocumentMoniker": "Commercium.API\\Program.cs",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\Program.cs",
+              "RelativeToolTip": "Commercium.API\\Program.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T22:01:50.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IUserFollowService.cs",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.Service\\Interfaces\\IUserFollowService.cs",
+              "RelativeDocumentMoniker": "Commercium.Service\\Interfaces\\IUserFollowService.cs",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.Service\\Interfaces\\IUserFollowService.cs",
+              "RelativeToolTip": "Commercium.Service\\Interfaces\\IUserFollowService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T21:38:03.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserFollowService.cs",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.Service\\Classes\\UserFollowService.cs",
+              "RelativeDocumentMoniker": "Commercium.Service\\Classes\\UserFollowService.cs",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.Service\\Classes\\UserFollowService.cs",
+              "RelativeToolTip": "Commercium.Service\\Classes\\UserFollowService.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T21:40:16.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GenericManager.cs",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.Data\\Classes\\GenericManager.cs",
+              "RelativeDocumentMoniker": "Commercium.Data\\Classes\\GenericManager.cs",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.Data\\Classes\\GenericManager.cs",
+              "RelativeToolTip": "Commercium.Data\\Classes\\GenericManager.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAqwJIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T21:30:26.139Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

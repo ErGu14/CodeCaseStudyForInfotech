@@ -17,10 +17,14 @@ namespace Commercium.Shared.Businness.CampaignRMs
         public DateTime EndDate { get; set; }
         public decimal DiscountPercentage { get; set; }
 
-        public int BusinessProfileId { get; set; }
+        public IEnumerable<ProductRM> Products { get; set; }
         public BusinessProfileRM BusinessProfile { get; set; }
 
-        public IEnumerable<ProductRM> Products { get; set; }
+        public int ClickCount { get; set; }  // Tıklama sayısı
+        public int LikeCount { get; set; }   // Beğeni sayısı
+        public int ViewCount { get; set; }   // Görüntülenme sayısı
     }
+
+
 
 }

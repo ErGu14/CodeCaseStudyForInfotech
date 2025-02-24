@@ -1,4 +1,5 @@
 ﻿using Commercium.Data.Interfaces;
+using Commercium.Entity.User.Account;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -136,6 +137,25 @@ namespace Commercium.Data.Classes
 
             return await query.Take(count).ToListAsync();
         }
+
+        public async Task<IEnumerable<T>> GetByIdsAsync(IEnumerable<int> ids)
+        {
+            return await _dbSet.Where(entity => ids.Contains((int)entity.GetType().GetProperty("Id").GetValue(entity, null)))
+                           .ToListAsync();
+        }
+
+        public async Task<T?> GetByIdAsync(string followedId)
+        {
+            // T'nin türü AppUser ise, string türünde ID ile sorgu yapıyoruz.
+            if (typeof(T) == typeof(AppUser))
+            {
+                return await _dbSet.FirstOrDefaultAsync(entity => EF.Property<string>(entity, "Id") == followedId);
+            }
+
+            // Eğer T farklı bir türdeyse (genel kullanım için)
+            throw new InvalidOperationException("Bu metod yalnızca AppUser nesnesi için kullanılabilir.");
+        }
+
     }
 
 }

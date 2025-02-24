@@ -25,6 +25,9 @@ namespace Commercium.Entity
         
         public ICollection<ProductCategory> ProductCategories { get; set; }
         public ICollection<ProductTag> ProductTags { get; set; }  // Ürün-etiket ilişkisi
+        public int ViewCount { get; set; }
+        public object CreatedDate { get; set; }
+        public int BusinessProfileId { get; set; }
     }
 
 

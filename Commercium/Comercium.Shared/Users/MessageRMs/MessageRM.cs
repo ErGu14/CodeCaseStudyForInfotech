@@ -1,4 +1,4 @@
-﻿using Commercium.Shared.Other.MediaRMs;
+﻿
 using Commercium.Shared.Users.AccountRMs;
 using System;
 using System.Collections.Generic;
@@ -22,8 +22,7 @@ namespace Commercium.Shared.Users.MessageRMs
         public DateTime SentDate { get; set; }
         public bool IsRead { get; set; }
 
-        public int? MediaId { get; set; }
-        public MediaRM? Media { get; set; }
+    
     }
 
 }

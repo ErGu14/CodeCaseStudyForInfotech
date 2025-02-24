@@ -30,7 +30,10 @@ namespace Commercium.Shared.Businness.CampaignRMs
         [Required(ErrorMessage = "İşletme profili ID gereklidir.")]
         public int BusinessProfileId { get; set; }
 
-        public IEnumerable<int>? ProductIds { get; set; }
+        [Required(ErrorMessage = "Ürün ID'leri gereklidir.")]
+        public IEnumerable<int> ProductIds { get; set; }  // Kampanyaya dahil edilen ürünlerin ID'leri
     }
+
+
 
 }

@@ -12,8 +12,10 @@ namespace Commercium.Shared.Tags.ProductTagRMs
     {
         public int ProductId { get; set; }
         public ProductRM Product { get; set; }
+
         public int TagId { get; set; }
         public TagRM Tag { get; set; }
     }
+
 
 }

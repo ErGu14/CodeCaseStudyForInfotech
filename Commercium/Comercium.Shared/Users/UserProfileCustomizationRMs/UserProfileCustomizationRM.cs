@@ -10,10 +10,12 @@ namespace Commercium.Shared.Users.UserProfileCustomizationRMs
     public class UserProfileCustomizationRM
     {
         public int UserProfileCustomizationId { get; set; }
-        public string CustomProfileImage { get; set; }
-        public string CustomBackgroundImage { get; set; }
-        public string CustomDescription { get; set; }
+        public string CustomProfileImage { get; set; }  // Kullanıcı profil resmi
+        public string CustomBackgroundImage { get; set; }  // Kullanıcı arka plan resmi
+        public string CustomDescription { get; set; }  // Kullanıcı açıklaması
+
         public string UserId { get; set; }
         public AppUserRM User { get; set; }
     }
+
 }

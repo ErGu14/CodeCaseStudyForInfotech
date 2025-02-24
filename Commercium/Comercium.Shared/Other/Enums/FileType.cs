@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Commercium.Shared.Enums
+namespace Commercium.Shared.Other.Enums
 {
-    public enum MediaType
+    public enum FileType
     {
-        Image = 1,
-        Video = 2,
-        Document = 3
+        Image,
+        Video,
+        Document,
+        Other
     }
-
 }

@@ -1,4 +1,5 @@
-﻿using Commercium.Shared.Enums;
+﻿using Commercium.Entity.Businness;
+using Commercium.Shared.Enums;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Commercium.Entity.User.Account
         public string LastName { get; set; }
         public UserRole Role { get; set; }
 
-
+        public ICollection<BusinessProfile>? BusinessProfiles { get; set; }
         public ICollection<UserFollow> Follows { get; set; }
         public ICollection<UserFollow> FollowedBy { get; set; }
     }

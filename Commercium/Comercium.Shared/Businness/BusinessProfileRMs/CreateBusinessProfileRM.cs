@@ -35,5 +35,7 @@ namespace Commercium.Shared.Businness.BusinessProfileRMs
 
         public int ClickCount { get; set; } = 0;
         public int LikeCount { get; set; } = 0;
+        public int ViewCount { get; set; } = 0;
+
     }
 }

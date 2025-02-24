@@ -16,8 +16,10 @@ namespace Commercium.Shared.Users.MessageRMs
         [StringLength(2000, ErrorMessage = "Mesaj en fazla 2000 karakter olabilir.")]
         public string? Content { get; set; }
 
-        public bool? IsRead { get; set; }
-        public IFormFile? MediaFile { get; set; }
+        public bool? IsRead { get; set; } // Mesajın okunma durumu değiştirilebilir
+
+        public IFormFile? File { get; set; } // Yeni bir medya dosyası eklenebilir veya değiştirilebilir
     }
+
 
 }

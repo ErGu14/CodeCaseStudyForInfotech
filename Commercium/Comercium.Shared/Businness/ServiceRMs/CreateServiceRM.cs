@@ -12,6 +12,8 @@ namespace Commercium.Shared.Businness.ServiceRMs
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int ClickCount { get; set; } = 0;
+        public int ViewCount { get; set; } = 0;
+
         public int LikeCount { get; set; } = 0;
         public int BusinessProfileId { get; set; }
         public int[] ServiceTagIds { get; set; }

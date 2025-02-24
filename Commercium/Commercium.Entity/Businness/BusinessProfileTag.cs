@@ -1,4 +1,6 @@
 ﻿using Commercium.Entity.Tags;
+using Commercium.Shared.Businness.BusinessProfileRMs;
+using Commercium.Shared.Tags.TagRMs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +12,11 @@ namespace Commercium.Entity.Businness
     public class BusinessProfileTag
     {
         public int BusinessProfileId { get; set; }
-        public BusinessProfile BusinessProfile { get; set; }  // İşletme Profili
+        public BusinessProfile BusinessProfile { get; set; }
 
         public int TagId { get; set; }
-        public Tag Tag { get; set; }  // Etiket
+        public TagRM Tag { get; set; }
     }
+
 
 }

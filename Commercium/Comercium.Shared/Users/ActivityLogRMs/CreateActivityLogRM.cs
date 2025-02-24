@@ -1,11 +1,5 @@
-﻿using Commercium.Shared.AccountRMs;
-using Commercium.Shared.Enums;
-using System;
-using System.Collections.Generic;
+﻿using Commercium.Shared.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Commercium.Shared.Users.ActivityLogRMs
 {
@@ -15,7 +9,7 @@ namespace Commercium.Shared.Users.ActivityLogRMs
         public ActivityType ActivityType { get; set; }
 
         [Required]
-        public DateTime ActivityDate { get; set; } = DateTime.UtcNow; // Varsayılan olarak şu anın zamanı
+        public DateTime ActivityDate { get; set; } = DateTime.UtcNow;
 
         [Required]
         [StringLength(500, ErrorMessage = "Detaylar en fazla 500 karakter olabilir.")]
@@ -26,16 +20,16 @@ namespace Commercium.Shared.Users.ActivityLogRMs
 
         [Required]
         [StringLength(100, ErrorMessage = "Entity tipi en fazla 100 karakter olabilir.")]
-        public string EntityType { get; set; }
+        public string EntityType { get; set; } // Burada EntityType'ı string olarak ekliyoruz
 
         [Required]
         public string UserId { get; set; }
 
-
-        public string? EntityName { get; set; }
+        public string EntityName { get; set; }
 
         public int? ProductId { get; set; }
 
         public int? ServiceId { get; set; }
     }
+
 }

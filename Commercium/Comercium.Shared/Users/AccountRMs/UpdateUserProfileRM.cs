@@ -20,5 +20,6 @@ namespace Commercium.Shared.Users.AccountRMs
 
         [Phone(ErrorMessage = "Geçerli bir telefon numarası giriniz.")]
         public string? PhoneNumber { get; set; }
+        public string UserId { get; set; }
     }
 }

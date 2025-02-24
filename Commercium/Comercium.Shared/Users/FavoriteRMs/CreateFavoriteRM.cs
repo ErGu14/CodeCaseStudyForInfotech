@@ -10,10 +10,11 @@ namespace Commercium.Shared.Users.FavoriteRMs
     public class CreateFavoriteRM
     {
         [Required(ErrorMessage = "Kullanıcı ID gereklidir.")]
-        public string UserId { get; set; }
+        public string UserId { get; set; }  // Favoriyi ekleyen kullanıcının ID'si
 
-        public int? ProductId { get; set; }
-        public int? ServiceId { get; set; }
+        public int? ProductId { get; set; }  // Favori ürün
+        public int? ServiceId { get; set; }  // Favori hizmet
     }
+
 
 }

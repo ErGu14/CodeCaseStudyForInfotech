@@ -8,9 +8,16 @@ namespace Commercium.Shared.Enums
 {
     public enum EntityType
     {
-        Product =1,
+        Product = 1,
         Service,
-        BusinessProfile
+        BusinessProfile,
+        Review,
+        Tag,
+        User,
+        Favorite,
+        Message,
+        Campaign
     }
+
 
 }

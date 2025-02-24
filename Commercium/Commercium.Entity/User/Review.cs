@@ -15,9 +15,12 @@ namespace Commercium.Entity.User
         public string Comment { get; set; }
         public DateTime DateCreated { get; set; }
 
-        public Product? Product { get; set; }
-        public Service? Service { get; set; }
+        public Product Product { get; set; }
+        public Service Service { get; set; }
         public AppUser User { get; set; }
+        public int? ProductId { get; set; }
+        public int? ServiceId { get; set; }
+        public string UserId { get; set; }
     }
 
 }

@@ -21,10 +21,10 @@ namespace Commercium.Entity.User
         public DateTime SentDate { get; set; }
         public bool IsRead { get; set; }
 
-
-        public int? MediaId { get; set; }
-        public Media Media { get; set; }
+        public string? FileUrl { get; set; } // Mesaja eklenen dosyanın yolu (opsiyonel)
+        public int ConversationId { get; set; }
     }
+
 
 
 }

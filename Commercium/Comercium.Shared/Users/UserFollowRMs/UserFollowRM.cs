@@ -9,9 +9,11 @@ namespace Commercium.Shared.Users.UserFollowRMs
 {
     public class UserFollowRM
     {
-        public string FollowerId { get; set; }
-        public AppUserRM Follower { get; set; }
-        public string FollowedId { get; set; }
-        public AppUserRM Followed { get; set; }
+        public string FollowerId { get; set; }  // Takip eden kullanıcı ID'si
+        public AppUserRM Follower { get; set; } // Takip eden kullanıcı bilgisi
+
+        public string FollowedId { get; set; }  // Takip edilen kullanıcı ID'si
+        public AppUserRM Followed { get; set; } // Takip edilen kullanıcı bilgisi
     }
+
 }

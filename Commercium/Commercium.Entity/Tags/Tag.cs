@@ -12,9 +12,11 @@ namespace Commercium.Entity.Tags
         public int TagId { get; set; }
         public string Name { get; set; }
 
+        // Tag ile ilişkilendirilen ürünler, hizmetler ve işletme profilleri
         public ICollection<ProductTag> ProductTags { get; set; }
         public ICollection<ServiceTag> ServiceTags { get; set; }
         public ICollection<BusinessProfileTag> BusinessProfileTags { get; set; }
     }
+
 
 }

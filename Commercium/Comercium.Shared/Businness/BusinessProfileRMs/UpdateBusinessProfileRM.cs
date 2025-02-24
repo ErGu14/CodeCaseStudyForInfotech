@@ -24,8 +24,8 @@ namespace Commercium.Shared.Businness.BusinessProfileRMs
         public string? ContactInfo { get; set; }
         public string? Location { get; set; }
 
-        public IEnumerable<ProductRM>? Products { get; set; }
-        public IEnumerable<ServiceRM>? Services { get; set; }
-        public IEnumerable<BusinessProfileTagRM>? BusinessProfileTags { get; set; }
+        public IEnumerable<ProductRM> Products { get; set; }
+        public IEnumerable<ServiceRM> Services { get; set; }
+        public IEnumerable<BusinessProfileTagRM> BusinessProfileTags { get; set; }
     }
 }

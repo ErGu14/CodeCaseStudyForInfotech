@@ -10,17 +10,17 @@ namespace Commercium.Shared.Businness.BusinessProfileCustomizationRMs
 {
     public class CreateBusinessProfileCustomizationRM
     {
-        [Required(ErrorMessage = "Profil resmi URL'si gereklidir.")]
-        public IFormFile CustomProfileImage { get; set; }
+        [Required(ErrorMessage = "Profil resmi gereklidir.")]
+        public IFormFile CustomProfileImage { get; set; }  // İşletme profil resmi dosyası
 
-        [Required(ErrorMessage = "Arka plan resmi URL'si gereklidir.")]
-        public IFormFile CustomBackgroundImage { get; set; }
+        [Required(ErrorMessage = "Arka plan resmi gereklidir.")]
+        public IFormFile CustomBackgroundImage { get; set; }  // İşletme arka plan resmi dosyası
 
-        [Required(ErrorMessage = "Açıklama gereklidir.")]
         [StringLength(1000, ErrorMessage = "Açıklama en fazla 1000 karakter olabilir.")]
-        public string CustomDescription { get; set; }
+        public string CustomDescription { get; set; }  // İşletme açıklaması
 
-        [Required(ErrorMessage = "İşletme profili ID'si gereklidir.")]
+        [Required(ErrorMessage = "İşletme profili ID gereklidir.")]
         public int BusinessProfileId { get; set; }
     }
+
 }
