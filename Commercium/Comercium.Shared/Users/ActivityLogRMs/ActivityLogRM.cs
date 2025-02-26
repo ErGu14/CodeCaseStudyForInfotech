@@ -26,4 +26,5 @@ namespace Commercium.Shared.Users.ActivityLogRMs
         public int? ServiceId { get; set; }
         public ServiceRM Service { get; set; }
     }
+    }
 

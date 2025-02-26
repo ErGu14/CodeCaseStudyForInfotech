@@ -12,10 +12,10 @@ namespace Commercium.Entity.Search
         public int SearchResultId { get; set; }
 
         public string SearchQuery { get; set; }
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
         public Product Product { get; set; }
 
-        public int ServiceId { get; set; }
+        public int? ServiceId { get; set; }
         public Service Service { get; set; }
 
         public int BusinessProfileId { get; set; }

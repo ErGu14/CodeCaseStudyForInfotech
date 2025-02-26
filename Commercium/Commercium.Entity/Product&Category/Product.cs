@@ -13,7 +13,7 @@ namespace Commercium.Entity
     {
         public int ProductId { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
         public decimal Price { get; set; }
         
         public int ClickCount { get; set; }  // Tıklanma sayısı
@@ -26,8 +26,11 @@ namespace Commercium.Entity
         public ICollection<ProductCategory> ProductCategories { get; set; }
         public ICollection<ProductTag> ProductTags { get; set; }  // Ürün-etiket ilişkisi
         public int ViewCount { get; set; }
-        public object CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         public int BusinessProfileId { get; set; }
+
+        public int? FavoriteId { get; set; }
+        public Favorite? Favorite { get; set; }
     }
 
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,6 +22,9 @@ namespace Commercium.Shared.Users.MessageRMs
         public IFormFile? File { get; set; } // Opsiyonel dosya desteği
 
         public DateTime SentDate { get; set; } = DateTime.UtcNow;
+
+        public int ConversationId { get; set; }
+        
     }
 
 }

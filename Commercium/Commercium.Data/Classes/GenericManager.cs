@@ -156,6 +156,7 @@ namespace Commercium.Data.Classes
             throw new InvalidOperationException("Bu metod yalnızca AppUser nesnesi için kullanılabilir.");
         }
 
+        
     }
 
 }

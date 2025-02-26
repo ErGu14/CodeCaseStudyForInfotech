@@ -17,6 +17,7 @@ using Microsoft.EntityFrameworkCore;
 using Commercium.Entity.User;
 using Commercium.Service.Classes;
 using Commercium.Shared.Other.Enums;
+using Commercium.Shared.Enums;
 
 public class AccountService : IAccountService
 {
@@ -59,7 +60,7 @@ public class AccountService : IAccountService
 
         var user = _mapper.Map<AppUser>(registerRM);
         user.EmailConfirmed = false;
-        user.PhoneNumberConfirmed = false;
+        user.Status = UserStatus.PendingApproval;
 
         var result = await _userManager.CreateAsync(user, registerRM.Password);
         if (!result.Succeeded)
@@ -267,6 +268,33 @@ public class AccountService : IAccountService
         return ReturnRM<IEnumerable<AppUserRM>>.Success(userRms, 200);
     }
 
+    public async Task<ReturnRM<string>> ApproveUserAsync(string userId)
+    {
+        // Kullanıcıyı ID ile bul
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user == null)
+        {
+            return ReturnRM<string>.Fail("Kullanıcı bulunamadı.", 404);
+        }
+
+        // Kullanıcı zaten onaylanmışsa veya başka bir durumda ise hata döndür
+        if (user.Status != UserStatus.PendingApproval)
+        {
+            return ReturnRM<string>.Fail("Kullanıcı onay bekleme durumunda değil.", 400);
+        }
+
+        // Kullanıcının durumunu Approved (Onaylandı) olarak değiştir
+        user.Status = UserStatus.Approved;
+        var result = await _userManager.UpdateAsync(user);
+
+        // Güncelleme başarısız olursa hata döndür
+        if (!result.Succeeded)
+        {
+            return ReturnRM<string>.Fail("Kullanıcı onaylanırken hata oluştu.", 500);
+        }
+
+        return ReturnRM<string>.Success("Kullanıcı başarıyla onaylandı.", 200);
+    }
 
     // Kullanıcı Token Oluşturma
     private async Task<TokenRM> CreateToken(AppUser user)
@@ -299,6 +327,4 @@ public class AccountService : IAccountService
             ExpirationDate = expires
         };
     }
-
-    
 }

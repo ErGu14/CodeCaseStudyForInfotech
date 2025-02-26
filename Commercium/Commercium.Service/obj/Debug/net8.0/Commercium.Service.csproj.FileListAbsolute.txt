@@ -1,9 +1,3 @@
-F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.csproj.AssemblyReference.cache
-F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.GeneratedMSBuildEditorConfig.editorconfig
-F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.AssemblyInfoInputs.cache
-F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.AssemblyInfo.cs
-F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.csproj.CoreCompileInputs.cache
-F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.sourcelink.json
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\bin\Debug\net8.0\Commercium.Service.deps.json
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\bin\Debug\net8.0\Commercium.Service.dll
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\bin\Debug\net8.0\Commercium.Service.pdb
@@ -13,6 +7,12 @@ F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commerc
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\bin\Debug\net8.0\Commercium.Shared.pdb
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\bin\Debug\net8.0\Commercium.Data.pdb
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\bin\Debug\net8.0\Commercium.Entity.pdb
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.csproj.AssemblyReference.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.GeneratedMSBuildEditorConfig.editorconfig
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.AssemblyInfoInputs.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.AssemblyInfo.cs
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.csproj.CoreCompileInputs.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.sourcelink.json
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commerci.D45BF32D.Up2Date
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\Commercium.Service.dll
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.Service\obj\Debug\net8.0\refint\Commercium.Service.dll

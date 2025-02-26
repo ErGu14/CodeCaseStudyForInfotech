@@ -20,7 +20,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<CommerciumDbContext>(x=>x.UseSqlServer(builder.Configuration.GetConnectionString("MsSqlServer")));
+builder.Services.AddDbContext<CommerciumDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer")));
 
 #region Identity & Configs
 //Identity 
@@ -84,7 +85,7 @@ builder.Services.AddScoped<IUserFollowService, UserFollowService>();
 builder.Services.AddScoped(typeof(IGenericManager<>), typeof(GenericManager<>));
 builder.Services.AddScoped<ITransactionManager, TransactionManager>();
 
-builder.Services.AddAutoMapper(typeof(Mapper));
+builder.Services.AddAutoMapper(typeof(AppMappingProfile));
 #endregion
 var app = builder.Build();
 

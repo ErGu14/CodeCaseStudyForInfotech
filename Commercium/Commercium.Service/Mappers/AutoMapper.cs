@@ -109,11 +109,22 @@ public class AppMappingProfile : Profile
 
         // Etiketler
         CreateMap<Tag, TagRM>().ReverseMap();
+        CreateMap<Tag, TagRM>()
+    .ForMember(dest => dest.TagId, opt => opt.MapFrom(src => src.TagId))
+    .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+    .ReverseMap();
+
         CreateMap<ServiceTag, ServiceTagRM>()
             .ForMember(dest => dest.Service, opt => opt.MapFrom(src => src.Service))
             .ForMember(dest => dest.Tag, opt => opt.MapFrom(src => src.Tag))
             .ReverseMap();
-        CreateMap<BusinessProfileTag, BusinessProfileTagRM>().ReverseMap();
+        CreateMap<BusinessProfileTagRM, BusinessProfileTag>().ReverseMap();
+        CreateMap<BusinessProfileTag, BusinessProfileTagRM>()
+    .ForMember(dest => dest.TagId, opt => opt.MapFrom(src => src.Tag.TagId))  // TagId'yi Tag'den alıyoruz
+    .ForMember(dest => dest.Tag.Name, opt => opt.MapFrom(src => src.Tag.Name))  // TagName'i Tag'den alıyoruz
+    .ReverseMap();
+       
+
         CreateMap<ProductTag, ProductTagRM>().ReverseMap();
 
         // Kullanıcı Takip

@@ -9,6 +9,6 @@ namespace Commercium.Entity.User.Account
 {
     public class AppRole : IdentityRole
     {
-
+        public string Description { get; set; }
     }
 }

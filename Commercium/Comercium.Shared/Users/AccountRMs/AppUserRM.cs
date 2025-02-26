@@ -1,5 +1,6 @@
 ﻿using Commercium.Shared.Businness.BusinessProfileRMs;
 using Commercium.Shared.Enums;
+using Commercium.Shared.Users.UserFollowRMs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace Commercium.Shared.Users.AccountRMs
         public UserStatus Status { get; set; }
         public UserRole Role { get; set; }
         public IEnumerable<BusinessProfileRM> BusinessProfiles { get; set; }
+        public IEnumerable<UserFollowRM> Follows { get; set; }
+        public IEnumerable<UserFollowRM> FollowedBy { get; set; }
     }
 
 }

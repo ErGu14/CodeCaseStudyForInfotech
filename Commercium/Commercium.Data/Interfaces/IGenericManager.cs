@@ -33,7 +33,7 @@ namespace Commercium.Data.Interfaces
                                          Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                          params Func<IQueryable<T>, IQueryable<T>>[] includes);
         Task<IEnumerable<T>> GetByIdsAsync(IEnumerable<int> ids);
-        Task GetByIdAsync(string followedId);
+        Task<T?> GetByIdAsync(string followedId);
     }
     
 }

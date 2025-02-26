@@ -23,6 +23,7 @@ namespace Commercium.Entity.User
 
         public string? FileUrl { get; set; } // Mesaja eklenen dosyanın yolu (opsiyonel)
         public int ConversationId { get; set; }
+        public ICollection<Conversation> Conversations { get; set; }
     }
 
 

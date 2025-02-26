@@ -1,4 +1,5 @@
-﻿using Commercium.Entity.User.Account;
+﻿using Commercium.Entity.User;
+using Commercium.Entity.User.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,9 @@ namespace Commercium.Entity.Businness
         public int ClickCount { get; set; }  // Tıklanma sayısı
         public int LikeCount { get; set; }   // Beğenilme sayısı
 
+        public int? NotificationId { get; set; }  // Opsiyonel yapıyoruz
+        public ICollection<Notification>? Notifications { get; set; }
+
         public string OwnerId { get; set; }
         public AppUser Owner { get; set; }
         public ICollection<Product> Products { get; set; }
@@ -25,6 +29,7 @@ namespace Commercium.Entity.Businness
 
         // Etiketler
         public ICollection<BusinessProfileTag> BusinessProfileTags { get; set; }  // Etiket bağlantısı
+
     }
 
 

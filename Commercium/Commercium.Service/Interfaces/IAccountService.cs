@@ -20,6 +20,7 @@ namespace Commercium.Service.Interfaces
         Task<ReturnRM<string>> ChangeEmailAsync(ChangeEmailRM changeEmailRM);
         Task<ReturnRM<string>> ChangePasswordAsync(ChangePasswordRM changePasswordRM);
         Task<ReturnRM<string>> ChangeUserRoleAsync(ChangeUserRoleRM changeUserRoleRM);
+        Task<ReturnRM<string>> ApproveUserAsync(string userId);
 
         //  Profil Özelleştirme
         Task<ReturnRM<string>> UpdateUserProfileAsync(UpdateUserProfileRM updateUserProfileRM);

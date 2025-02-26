@@ -16,5 +16,5 @@ namespace Commercium.Shared.ReturnRMs
                 StatusCode = returnRM.StatusCode
             };
         }
-}
+    }
 }

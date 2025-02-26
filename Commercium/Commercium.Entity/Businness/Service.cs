@@ -20,9 +20,11 @@ namespace Commercium.Entity.Businness
 
         public BusinessProfile BusinessProfile { get; set; }
         public ICollection<Review> Reviews { get; set; }
-
+        public int? FavoriteId { get; set; }
+        public Favorite? Favorite { get; set; }
         // Etiketler
         public ICollection<ServiceTag> ServiceTags { get; set; }
+        public int BusinessProfileId { get; set; }
     }
 
 }

@@ -1,5 +1,6 @@
 ﻿
 using Commercium.Shared.Users.AccountRMs;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,10 @@ namespace Commercium.Shared.Users.MessageRMs
         public string Content { get; set; }
         public DateTime SentDate { get; set; }
         public bool IsRead { get; set; }
+        public int ConversationId { get; set; }
+        public IEnumerable<ConversationRM> Conversations { get; set; }
 
-    
+
     }
 
 }
