@@ -1,0 +1,2139 @@
+[
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "ApproveUser",
+    "RelativePath": "api/account/approve-user/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "BanUser",
+    "RelativePath": "api/account/ban-user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "isPermanent",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "ChangeEmail",
+    "RelativePath": "api/account/change-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changeEmailRM",
+        "Type": "Commercium.Shared.Users.AccountRMs.ChangeEmailRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/account/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changePasswordRM",
+        "Type": "Commercium.Shared.Users.AccountRMs.ChangePasswordRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "ChangeUserRole",
+    "RelativePath": "api/account/change-user-role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changeUserRoleRM",
+        "Type": "Commercium.Shared.Users.AccountRMs.ChangeUserRoleRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "ConfirmEmail",
+    "RelativePath": "api/account/confirm-email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "CustomizeProfile",
+    "RelativePath": "api/account/customize-profile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateUserProfileCustomizationRM",
+        "Type": "Commercium.Shared.Users.UserProfileCustomizationRMs.UpdateUserProfileCustomizationRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/account/get-all-users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "GetUserWithBusinessInfo",
+    "RelativePath": "api/account/get-user-with-business-info/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "GetUser",
+    "RelativePath": "api/account/get-user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "GetUsersWithBusinessInfo",
+    "RelativePath": "api/account/get-users-with-business-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/account/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRM",
+        "Type": "Commercium.Shared.Users.AccountRMs.LoginRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "api/account/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerRM",
+        "Type": "Commercium.Shared.Users.AccountRMs.RegisterRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/account/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resetPasswordRM",
+        "Type": "Commercium.Shared.Users.AccountRMs.ResetPasswordRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "UnbanUser",
+    "RelativePath": "api/account/unban-user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.AccountController",
+    "Method": "UpdateUserProfile",
+    "RelativePath": "api/account/update-profile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateUserProfileRM",
+        "Type": "Commercium.Shared.Users.AccountRMs.UpdateUserProfileRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ActivityLogController",
+    "Method": "GetActivityById",
+    "RelativePath": "api/activity-log/{activityLogId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "activityLogId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ActivityLogController",
+    "Method": "CreateActivity",
+    "RelativePath": "api/activity-log/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createActivityLogRM",
+        "Type": "Commercium.Shared.Users.ActivityLogRMs.CreateActivityLogRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ActivityLogController",
+    "Method": "GetActivitiesByDateRange",
+    "RelativePath": "api/activity-log/date-range",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ActivityLogController",
+    "Method": "GetActivitiesByEntity",
+    "RelativePath": "api/activity-log/entity/{entityId}/{entityType}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "entityType",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ActivityLogController",
+    "Method": "GetActivitiesByType",
+    "RelativePath": "api/activity-log/type/{activityType}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "activityType",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ActivityLogController",
+    "Method": "GetUserActivities",
+    "RelativePath": "api/activity-log/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ActivityLogController",
+    "Method": "GetRecentUserActivities",
+    "RelativePath": "api/activity-log/user/{userId}/recent/{count}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "GetBusinessById",
+    "RelativePath": "api/business-profile/{businessProfileId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "businessProfileId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "AddBusinessTag",
+    "RelativePath": "api/business-profile/add-business-tag",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createBusinessProfileTagRM",
+        "Type": "Commercium.Shared.Businness.BusinessProfileTagRMs.CreateBusinessProfileTagRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "GetAllBusinesses",
+    "RelativePath": "api/business-profile/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "GetServicesByBusiness",
+    "RelativePath": "api/business-profile/business/{businessProfileId}/services",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "businessProfileId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "CreateBusiness",
+    "RelativePath": "api/business-profile/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createBusinessProfileRM",
+        "Type": "Commercium.Shared.Businness.BusinessProfileRMs.CreateBusinessProfileRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "CustomizeBusinessProfile",
+    "RelativePath": "api/business-profile/customize-profile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateBusinessProfileCustomizationRM",
+        "Type": "Commercium.Shared.Businness.BusinessProfileCustomizationRMs.UpdateBusinessProfileCustomizationRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "DeleteBusiness",
+    "RelativePath": "api/business-profile/delete/{businessProfileId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "businessProfileId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "IncreaseBusinessClickCount",
+    "RelativePath": "api/business-profile/increase-click/{businessProfileId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "businessProfileId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "IncreaseBusinessLikeCount",
+    "RelativePath": "api/business-profile/increase-like/{businessProfileId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "businessProfileId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "IncreaseBusinessViewCount",
+    "RelativePath": "api/business-profile/increase-view/{businessProfileId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "businessProfileId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "RemoveBusinessTag",
+    "RelativePath": "api/business-profile/remove-business-tag",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateBusinessProfileTagRM",
+        "Type": "Commercium.Shared.Businness.BusinessProfileTagRMs.UpdateBusinessProfileTagRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "GetServiceById",
+    "RelativePath": "api/business-profile/service/{serviceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serviceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "CreateService",
+    "RelativePath": "api/business-profile/service/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createServiceRM",
+        "Type": "Commercium.Shared.Businness.ServiceRMs.CreateServiceRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "DeleteService",
+    "RelativePath": "api/business-profile/service/delete/{serviceId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serviceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "UpdateService",
+    "RelativePath": "api/business-profile/service/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateServiceRM",
+        "Type": "Commercium.Shared.Businness.ServiceRMs.UpdateServiceRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "GetAllServices",
+    "RelativePath": "api/business-profile/services",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.BusinessProfileController",
+    "Method": "UpdateBusiness",
+    "RelativePath": "api/business-profile/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateBusinessProfileRM",
+        "Type": "Commercium.Shared.Businness.BusinessProfileRMs.UpdateBusinessProfileRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CampaignController",
+    "Method": "GetCampaignById",
+    "RelativePath": "api/campaign/{campaignId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "campaignId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CampaignController",
+    "Method": "GetProductsByCampaignId",
+    "RelativePath": "api/campaign/{campaignId}/products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "campaignId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CampaignController",
+    "Method": "UpdateCampaignProducts",
+    "RelativePath": "api/campaign/{campaignId}/update-products",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "campaignId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "productIds",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CampaignController",
+    "Method": "GetAllCampaigns",
+    "RelativePath": "api/campaign/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CampaignController",
+    "Method": "GetCampaignsByBusinessProfileId",
+    "RelativePath": "api/campaign/business/{businessProfileId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "businessProfileId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CampaignController",
+    "Method": "CreateCampaign",
+    "RelativePath": "api/campaign/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCampaignRM",
+        "Type": "Commercium.Shared.Businness.CampaignRMs.CreateCampaignRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CampaignController",
+    "Method": "GetCampaignsByDateRange",
+    "RelativePath": "api/campaign/date-range",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CampaignController",
+    "Method": "DeleteCampaign",
+    "RelativePath": "api/campaign/delete/{campaignId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "campaignId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CampaignController",
+    "Method": "UpdateCampaign",
+    "RelativePath": "api/campaign/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateCampaignRM",
+        "Type": "Commercium.Shared.Businness.CampaignRMs.UpdateCampaignRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CategoryController",
+    "Method": "GetCategoryById",
+    "RelativePath": "api/category/{categoryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CategoryController",
+    "Method": "GetProductCountByCategory",
+    "RelativePath": "api/category/{categoryId}/product-count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CategoryController",
+    "Method": "GetProductsByCategory",
+    "RelativePath": "api/category/{categoryId}/products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CategoryController",
+    "Method": "GetAllCategories",
+    "RelativePath": "api/category/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CategoryController",
+    "Method": "CreateCategory",
+    "RelativePath": "api/category/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCategoryRM",
+        "Type": "Commercium.Shared.CategoryRMs.CreateCategoryRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CategoryController",
+    "Method": "DeleteCategory",
+    "RelativePath": "api/category/delete/{categoryId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CategoryController",
+    "Method": "GetTopCategories",
+    "RelativePath": "api/category/top",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.CategoryController",
+    "Method": "UpdateCategory",
+    "RelativePath": "api/category/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateCategoryRM",
+        "Type": "Commercium.Shared.CategoryRMs.UpdateCategoryRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.FavoriteController",
+    "Method": "AddFavoriteProduct",
+    "RelativePath": "api/Favorite/add-product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createFavoriteRM",
+        "Type": "Commercium.Shared.Users.FavoriteRMs.CreateFavoriteRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.FavoriteController",
+    "Method": "AddFavoriteService",
+    "RelativePath": "api/Favorite/add-service",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createFavoriteRM",
+        "Type": "Commercium.Shared.Users.FavoriteRMs.CreateFavoriteRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.FavoriteController",
+    "Method": "GetFavoriteCountForProduct",
+    "RelativePath": "api/Favorite/product/{productId}/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.FavoriteController",
+    "Method": "RemoveFavoriteProduct",
+    "RelativePath": "api/Favorite/remove-product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateFavoriteRM",
+        "Type": "Commercium.Shared.Users.FavoriteRMs.UpdateFavoriteRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.FavoriteController",
+    "Method": "RemoveFavoriteService",
+    "RelativePath": "api/Favorite/remove-service",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateFavoriteRM",
+        "Type": "Commercium.Shared.Users.FavoriteRMs.UpdateFavoriteRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.FavoriteController",
+    "Method": "GetFavoriteCountForService",
+    "RelativePath": "api/Favorite/service/{serviceId}/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serviceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.FavoriteController",
+    "Method": "GetUserFavorites",
+    "RelativePath": "api/Favorite/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.FavoriteController",
+    "Method": "GetUserFavoriteProducts",
+    "RelativePath": "api/Favorite/user/{userId}/products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.FavoriteController",
+    "Method": "GetUserFavoriteServices",
+    "RelativePath": "api/Favorite/user/{userId}/services",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.MessageController",
+    "Method": "GetMessagesByConversation",
+    "RelativePath": "api/message/conversation/{conversationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conversationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.MessageController",
+    "Method": "GetLastMessageByConversation",
+    "RelativePath": "api/message/conversation/{conversationId}/last",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conversationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.MessageController",
+    "Method": "DeleteAllMessagesInConversation",
+    "RelativePath": "api/message/delete-all/{conversationId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conversationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.MessageController",
+    "Method": "DeleteMessage",
+    "RelativePath": "api/message/delete/{messageId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messageId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.MessageController",
+    "Method": "MarkMessageAsRead",
+    "RelativePath": "api/message/mark-as-read/{messageId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messageId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.MessageController",
+    "Method": "SendMessage",
+    "RelativePath": "api/message/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "SenderId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReceiverId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Content",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "SentDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "ConversationId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentDisposition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Headers",
+        "Type": "Microsoft.AspNetCore.Http.IHeaderDictionary",
+        "IsRequired": false
+      },
+      {
+        "Name": "Length",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.MessageController",
+    "Method": "UpdateMessage",
+    "RelativePath": "api/message/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateMessageRM",
+        "Type": "Commercium.Shared.Users.MessageRMs.UpdateMessageRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.MessageController",
+    "Method": "GetUserConversations",
+    "RelativePath": "api/message/user/{userId}/conversations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.MessageController",
+    "Method": "GetUnreadMessages",
+    "RelativePath": "api/message/user/{userId}/unread",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "GetNotificationById",
+    "RelativePath": "api/notification/{notificationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "DeleteNotification",
+    "RelativePath": "api/notification/{notificationId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "ClearUserNotifications",
+    "RelativePath": "api/notification/clear-user/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "CreateNotification",
+    "RelativePath": "api/notification/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createNotificationRM",
+        "Type": "Commercium.Shared.Users.NotificationRMs.CreateNotificationRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "MarkAllNotificationsAsRead",
+    "RelativePath": "api/notification/mark-all-as-read/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "MarkNotificationAsRead",
+    "RelativePath": "api/notification/mark-as-read/{notificationId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "GetUserNotifications",
+    "RelativePath": "api/notification/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "GetLatestNotifications",
+    "RelativePath": "api/notification/user/{userId}/latest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "GetUnreadNotifications",
+    "RelativePath": "api/notification/user/{userId}/unread",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.NotificationController",
+    "Method": "GetUnreadNotificationCount",
+    "RelativePath": "api/notification/user/{userId}/unread-count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "GetProductById",
+    "RelativePath": "api/product/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "AddProductCategory",
+    "RelativePath": "api/product/add-category",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productCategoryRM",
+        "Type": "Commercium.Shared.ProductCategoryRMs.ProductCategoryRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "AddProductTag",
+    "RelativePath": "api/product/add-tag",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createProductTagRM",
+        "Type": "Commercium.Shared.Tags.ProductTagRMs.CreateProductTagRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "GetAllProducts",
+    "RelativePath": "api/product/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "GetProductsByBusiness",
+    "RelativePath": "api/product/business/{businessProfileId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "businessProfileId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "GetProductsByCategory",
+    "RelativePath": "api/product/category/{categoryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "CreateProduct",
+    "RelativePath": "api/product/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createProductRM",
+        "Type": "Commercium.Shared.ProductRMs.CreateProductRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/product/delete/{productId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "IncreaseProductClickCount",
+    "RelativePath": "api/product/increase-click/{productId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "IncreaseProductLikeCount",
+    "RelativePath": "api/product/increase-like/{productId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "IncreaseProductViewCount",
+    "RelativePath": "api/product/increase-view/{productId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "GetLatestProducts",
+    "RelativePath": "api/product/latest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "RemoveProductCategory",
+    "RelativePath": "api/product/remove-category",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productCategoryRM",
+        "Type": "Commercium.Shared.ProductCategoryRMs.ProductCategoryRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "RemoveProductTag",
+    "RelativePath": "api/product/remove-tag",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateProductTagRM",
+        "Type": "Commercium.Shared.Tags.ProductTagRMs.UpdateProductTagRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "GetProductsByTag",
+    "RelativePath": "api/product/tag/{tagId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ProductController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/product/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateProductRM",
+        "Type": "Commercium.Shared.ProductRMs.UpdateProductRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ReviewController",
+    "Method": "GetReviewById",
+    "RelativePath": "api/review/{reviewId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reviewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ReviewController",
+    "Method": "CreateReview",
+    "RelativePath": "api/review/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createReviewRM",
+        "Type": "Commercium.Shared.Users.ReviewRMs.CreateReviewRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ReviewController",
+    "Method": "DeleteReview",
+    "RelativePath": "api/review/delete/{reviewId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reviewId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ReviewController",
+    "Method": "GetReviewsByProduct",
+    "RelativePath": "api/review/product/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ReviewController",
+    "Method": "GetAverageRatingForProduct",
+    "RelativePath": "api/review/product/{productId}/average-rating",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ReviewController",
+    "Method": "GetReviewsByService",
+    "RelativePath": "api/review/service/{serviceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serviceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ReviewController",
+    "Method": "GetAverageRatingForService",
+    "RelativePath": "api/review/service/{serviceId}/average-rating",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serviceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ReviewController",
+    "Method": "UpdateReview",
+    "RelativePath": "api/review/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateReviewRM",
+        "Type": "Commercium.Shared.Users.ReviewRMs.UpdateReviewRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.ReviewController",
+    "Method": "GetUserReviews",
+    "RelativePath": "api/review/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.SearchController",
+    "Method": "SaveSearchHistory",
+    "RelativePath": "api/search/save-history",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.SearchController",
+    "Method": "Search",
+    "RelativePath": "api/search/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.SearchController",
+    "Method": "SearchByTag",
+    "RelativePath": "api/search/search-by-tag/{tagId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.SearchController",
+    "Method": "GetUserSearchHistory",
+    "RelativePath": "api/search/user/{userId}/history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.TagController",
+    "Method": "GetTagById",
+    "RelativePath": "api/tag/{tagId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.TagController",
+    "Method": "GetBusinessesByTag",
+    "RelativePath": "api/tag/{tagId}/businesses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.TagController",
+    "Method": "GetProductsByTag",
+    "RelativePath": "api/tag/{tagId}/products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.TagController",
+    "Method": "GetServicesByTag",
+    "RelativePath": "api/tag/{tagId}/services",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.TagController",
+    "Method": "GetAllTags",
+    "RelativePath": "api/tag/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.TagController",
+    "Method": "CreateTag",
+    "RelativePath": "api/tag/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createTagRM",
+        "Type": "Commercium.Shared.Tags.TagRMs.CreateTagRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.TagController",
+    "Method": "DeleteTag",
+    "RelativePath": "api/tag/delete/{tagId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tagId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.TagController",
+    "Method": "GetTopTags",
+    "RelativePath": "api/tag/top",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.TagController",
+    "Method": "UpdateTag",
+    "RelativePath": "api/tag/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateTagRM",
+        "Type": "Commercium.Shared.Tags.TagRMs.UpdateTagRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.UserFollowController",
+    "Method": "FollowUser",
+    "RelativePath": "api/user-follow/follow",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createUserFollowRM",
+        "Type": "Commercium.Shared.Users.UserFollowRMs.CreateUserFollowRM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.UserFollowController",
+    "Method": "GetFollowerCount",
+    "RelativePath": "api/user-follow/follower-count/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.UserFollowController",
+    "Method": "GetFollowers",
+    "RelativePath": "api/user-follow/followers/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.UserFollowController",
+    "Method": "GetFollowingCount",
+    "RelativePath": "api/user-follow/following-count/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.UserFollowController",
+    "Method": "GetFollowing",
+    "RelativePath": "api/user-follow/following/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.UserFollowController",
+    "Method": "IsUserFollowing",
+    "RelativePath": "api/user-follow/is-following",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "followerId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "followedId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Commercium.API.Controllers.UserFollowController",
+    "Method": "UnfollowUser",
+    "RelativePath": "api/user-follow/unfollow",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "followerId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "followedId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

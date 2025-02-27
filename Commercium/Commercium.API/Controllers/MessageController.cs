@@ -21,11 +21,12 @@ namespace Commercium.API.Controllers
         // Mesaj Gönderme - User, SalesRepresentative erişebilir
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("send")]
-        public async Task<IActionResult> SendMessage([FromBody] CreateMessageRM createMessageRM, [FromForm] IFormFile? file)
+        public async Task<IActionResult> SendMessage([FromForm] CreateMessageRM createMessageRM, [FromForm] IFormFile? file)
         {
             var response = await _messageService.SendMessageAsync(createMessageRM, file);
             return CreateReturn(response);
         }
+
 
         // Mesaj Güncelleme - User, Admin ve SalesRepresentative erişebilir
         [Authorize(Roles = "User, Admin, SalesRepresentative")]

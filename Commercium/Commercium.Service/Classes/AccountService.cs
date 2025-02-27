@@ -67,8 +67,20 @@ public class AccountService : IAccountService
             return ReturnRM<string>.Fail(result.Errors.Select(e => e.Description).ToList(), 400);
 
         await _userManager.AddToRoleAsync(user, registerRM.Role.ToString());
-        return ReturnRM<string>.Success("Kayıt başarılı.", 201);
+
+        // JWT Token oluştur (doğrulama için)
+        var token = GenerateEmailVerificationToken(user);
+
+        var confirmationLink = $"https://yourfrontend.com/verify-email?token={token}";
+
+        // Kullanıcıya e-posta gönder
+        await _emailService.SendEmailAsync(user.Email, "E-posta Doğrulama",
+            $"Lütfen e-posta adresinizi doğrulamak için <a href='{confirmationLink}'>buraya tıklayın</a>.");
+
+        return ReturnRM<string>.Success("Kayıt başarılı. Lütfen e-postanızı doğrulayın.", 201);
     }
+
+
 
     // Kullanıcı Şifresini Sıfırlama
     public async Task<ReturnRM<string>> ResetPasswordAsync(ResetPasswordRM resetPasswordRM)
@@ -326,5 +338,69 @@ public class AccountService : IAccountService
             AccessToken = new JwtSecurityTokenHandler().WriteToken(token),
             ExpirationDate = expires
         };
+
     }
+    private string GenerateEmailVerificationToken(AppUser user)
+    {
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.ASCII.GetBytes(_jwtConfig.Secret);
+
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(new[]
+            {
+            new Claim(ClaimTypes.NameIdentifier, user.Id),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim("email_verification", "true") // Özel claim
+        }),
+            Expires = DateTime.UtcNow.AddHours(24), // Token 24 saat geçerli
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        };
+
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        return tokenHandler.WriteToken(token);
+    }
+
+    public async Task<ReturnRM<string>> ConfirmEmailAsync(string token)
+    {
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.ASCII.GetBytes(_jwtConfig.Secret);
+
+        try
+        {
+            var claimsPrincipal = tokenHandler.ValidateToken(token, new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ClockSkew = TimeSpan.Zero
+            }, out _);
+
+            var userId = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var emailClaim = claimsPrincipal.FindFirst(ClaimTypes.Email)?.Value;
+            var emailVerificationClaim = claimsPrincipal.FindFirst("email_verification")?.Value;
+
+            if (userId == null || emailClaim == null || emailVerificationClaim != "true")
+                return ReturnRM<string>.Fail("Geçersiz doğrulama tokenı.", 400);
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+                return ReturnRM<string>.Fail("Kullanıcı bulunamadı.", 404);
+
+            if (user.EmailConfirmed)
+                return ReturnRM<string>.Fail("E-posta zaten doğrulanmış.", 400);
+
+            user.EmailConfirmed = true;
+           
+
+            await _userManager.UpdateAsync(user);
+            return ReturnRM<string>.Success("E-posta başarıyla doğrulandı.", 200);
+        }
+        catch (Exception ex)
+        {
+            return ReturnRM<string>.Fail("Geçersiz veya süresi dolmuş token.", 400);
+        }
+    }
+
 }

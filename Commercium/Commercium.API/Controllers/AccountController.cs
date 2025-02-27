@@ -133,6 +133,12 @@ namespace Commercium.API.Controllers
             var response = await _accountService.ApproveUserAsync(userId);
             return CreateReturn(response);
         }
+        [HttpGet("confirm-email")]
+        public async Task<IActionResult> ConfirmEmail([FromQuery] string token)
+        {
+            var response = await _accountService.ConfirmEmailAsync(token);
+            return CreateReturn(response);
+        }
 
 
     }

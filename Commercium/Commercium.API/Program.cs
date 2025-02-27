@@ -19,7 +19,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.MapType<IFormFile>(() => new Microsoft.OpenApi.Models.OpenApiSchema { Type = "string", Format = "binary" });
+});
+
+
 builder.Services.AddDbContext<CommerciumDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer")));
 
@@ -65,7 +70,6 @@ builder.Services.AddAuthentication(x =>
 #endregion
 /**********/
 #region AddScopeds
-builder.Services.AddScoped<ITransactionManager, TransactionManager>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IActivityLogService, ActivityLogService>();
 builder.Services.AddScoped<IBusinessService, BusinessService>();
@@ -87,6 +91,8 @@ builder.Services.AddScoped<ITransactionManager, TransactionManager>();
 
 builder.Services.AddAutoMapper(typeof(AppMappingProfile));
 #endregion
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -98,11 +104,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseAuthorization();
-
 app.UseAuthentication();
-
 app.MapControllers();
 
 app.Run();

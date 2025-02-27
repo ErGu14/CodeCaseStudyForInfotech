@@ -1,4 +1,5 @@
-﻿using Commercium.Data.Interfaces;
+﻿using Commercium.Data.DbContexts;
+using Commercium.Data.Interfaces;
 using Commercium.Entity.User.Account;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,10 +13,10 @@ namespace Commercium.Data.Classes
 {
     public class GenericManager<T> : IGenericManager<T> where T : class
     {
-        private readonly DbContext _context;
+        private readonly CommerciumDbContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public GenericManager(DbContext context)
+        public GenericManager(CommerciumDbContext context)
         {
             _context = context;
             _dbSet = _context.Set<T>();

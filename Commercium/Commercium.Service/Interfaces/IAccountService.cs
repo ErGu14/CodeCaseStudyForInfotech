@@ -15,6 +15,7 @@ namespace Commercium.Service.Interfaces
         Task<ReturnRM<TokenRM>> LoginAsync(LoginRM loginRM);
         Task<ReturnRM<string>> RegisterAsync(RegisterRM registerRM);
         Task<ReturnRM<string>> ResetPasswordAsync(ResetPasswordRM resetPasswordRM);
+        Task<ReturnRM<string>> ConfirmEmailAsync(string token);
 
         //  Kullanıcı Bilgi Güncellemeleri
         Task<ReturnRM<string>> ChangeEmailAsync(ChangeEmailRM changeEmailRM);

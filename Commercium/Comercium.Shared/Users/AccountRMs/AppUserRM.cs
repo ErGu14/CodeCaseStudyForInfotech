@@ -15,6 +15,7 @@ namespace Commercium.Shared.Users.AccountRMs
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+        public bool EmailConfirmed { get; set; }
         public string Password { get; set; }  
         public UserStatus Status { get; set; }
         public UserRole Role { get; set; }

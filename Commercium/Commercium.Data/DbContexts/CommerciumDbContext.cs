@@ -20,7 +20,7 @@ namespace Commercium.Data.DbContexts
 {
     public class CommerciumDbContext : IdentityDbContext<AppUser, AppRole, string>
     {
-        public CommerciumDbContext(DbContextOptions options)
+        public CommerciumDbContext(DbContextOptions<CommerciumDbContext> options)
             : base(options)
         { }
 
