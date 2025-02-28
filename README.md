@@ -1,2 +1,2 @@
 # CodeCaseStudyForInfotech
- Code CaseS tudy For Infotech
+ Code Case Study For Infotech
