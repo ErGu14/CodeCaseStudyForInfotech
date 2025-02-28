@@ -66,8 +66,7 @@
               "RelativeToolTip": "Commercium.API\\Controllers\\MessageController.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAASwEsAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:52:53.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T19:52:53.385Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "RelativeToolTip": "Commercium.API\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-27T19:45:52.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T19:45:52.402Z"
             },
             {
               "$type": "Document",
@@ -92,8 +90,7 @@
               "RelativeToolTip": "Commercium.Data\\Classes\\GenericManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:28:03.474Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T19:28:03.474Z"
             },
             {
               "$type": "Document",
@@ -105,8 +102,7 @@
               "RelativeToolTip": "Commercium.Data\\DbContexts\\CommerciumDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T18:54:12.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T18:54:12.115Z"
             },
             {
               "$type": "Document",
@@ -118,8 +114,7 @@
               "RelativeToolTip": "Commercium.API\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-27T18:50:53.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T18:50:53.053Z"
             },
             {
               "$type": "Document",
@@ -129,7 +124,7 @@
               "RelativeDocumentMoniker": "Commercium.API\\Program.cs",
               "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\Program.cs",
               "RelativeToolTip": "Commercium.API\\Program.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T18:50:16.584Z",
               "EditorCaption": ""
@@ -144,8 +139,7 @@
               "RelativeToolTip": "Commercium.API\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAGwAAAAAAAAAAAA2wIoAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T14:38:24.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T14:38:24.48Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "Commercium.Service\\Interfaces\\IAccountService.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T14:35:56.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T14:35:56.179Z"
             },
             {
               "$type": "Document",
@@ -170,8 +163,7 @@
               "RelativeToolTip": "Commercium.Service\\Classes\\AccountService.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAowBkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T14:31:59.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T14:31:59.982Z"
             },
             {
               "$type": "Document",
@@ -183,8 +175,7 @@
               "RelativeToolTip": "Comercium.Shared\\Users\\AccountRMs\\AppUserRM.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T14:30:47.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T14:30:47.131Z"
             },
             {
               "$type": "Document",
@@ -196,8 +187,7 @@
               "RelativeToolTip": "Commercium.Entity\\Businness\\BusinessProfile.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T00:55:10.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T00:55:10.151Z"
             }
           ]
         }
