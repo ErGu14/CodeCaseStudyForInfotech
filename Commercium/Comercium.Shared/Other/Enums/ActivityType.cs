@@ -10,7 +10,9 @@ namespace Commercium.Shared.Enums
     {
         Click = 1,
         Like = 2,
-        View = 3
+        View = 3,
+        Login,
+        Register
     }
 
 }

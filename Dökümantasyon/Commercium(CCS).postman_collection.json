@@ -1,0 +1,3389 @@
+{
+	"info": {
+		"_postman_id": "1976b3a8-1b9e-48ee-bb11-c594c5e65728",
+		"name": "Commercium(CCS)",
+		"description": "# Giriş\n\n## Commercium\n\nBu proje, InfotechLab firması için geliştirilmiş olan bir yazılım çözümüdür. Amacı, işletmecilerin ürün ve hizmetlerini sosyal bir ağ üzerinden daha geniş kitlelere pazarlamalarını desteklemektir. Kullanıcılar, sisteme giriş yaptıktan sonra ürünlerini tanıtabilir, teklifler alabilir veya verebilir. Ayrıca, ürün ve hizmetlere yorum yapabilir, beğeni gönderebilir ve diğer işletmelerle etkileşime geçebilirler.\n\nProje, işletme sahiplerinin kampanyalarını, yeni ürünlerini ve hizmetlerini duyurabileceği, aynı zamanda bu paylaşımlara yorumlar yaparak etkileşime girebileceği bir platform sunmaktadır. Sosyal ağ üzerinden yapılan tüm hareketler kayıt altına alınarak, platform yöneticilerine detaylı raporlar sunulmaktadır.\n\n_\\*\\\\_\n\n# Örnek Kullanıcılar\n\nAşağıda, sisteme giriş yaparak API isteklerinde bulunabilecek örnek kullanıcılar ve ilgili bilgileri yer almaktadır. Kullanıcılar, belirtilen e-posta ve şifre ile giriş yaparak token alabilir ve bu token ile 3 saat boyunca sistemde işlem yapabilirler.\n\n### **1\\. Ahmet Yıldız**\n\n#### **Rolü**: User\n\n**Bilgiler**:\n\n- **E-posta**: [ahmetyilmaz41@outlook.com](https://null)\n    \n- **Şifre**: 41NewyorK41.!\n    \n- **Telefon Numarası**: 5346530901\n    \n- **Doğum Tarihi**: 13 Aralık 1988\n    \n- **Cinsiyet**: Tercih Edilmedi\n    \n\nAhmet Yıldız, sistemde **User** rolüyle işlem yapabilir. Sisteme giriş yaptıktan sonra 3 saat boyunca geçerli olacak bir token alabilir ve bu token ile API isteklerinde bulunabilir.\n\n### **2\\. Mehmet Güler**\n\n### **Rolü**: Seller\n\n**Bilgiler**:\n\n- **E-posta**: [mehmetguler@hotmail.com](https://null)\n    \n- **Şifre**: Mehmet123!@\n    \n- **Telefon Numarası**: 5551234567\n    \n- **Doğum Tarihi**: 24 Mayıs 1992\n    \n- **Cinsiyet**: Erkek\n    \n\nMehmet Güler, **Seller** rolüyle sisteme giriş yaparak, satış ve pazarlama işlemlerine yönelik API isteklerinde bulunabilir. Sisteme giriş yaptıktan sonra 3 saat boyunca geçerli olacak bir token alabilir.\n\n### **3\\. Ali Çelik**\n\n### **Rolü**: BusinessOwner\n\n**Bilgiler**:\n\n- **E-posta**: [alicelik@business.com](https://null)\n    \n- **Şifre**: BusinessOwner1234!@\n    \n- **Telefon Numarası**: 5364567890\n    \n- **Doğum Tarihi**: 1 Şubat 1990\n    \n- **Cinsiyet**: Erkek\n    \n\nAli Çelik, **BusinessOwner** rolüyle sisteme giriş yaparak, işletme yönetimi ve ürün/hizmet paylaşımı gibi işlemleri gerçekleştirebilir. Sisteme giriş yaptıktan sonra 3 saat boyunca geçerli olacak bir token alabilir.\n\n### **4\\. Ayşe Yılmaz**\n\n### **Rolü**: Admin\n\n**Bilgiler**:\n\n- **E-posta**: [ayseyilmaz@admin.com](https://null)\n    \n- **Şifre**: Admin123!@\n    \n- **Telefon Numarası**: 5327654321\n    \n- **Doğum Tarihi**: 17 Nisan 1985\n    \n- **Cinsiyet**: Kadın\n    \n\nAyşe Yılmaz, **Admin** rolüyle sisteme giriş yaparak, kullanıcı yönetimi ve diğer admin işlemleri için API isteklerinde bulunabilir. Sisteme giriş yaptıktan sonra 3 saat boyunca geçerli olacak bir token alabilir.\n\n### _\n\nÖrnek API Body\n\n_`{ \"email\": \"`[<code>ahmetyilmaz41@outlook.com</code>](https://mailto:ahmetyilmaz41@outlook.com)`\", \"password\": \"41NewyorK41.!\" }`\n\n_\\*\\\\_\n\n# **Kayıt Olma İşlemi**\n\nKullanıcılar, sisteme kayıt olabilmek için **e-posta** adreslerini ve **şifrelerini** doğru bir şekilde girmelidir. Şifre, en az 8 karakter olmalı ve büyük harf, küçük harf, rakam ve özel karakter içermelidir. Kayıt olduktan sonra kullanıcıların e-posta adreslerini onaylamaları gerekmektedir. Bu onaylama işlemi için bir onay e-postası gönderilecektir.\n\nE-posta onayından sonra, sistem yöneticisinin **kullanıcı onayını** beklemesi gerekecektir. Kullanıcılar, onayları **gün içerisinde** gerçekleşecektir. Onayı alan kullanıcılar, sisteme giriş yaparak platformda rahatlıkla gezinebileceklerdir.\n\n**Rol Seçimi**: Kayıt sırasında, kullanıcılar sistemdeki uygun rolleri seçebilirler. Test amaçlı olarak Postman üzerinden farklı rollerle kayıt olabilirsiniz. **Roller** şunlardır:\n\n- **User** (Kullanıcı)\n    \n- **BusinessOwner** (İşletme Sahibi)\n    \n- **Admin** (Yönetici)\n    \n- **SalesRepresentative** (Satış Temsilcisi)\n    \n\n## **Kayıt İçin Gerekli Bilgiler**\n\nAşağıdaki bilgiler, kullanıcıların sisteme kayıt olurken doldurmaları gereken alanlardır:\n\n- **Ad** (FirstName): Zorunlu. Kullanıcının adı gereklidir.\n    \n- **Soyad** (LastName): Zorunlu. Kullanıcının soyadı gereklidir.\n    \n- **E-posta Adresi** (Email): Zorunlu. Geçerli bir e-posta adresi gereklidir. Ayrıca e-posta onay işlemi gerekmektedir.\n    \n- **Telefon Numarası** (PhoneNumber): Zorunlu. Geçerli bir telefon numarası gereklidir.\n    \n- **Şifre** (Password): Zorunlu. Şifre en az 8 karakter olmalı, büyük harf, küçük harf, rakam ve özel karakter içermelidir.\n    \n- **Şifreyi Onayla** (ConfirmPassword): Zorunlu. Şifre onayının yapılması gerekmektedir ve şifreler eşleşmelidir.\n    \n- **Rol** (Role): Kullanıcılar, sistemdeki rolleri seçebilirler. Varsayılan rol **User** olarak belirlenmiştir.\n    \n\n## Örnek API Body\n\n`{ \"firstName\": \"Ahmet\", \"lastName\": \"Yıldız\", \"email\": \"`[<code>ahmetyilmaz41@outlook.com</code>](https://mailto:ahmetyilmaz41@outlook.com)`\", \"phoneNumber\": \"5346530901\", \"password\": \"41NewyorK41.!\", \"confirmPassword\": \"41NewyorK41.!\", \"role\": \"User\" }`\n\n_\\*\\\\_\n\n# **Hesap Bilgileri Değiştirme İşlemi**\n\nKullanıcıların hesap bilgilerini değiştirebilmesi için aşağıdaki işlemler gerçekleştirilmelidir. Bu işlemler, **e-posta değişikliği**, **şifre değiştirme**, **kullanıcı rolü değiştirme** ve **şifre sıfırlama** gibi işlemleri kapsar. Her işlemde ilgili doğrulama kodu veya geçerli bilgiler istenmektedir.\n\n## **1\\. E-posta Değiştirme**\n\nKullanıcı, mevcut e-posta adresini ve yeni e-posta adresini belirterek, e-posta değiştirme işlemini gerçekleştirebilir. Bu işlem için e-posta doğrulama kodu gerekmektedir.\n\n{`\"userId\": \"1e5c4d9b-cd72-41f1-b123-57b66ac50f3b\", \"currentEmail\": \"`[<code>ahmetyilmaz41@outlook.com</code>](https://mailto:ahmetyilmaz41@outlook.com)`\", \"newEmail\": \"`[<code>ahmetyeni@outlook.com</code>](https://mailto:ahmetyeni@outlook.com)`\", \"verificationCode\": \"123456\" }`\n\n## **2\\. Şifre Değiştirme**\n\nKullanıcı, mevcut şifresini girip, yeni şifresini belirleyebilir ve şifrelerini onaylayarak değiştirme işlemi gerçekleştirebilir.\n\n`{ \"userId\": \"1e5c4d9b-cd72-41f1-b123-57b66ac50f3b\", \"currentPassword\": \"41NewyorK41.!\", \"newPassword\": \"NewPassword123!\", \"confirmNewPassword\": \"NewPassword123!\" }`\n\n## **3\\. Kullanıcı Rolü Değiştirme**\n\n**Admin** yetkisine sahip kullanıcılar, diğer kullanıcıların rollerini değiştirebilir.\n\n`{ \"userId\": \"f8c9debe-935b-432a-b8a2-7c417f7767b1\", \"newRole\": \"Admin\" }`\n\n## **4\\. Şifre Sıfırlama**\n\nKullanıcı, şifresini sıfırlamak için e-posta adresini ve sıfırlama kodunu girerek yeni şifre belirleyebilir.\n\n`{ \"email\": \"`[<code>ahmetyilmaz41@outlook.com</code>](https://mailto:ahmetyilmaz41@outlook.com)`\", \"resetToken\": \"reset12345\", \"newPassword\": \"NewPassword123!\", \"confirmNewPassword\": \"NewPassword123!\" }`\n\n## **5\\. Kullanıcı Profil Özelleştirmesi**\n\nKullanıcı, profil fotoğrafı, arka plan resmi ve açıklama gibi bilgileri güncelleyebilir.\n\n{  \n\"userProfileCustomizationId\": 1,  \n\"customProfileImage\": \"filedata\",  \n\"customBackgroundImage\": \"filedata\",  \n\"customDescription\": \"Yeni profil açıklaması.\",  \n\"userId\": \"1e5c4d9b-cd72-41f1-b123-57b66ac50f3b\"  \n}\n\n_\\*\\\\_\n\n# API İstekleri Ve Geriye Kalan Bilgiler\n\n## **1\\. Kullanıcı Girişi (Login)**\n\n**Kullanıcı sisteme giriş yapar ve JWT token alır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/login`\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"email\": \"kullanici@example.com\",\n  \"password\": \"Sifre123!\"\n}\n\n ```\n\n- **Yanıt:** JWT token döner.\n    \n\n---\n\n## **2\\. Kullanıcı Kaydı (Register)**\n\n**Yeni bir kullanıcı sisteme kayıt olur.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/register`\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"firstName\": \"Ahmet\",\n  \"lastName\": \"Yılmaz\",\n  \"email\": \"ahmet@example.com\",\n  \"phoneNumber\": \"5321234567\",\n  \"password\": \"Sifre123!\",\n  \"confirmPassword\": \"Sifre123!\",\n  \"role\": \"User\"\n}\n\n ```\n\n- **Not:** E-posta doğrulaması ve sistem yöneticisi onayı gereklidir.\n    \n\n---\n\n## **3\\. Şifre Sıfırlama (Reset Password)**\n\n**Kullanıcı şifresini sıfırlamak için istek yapar.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/reset-password`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"email\": \"kullanici@example.com\",\n  \"resetToken\": \"123456\",\n  \"newPassword\": \"YeniSifre123!\",\n  \"confirmNewPassword\": \"YeniSifre123!\"\n}\n\n ```\n\n---\n\n## **4\\. E-Posta Değiştirme (Change Email)**\n\n**Kullanıcı, mevcut e-posta adresini yeni bir e-posta ile değiştirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/change-email`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"currentEmail\": \"eski@example.com\",\n  \"newEmail\": \"yeni@example.com\",\n  \"verificationCode\": \"654321\"\n}\n\n ```\n\n---\n\n## **5\\. Şifre Değiştirme (Change Password)**\n\n**Kullanıcı mevcut şifresini değiştirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/change-password`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"currentPassword\": \"EskiSifre123!\",\n  \"newPassword\": \"YeniSifre123!\",\n  \"confirmNewPassword\": \"YeniSifre123!\"\n}\n\n ```\n\n---\n\n## **6\\. Kullanıcı Rolü Değiştirme (Change User Role) \\[Admin Yetkisi\\]**\n\n**Yalnızca admin, bir kullanıcının rolünü değiştirebilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/change-user-role`\n    \n- **Authorization:** **Admin Yetkisi Gerekli**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"newRole\": \"BusinessOwner\"\n}\n\n ```\n\n---\n\n## **7\\. Kullanıcı Profilini Güncelleme (Update Profile)**\n\n**Kullanıcı, profil bilgilerini güncelleyebilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/update-profile`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"firstName\": \"Mehmet\",\n  \"lastName\": \"Demir\",\n  \"phoneNumber\": \"5559876543\",\n  \"customBio\": \"E-ticaret sektöründe deneyimli bir girişimci.\"\n}\n\n ```\n\n---\n\n## **8\\. Kullanıcı Profilini Özelleştirme (Customize Profile)**\n\n**Kullanıcı, profil arka planı veya profil resmini değiştirebilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/customize-profile`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"customProfileImage\": \"base64ImageString\",\n  \"customBackgroundImage\": \"base64ImageString\",\n  \"customDescription\": \"E-ticaret ve dijital pazarlama ile ilgileniyorum.\"\n}\n\n ```\n\n---\n\n## **9\\. Kullanıcıyı Banlama (Ban User) \\[Admin Yetkisi\\]**\n\n**Admin, bir kullanıcıyı belirli bir süreliğine veya süresiz olarak yasaklayabilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/ban-user/(true-false)`\n    \n- **Authorization:** **Admin Yetkisi Gerekli**\n    \n- **Query Parametreleri:**\n    \n    - `userId`: Yasaklanacak kullanıcı ID’si\n        \n    - `isPermanent`: `true` ise süresiz banlanır.\n        \n\n---\n\n**10\\. Kullanıcı Banını Kaldırma (Unban User) \\[Admin Yetkisi\\]**\n\n**Admin, banlanan bir kullanıcının yasağını kaldırabilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/unban-user`\n    \n- **Authorization:** **Admin Yetkisi Gerekli**\n    \n- **Query Parametreleri:**\n    \n    - `userId`: Banı kaldırılacak kullanıcı ID’si\n        \n\n---\n\n## **11\\. Kullanıcı Onaylama (E-Posta Doğrulama)**\n\n**Kullanıcı, e-posta doğrulama kodunu kullanarak hesabını onaylar.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/account/confirm-email`\n    \n- **Query Parametresi:**\n    \n    - `token`: E-posta doğrulama kodu\n        \n\n---\n\n## **12\\. Kullanıcıyı Onaylama (Approve User) \\[Admin Yetkisi\\]**\n\n**Admin, bir kullanıcının hesabını onaylayabilir.**\n\n**İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/account/approve-user/{userId}`\n    \n- **Authorization:** **Admin Yetkisi Gerekli**\n    \n- **Parametreler:**\n    \n    - `userId`: Onaylanacak kullanıcının kimliği\n        \n\n---\n\n## **13\\. Tüm Kullanıcıları Getirme (Get All Users) \\[Admin Yetkisi\\]**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/account/get-all-users`\n    \n- **Authorization:** **Admin Yetkisi Gerekli**\n    \n\n---\n\n## **14\\. İşletme Bilgisi Olan Kullanıcıları Getirme (Get Users With Business Info) \\[Admin Yetkisi\\]**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/account/get-users-with-business-info`\n    \n- **Authorization:** **Admin Yetkisi Gerekli**\n    \n\n---\n\n## **15\\. Belirli Kullanıcıyı Getirme (Get User)**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/account/get-user/{userId}`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n\n---\n\n## **16\\. İşletme Bilgisi ile Kullanıcı Getirme (Get User With Business Info)**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/account/get-user-with-business-info/{userId}`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n\n_\\*\\\\_\n\n# **ActivityLogController**\n\n**Base URL:** `http://localhost:5009/api/activity-log`\n\nBu bölümde **ActivityLogController** içerisindeki **7 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Aktivite Kaydetme (Create Activity Log)**\n\n**Kullanıcının sistemde yaptığı belirli bir işlemi kayıt altına alır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/activity-log/create`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"entityId\": 6789,\n  \"entityType\": \"Product\",\n  \"activityType\": \"Viewed\",\n  \"description\": \"Kullanıcı ürün detaylarını görüntüledi.\"\n}\n\n ```\n\n---\n\n## **2\\. Aktivite Detaylarını Getirme (Get Activity By ID)**\n\n**Belirli bir aktivitenin detaylarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/activity-log/{activityLogId}`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Parametreler:**\n    \n    - `activityLogId`: Aktivite kaydının kimliği\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/activity-log/1001\n\n ```\n\n---\n\n## **3\\. Kullanıcının Tüm Aktivitelerini Getirme (Get User Activities)**\n\n**Belirli bir kullanıcının yaptığı tüm aktiviteleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/activity-log/user/{userId}`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Parametreler:**\n    \n    - `userId`: Aktivite kaydı sorgulanacak kullanıcının kimliği\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/activity-log/user/12345\n\n ```\n\n---\n\n## **4\\. Varlık (Entity) Bazlı Aktiviteleri Getirme (Get Activities By Entity)**\n\n**Belirli bir ürüne veya hizmete yapılan aktiviteleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/activity-log/entity/{entityId}/{entityType}`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Parametreler:**\n    \n    - `entityId`: Ürün veya hizmetin ID’si\n        \n    - `entityType`: `Product` veya `Service`\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/activity-log/entity/6789/Product\n\n ```\n\n---\n\n## **5\\. Kullanıcının Son X Aktivitesini Getirme (Get Recent User Activities)**\n\n**Belirli bir kullanıcının en son yaptığı X aktiviteyi getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/activity-log/user/{userId}/recent/{count}`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcının kimliği\n        \n    - `count`: Kaç adet son aktivite getirileceği\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/activity-log/user/12345/recent/5\n\n ```\n\n---\n\n## **6\\. Aktivite Türüne Göre Getirme (Get Activities By Type)**\n\n**Belirli bir aktivite türüne göre filtreleme yapar.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/activity-log/type/{activityType}`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Parametreler:**\n    \n    - `activityType`: Aktivite türü (Örn: `Viewed`, `Liked`, `Purchased`)\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/activity-log/type/Liked\n\n ```\n\n---\n\n## **7\\. Tarih Aralığında Aktivite Getirme (Get Activities By Date Range)**\n\n**Belirli bir tarih aralığında yapılan aktiviteleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/activity-log/date-range`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Query Parametreleri:**\n    \n    - `startDate`: Başlangıç tarihi (ISO formatında)\n        \n    - `endDate`: Bitiş tarihi (ISO formatında)\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/activity-log/date-range?startDate=2024-01-01T00:00:00&endDate=2024-12-31T23:59:59\n\n ```\n\n---\n\n**Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Yanıt Formatı:** Başarılı isteklerde genellikle `200 OK`, başarısız isteklerde `400 Bad Request` veya `403 Forbidden` dönebilir.\n    \n\n_\\*\\\\_\n\n# **BusinessProfileController**\n\n**Base URL:** `http://localhost:5009/api/business-profile`\n\nBu bölümde **BusinessProfileController** içerisindeki **17 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. İşletme Detaylarını Getirme (Get Business By ID)**\n\n**Belirtilen işletmenin detaylarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/business-profile/{businessProfileId}`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n- **Parametreler:**\n    \n    - `businessProfileId`: İşletme ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/business-profile/101\n\n ```\n\n---\n\n## **2\\. Tüm İşletmeleri Listeleme (Get All Businesses) \\[Admin & BusinessOwner & SalesRepresentative\\]**\n\n**Sistemdeki tüm işletmeleri listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/business-profile/all`\n    \n- **Authorization:** **Gerekli** (`Bearer Token`)\n    \n\n---\n\n## **3\\. Yeni İşletme Oluşturma (Create Business) \\[Admin\\]**\n\n**Yeni bir işletme oluşturur.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/business-profile/create`\n    \n- **Authorization:** **Admin Yetkisi**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"businessName\": \"Örnek İşletme\",\n  \"businessOwnerId\": \"12345\",\n  \"description\": \"İşletme hakkında detaylar\",\n  \"address\": \"İstanbul, Türkiye\"\n}\n\n ```\n\n---\n\n## **4\\. İşletme Bilgilerini Güncelleme (Update Business) \\[Admin & BusinessOwner\\]**\n\n**İşletme bilgilerini günceller.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `PUT http://localhost:5009/api/business-profile/update`\n    \n- **Authorization:** **Admin veya İşletme Sahibi**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"businessProfileId\": 101,\n  \"businessName\": \"Güncellenmiş İşletme\",\n  \"description\": \"Yeni açıklama\",\n  \"address\": \"Ankara, Türkiye\"\n}\n\n ```\n\n---\n\n## **5\\. İşletme Silme (Delete Business) \\[Admin\\]**\n\n**Belirli bir işletmeyi sistemden siler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/business-profile/delete/{businessProfileId}`\n    \n- **Authorization:** **Admin Yetkisi**\n    \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/business-profile/delete/101\n\n ```\n\n---\n\n## **6\\. İşletme Beğeni Sayısını Artırma (Increase Business Like Count) \\[User & SalesRepresentative\\]**\n\n**Belirli bir işletmenin beğeni sayısını artırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/business-profile/increase-like/{businessProfileId}`\n    \n- **Authorization:** **User veya SalesRepresentative Yetkisi**\n    \n\n---\n\n## **7\\. İşletme Tıklama Sayısını Artırma (Increase Business Click Count) \\[User & SalesRepresentative\\]**\n\n**Belirli bir işletmeye yapılan tıklamaları artırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/business-profile/increase-click/{businessProfileId}`\n    \n- **Authorization:** **User veya SalesRepresentative Yetkisi**\n    \n\n---\n\n## **8\\. İşletme Görüntülenme Sayısını Artırma (Increase Business View Count) \\[User & SalesRepresentative\\]**\n\n**Belirli bir işletmenin görüntülenme sayısını artırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/business-profile/increase-view/{businessProfileId}`\n    \n- **Authorization:** **User veya SalesRepresentative Yetkisi**\n    \n\n---\n\n## **9\\. İşletmeye Ait Hizmet Detaylarını Getirme (Get Service By ID) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir hizmetin detaylarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/business-profile/service/{serviceId}`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n\n---\n\n## **10\\. Tüm Hizmetleri Getirme (Get All Services) \\[Admin & BusinessOwner & SalesRepresentative\\]**\n\n**Sistemdeki tüm hizmetleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/business-profile/services`\n    \n- **Authorization:** **Admin, BusinessOwner veya SalesRepresentative Yetkisi**\n    \n\n---\n\n## **11\\. İşletmeye Ait Hizmetleri Getirme (Get Services By Business) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir işletmeye ait hizmetleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/business-profile/business/{businessProfileId}/services`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n\n---\n\n## **12\\. Yeni Hizmet Oluşturma (Create Service) \\[Admin & BusinessOwner\\]**\n\n**İşletme için yeni bir hizmet oluşturur.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/business-profile/service/create`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"businessProfileId\": 101,\n  \"serviceName\": \"Web Tasarım\",\n  \"description\": \"Profesyonel web tasarım hizmetleri\"\n}\n\n ```\n\n---\n\n## **13\\. Hizmet Güncelleme (Update Service) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir hizmetin bilgilerini günceller.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `PUT http://localhost:5009/api/business-profile/service/update`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n\n---\n\n## **14\\. Hizmet Silme (Delete Service) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir hizmeti sistemden siler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/business-profile/service/delete/{serviceId}`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n\n---\n\n## **15\\. İşletme Profili Özelleştirme (Customize Business Profile) \\[Admin & BusinessOwner\\]**\n\n**İşletme profilini özelleştirmek için kullanılır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/business-profile/customize-profile`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n\n---\n\n## **16\\. İşletmeye Etiket Ekleme (Add Business Tag) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir işletmeye etiket ekler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/business-profile/add-business-tag`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"businessProfileId\": 101,\n  \"tagId\": 5\n}\n\n ```\n\n---\n\n## **17\\. İşletme Etiketini Kaldırma (Remove Business Tag) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir işletmeden etiket kaldırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/business-profile/remove-business-tag`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n\n---\n\n**Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Yanıt Formatı:** Başarılı isteklerde `200 OK`, başarısız isteklerde `400 Bad Request` veya `403 Forbidden` dönebilir.\n    \n\n_\\*\\\\_\n\n# **CampaignController**\n\n**Base URL:** `http://localhost:5009/api/campaign`\n\nBu bölümde **CampaignController** içerisindeki **9 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Kampanya Oluşturma (Create Campaign) \\[Admin & BusinessOwner\\]**\n\n**Yeni bir kampanya oluşturur.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/campaign/create`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"title\": \"Bahar İndirimi\",\n  \"description\": \"Tüm ürünlerde   indirim!\",\n  \"startDate\": \"2024-04-01T00:00:00\",\n  \"endDate\": \"2024-04-15T23:59:59\",\n  \"discountPercentage\": 20,\n  \"businessProfileId\": 101,\n  \"productIds\": [1, 2, 3]\n}\n\n ```\n\n---\n\n## **2\\. Kampanya Güncelleme (Update Campaign) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir kampanyanın bilgilerini günceller.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `PUT http://localhost:5009/api/campaign/update`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"campaignId\": 1,\n  \"title\": \"Güncellenmiş Kampanya\",\n  \"description\": \"İndirim oranı arttı!\",\n  \"startDate\": \"2024-04-05T00:00:00\",\n  \"endDate\": \"2024-04-20T23:59:59\",\n  \"discountPercentage\": 25,\n  \"productIds\": [1, 2, 4, 5]\n}\n\n ```\n\n---\n\n## **3\\. Kampanya Silme (Delete Campaign) \\[Admin\\]**\n\n**Belirli bir kampanyayı sistemden siler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/campaign/delete/{campaignId}`\n    \n- **Authorization:** **Admin Yetkisi**\n    \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/campaign/delete/1\n\n ```\n\n---\n\n## **4\\. Kampanyayı ID ile Getirme (Get Campaign By ID)**\n\n**Belirli bir kampanyanın detaylarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/campaign/{campaignId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `campaignId`: Kampanya ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/campaign/1\n\n ```\n\n---\n\n## **5\\. Tüm Kampanyaları Listeleme (Get All Campaigns)**\n\n**Sistemdeki tüm kampanyaları getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/campaign/all`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n\n---\n\n## **6\\. Kampanyaya Ait Ürünleri Getirme (Get Products By Campaign ID)**\n\n**Belirtilen kampanyaya dahil olan ürünleri listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/campaign/{campaignId}/products`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `campaignId`: Kampanya ID’si\n        \n\n---\n\n## **7\\. İşletmeye Ait Kampanyaları Getirme (Get Campaigns By Business Profile ID) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir işletmeye ait kampanyaları getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/campaign/business/{businessProfileId}`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n- **Parametreler:**\n    \n    - `businessProfileId`: İşletme Profili ID’si\n        \n\n---\n\n## **8\\. Kampanyaları Tarih Aralığına Göre Filtreleme (Get Campaigns By Date Range) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir tarih aralığında başlatılmış kampanyaları listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/campaign/date-range`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n- **Query Parametreleri:**\n    \n    - `startDate`: Başlangıç tarihi (YYYY-MM-DD formatında)\n        \n    - `endDate`: Bitiş tarihi (YYYY-MM-DD formatında)\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/campaign/date-range?startDate=2024-04-01&endDate=2024-04-30\n\n ```\n\n---\n\n## **9\\. Kampanyaya Ürün Ekleme veya Güncelleme (Update Campaign Products) \\[Admin & BusinessOwner\\]**\n\n**Belirli bir kampanyaya yeni ürünler ekler veya mevcut ürünleri günceller.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `PUT http://localhost:5009/api/campaign/{campaignId}/update-products`\n    \n- **Authorization:** **Admin veya BusinessOwner Yetkisi**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"productIds\": [2, 5, 7, 9]\n}\n\n ```\n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Yanıt Formatı:** Başarılı isteklerde `200 OK`, başarısız isteklerde `400 Bad Request` veya `403 Forbidden` dönebilir.\n    \n\n_\\*\\\\_\n\n# **CategoryController**\n\n**Base URL:** `http://localhost:5009/api/category`\n\nBu bölümde **CategoryController** içerisindeki **8 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Kategori Detaylarını Getirme (Get Category By ID)**\n\n**Belirtilen ID'ye sahip kategori bilgilerini getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/category/{categoryId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `categoryId`: Kategori ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/category/5\n\n ```\n\n---\n\n## **2\\. Tüm Kategorileri Listeleme (Get All Categories)**\n\n**Sistemdeki tüm kategorileri listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/category/all`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n\n---\n\n## **3\\. Kategori Oluşturma (Create Category) \\[Admin\\]**\n\n**Yeni bir kategori oluşturur.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/category/create`\n    \n- **Authorization:** **Admin Yetkisi**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"name\": \"Elektronik\",\n  \"description\": \"Elektronik ürünler için kategori\"\n}\n\n ```\n\n---\n\n## **4\\. Kategori Güncelleme (Update Category) \\[Admin\\]**\n\n**Belirli bir kategorinin bilgilerini günceller.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `PUT http://localhost:5009/api/category/update`\n    \n- **Authorization:** **Admin Yetkisi**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"categoryId\": 5,\n  \"name\": \"Güncellenmiş Elektronik\",\n  \"description\": \"Güncellenmiş açıklama\"\n}\n\n ```\n\n---\n\n## **5\\. Kategori Silme (Delete Category) \\[Admin\\]**\n\n**Belirli bir kategoriyi sistemden siler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/category/delete/{categoryId}`\n    \n- **Authorization:** **Admin Yetkisi**\n    \n- **Parametreler:**\n    \n    - `categoryId`: Silinecek kategori ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/category/delete/5\n\n ```\n\n---\n\n## **6\\. Kategoriye Ait Ürünleri Getirme (Get Products By Category)**\n\n**Belirtilen kategoriye ait ürünleri listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/category/{categoryId}/products`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `categoryId`: Kategori ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/category/5/products\n\n ```\n\n---\n\n## **7\\. Kategorilere Göre Ürün Sayısı (Get Product Count By Category)**\n\n**Belirtilen kategoriye ait ürünlerin toplam sayısını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/category/{categoryId}/product-count`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `categoryId`: Kategori ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/category/5/product-count\n\n ```\n\n---\n\n## **8\\. En Popüler Kategorileri Getirme (Get Top Categories)**\n\n**En popüler kategorileri belirli bir limit ile listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/category/top`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Query Parametreleri:**\n    \n    - `count`: Gösterilecek en popüler kategori sayısı\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/category/top?count=5\n\n ```\n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Yanıt Formatı:** Başarılı isteklerde `200 OK`, başarısız isteklerde `400 Bad Request` veya `403 Forbidden` dönebilir.\n    \n\n_\\*\\\\_\n\n# **FavoriteController**\n\n**Base URL:** `http://localhost:5009/api/favorite`\n\nBu bölümde **FavoriteController** içerisindeki **9 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Favori Ürün Ekleme (Add Favorite Product)**\n\n**Kullanıcı, belirli bir ürünü favorilerine ekler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/favorite/add-product`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"productId\": 10\n}\n\n ```\n\n---\n\n## **2\\. Favori Ürün Kaldırma (Remove Favorite Product)**\n\n**Kullanıcı, belirli bir ürünü favorilerinden çıkarır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/favorite/remove-product`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"productId\": 10\n}\n\n ```\n\n---\n\n## **3\\. Favori Hizmet Ekleme (Add Favorite Service)**\n\n**Kullanıcı, belirli bir hizmeti favorilerine ekler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/favorite/add-service`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"serviceId\": 7\n}\n\n ```\n\n---\n\n## **4\\. Favori Hizmet Kaldırma (Remove Favorite Service)**\n\n**Kullanıcı, belirli bir hizmeti favorilerinden çıkarır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/favorite/remove-service`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"serviceId\": 7\n}\n\n ```\n\n---\n\n## **5\\. Kullanıcının Favori Ürünlerini Getirme (Get User Favorite Products)**\n\n**Kullanıcının favorilere eklediği ürünleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/favorite/user/{userId}/products`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcı ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/favorite/user/12345/products\n\n ```\n\n---\n\n## **6\\. Kullanıcının Favori Hizmetlerini Getirme (Get User Favorite Services)**\n\n**Kullanıcının favorilere eklediği hizmetleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/favorite/user/{userId}/services`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcı ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/favorite/user/12345/services\n\n ```\n\n---\n\n## **7\\. Kullanıcının Tüm Favorilerini Getirme (Get User Favorites)**\n\n**Kullanıcının tüm favorilerini (hem ürün hem hizmet) getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/favorite/user/{userId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcı ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/favorite/user/12345\n\n ```\n\n---\n\n## **8\\. Ürünün Favori Sayısını Getirme (Get Favorite Count For Product)**\n\n**Belirtilen bir ürünün kaç kişi tarafından favorilere eklendiğini getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/favorite/product/{productId}/count`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `productId`: Ürün ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/favorite/product/10/count\n\n ```\n\n---\n\n## **9\\. Hizmetin Favori Sayısını Getirme (Get Favorite Count For Service)**\n\n**Belirtilen bir hizmetin kaç kişi tarafından favorilere eklendiğini getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/favorite/service/{serviceId}/count`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `serviceId`: Hizmet ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/favorite/service/7/count\n\n ```\n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Yanıt Formatı:** Başarılı isteklerde `200 OK`, başarısız isteklerde `400 Bad Request` veya `403 Forbidden` dönebilir.\n    \n\n_\\*\\\\_\n\n# **MessageController**\n\n**Base URL:** `http://localhost:5009/api/message`\n\nBu bölümde **MessageController** içerisindeki **9 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Mesaj Gönderme (Send Message)**\n\n**Kullanıcı veya satış temsilcisi (SalesRepresentative) bir mesaj gönderir. Dosya eklenebilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/message/send`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri (Form Data olarak gönderilmelidir):**\n    \n\n```\n{\n  \"senderId\": \"12345\",\n  \"receiverId\": \"67890\",\n  \"content\": \"Merhaba, nasıl yardımcı olabilirim?\"\n}\n\n ```\n\n- **Dosya Ekleme:** `file` parametresi ile bir dosya gönderilebilir. (Opsiyonel)\n    \n\n---\n\n## **2\\. Mesaj Güncelleme (Update Message)**\n\n**Kullanıcı, satış temsilcisi veya admin, daha önce gönderdiği mesajı güncelleyebilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `PUT http://localhost:5009/api/message/update`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"messageId\": 15,\n  \"newContent\": \"Güncellenmiş mesaj içeriği.\"\n}\n\n ```\n\n---\n\n## **3\\. Mesaj Silme (Delete Message)**\n\n**Kullanıcı, satış temsilcisi veya admin, belirli bir mesajı silebilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/message/delete/{messageId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `messageId`: Silinecek mesajın ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/message/delete/15\n\n ```\n\n---\n\n## **4\\. Tüm Mesajları Konuşma İçin Silme (Delete All Messages In Conversation)**\n\n**Admin ve satış temsilcisi (SalesRepresentative), belirli bir konuşmadaki tüm mesajları silebilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/message/delete-all/{conversationId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `conversationId`: Silinecek konuşmanın ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/message/delete-all/123\n\n ```\n\n---\n\n## **5\\. Kullanıcının Tüm Konuşmalarını Getirme (Get User Conversations)**\n\n**Bir kullanıcının geçmiş konuşmalarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/message/user/{userId}/conversations`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcının ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/message/user/12345/conversations\n\n ```\n\n---\n\n## **6\\. Konuşmadaki Tüm Mesajları Getirme (Get Messages By Conversation)**\n\n**Belirli bir konuşmaya ait tüm mesajları getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/message/conversation/{conversationId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `conversationId`: Konuşma ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/message/conversation/123\n\n ```\n\n---\n\n## **7\\. Konuşmadaki Son Mesajı Getirme (Get Last Message By Conversation)**\n\n**Belirli bir konuşmanın en son gönderilen mesajını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/message/conversation/{conversationId}/last`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `conversationId`: Konuşma ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/message/conversation/123/last\n\n ```\n\n---\n\n## **8\\. Kullanıcının Okunmamış Mesajlarını Getirme (Get Unread Messages)**\n\n**Kullanıcının okunmamış mesajlarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/message/user/{userId}/unread`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcının ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/message/user/12345/unread\n\n ```\n\n---\n\n## **9\\. Mesajı Okundu Olarak İşaretleme (Mark Message As Read)**\n\n**Kullanıcı, admin veya satış temsilcisi belirli bir mesajı okundu olarak işaretler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/message/mark-as-read/{messageId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `messageId`: Okundu olarak işaretlenecek mesajın ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nPOST http://localhost:5009/api/message/mark-as-read/15\n\n ```\n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Dosya yükleme işlemi:** `SendMessage` isteğinde `file` parametresi ile eklenebilir.\n    \n- **Yanıt Formatı:** Başarılı isteklerde `200 OK`, başarısız isteklerde `400 Bad Request` veya `403 Forbidden` dönebilir.\n    \n\n_\\*\\\\_\n\n# **NotificationController**\n\n**Base URL:** `http://localhost:5009/api/notification`\n\nBu bölümde **NotificationController** içerisindeki **10 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Bildirim Oluşturma (Create Notification)**\n\n**Admin veya işletme sahibi (BusinessOwner) yeni bir bildirim oluşturabilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/notification/create`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"userId\": \"12345\",\n  \"title\": \"Yeni Güncelleme!\",\n  \"content\": \"Sistemimize yeni özellikler eklendi!\",\n  \"notificationType\": \"Info\"\n}\n\n ```\n\n---\n\n## **2\\. Kullanıcının Bildirimlerini Getirme (Get User Notifications)**\n\n**Belirtilen kullanıcıya ait tüm bildirimleri döndürür.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/notification/user/{userId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcının ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/notification/user/12345\n\n ```\n\n---\n\n## **3\\. Bildirim Detaylarını Getirme (Get Notification By Id)**\n\n**Belirli bir bildirimin detaylarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/notification/{notificationId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `notificationId`: Bildirimin ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/notification/67890\n\n ```\n\n---\n\n## **4\\. Bildirimi Silme (Delete Notification)**\n\n**Bir bildirimi siler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/notification/{notificationId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `notificationId`: Silinecek bildirimin ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/notification/67890\n\n ```\n\n---\n\n## **5\\. Kullanıcıya Ait Tüm Bildirimleri Temizleme (Clear User Notifications)**\n\n**Belirli bir kullanıcıya ait tüm bildirimleri temizler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/notification/clear-user/{userId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Bildirimleri silinecek kullanıcının ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/notification/clear-user/12345\n\n ```\n\n---\n\n## **6\\. Kullanıcının Okunmamış Bildirimlerini Getirme (Get Unread Notifications)**\n\n**Kullanıcının henüz okumadığı bildirimleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/notification/user/{userId}/unread`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcının ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/notification/user/12345/unread\n\n ```\n\n---\n\n## **7\\. Bildirimi Okundu Olarak İşaretleme (Mark Notification As Read)**\n\n**Kullanıcı belirli bir bildirimi okundu olarak işaretler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/notification/mark-as-read/{notificationId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `notificationId`: Okundu olarak işaretlenecek bildirimin ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nPOST http://localhost:5009/api/notification/mark-as-read/67890\n\n ```\n\n---\n\n## **8\\. Tüm Bildirimleri Okundu Olarak İşaretleme (Mark All Notifications As Read)**\n\n**Kullanıcıya ait tüm bildirimleri okundu olarak işaretler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/notification/mark-all-as-read/{userId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Bildirimleri okundu olarak işaretlenecek kullanıcının ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nPOST http://localhost:5009/api/notification/mark-all-as-read/12345\n\n ```\n\n---\n\n## **9\\. Kullanıcının En Son Bildirimlerini Getirme (Get Latest Notifications)**\n\n**Kullanıcının en son aldığı bildirimleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/notification/user/{userId}/latest`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcının ID’si\n        \n    - `count`: Getirilecek maksimum bildirim sayısı\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/notification/user/12345/latest?count=5\n\n ```\n\n---\n\n## **10\\. Kullanıcının Okunmamış Bildirim Sayısını Getirme (Get Unread Notification Count)**\n\n**Kullanıcının kaç adet okunmamış bildirimi olduğunu getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/notification/user/{userId}/unread-count`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcının ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/notification/user/12345/unread-count\n\n ```\n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Okunmamış bildirimleri almak ve sayısını öğrenmek için** **`/unread`** **ve** **`/unread-count`** **endpointleri kullanılabilir.**\n    \n- **Yanıt Formatı:** Başarılı isteklerde `200 OK`, başarısız isteklerde `400 Bad Request` veya `403 Forbidden` dönebilir.\n    \n\n_\\*\\\\_\n\n# **ProductController**\n\n**Base URL:** `http://localhost:5009/api/product`\n\nBu bölümde **ProductController** içerisindeki **16 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Ürün Detaylarını Getirme (Get Product By Id)**\n\n**Belirtilen ürünün detaylarını döndürür.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/product/{productId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `productId`: Ürünün ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/product/123\n\n ```\n\n---\n\n## **2\\. Tüm Ürünleri Getirme (Get All Products)**\n\n**Sistemdeki tüm ürünleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/product/all`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/product/all\n\n ```\n\n---\n\n## **3\\. İşletmeye Ait Ürünleri Getirme (Get Products By Business Profile Id)**\n\n**Belirtilen işletmeye ait ürünleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/product/business/{businessProfileId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `businessProfileId`: İşletme profili ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/product/business/321\n\n ```\n\n---\n\n## **4\\. Kategoriye Göre Ürünleri Getirme (Get Products By Category Id)**\n\n**Belirtilen kategoriye ait ürünleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/product/category/{categoryId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `categoryId`: Kategorinin ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/product/category/5\n\n ```\n\n---\n\n## **5\\. Etikete Göre Ürünleri Getirme (Get Products By Tag Id)**\n\n**Belirtilen etikete sahip ürünleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/product/tag/{tagId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `tagId`: Etiketin ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/product/tag/10\n\n ```\n\n---\n\n## **6\\. Son Eklenen Ürünleri Getirme (Get Latest Products)**\n\n**Son eklenen belirli sayıda ürünü getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/product/latest`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Query Parametreleri:**\n    \n    - `count`: Getirilecek ürün sayısı\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/product/latest?count=5\n\n ```\n\n---\n\n## **7\\. Yeni Ürün Oluşturma (Create Product)**\n\n**Yeni bir ürün oluşturur.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/product/create`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"name\": \"Yeni Ürün\",\n  \"description\": \"Ürün açıklaması\",\n  \"price\": 100.0,\n  \"businessProfileId\": 321\n}\n\n ```\n\n---\n\n## **8\\. Ürün Güncelleme (Update Product)**\n\n**Mevcut bir ürünü günceller.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `PUT http://localhost:5009/api/product/update`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"productId\": 123,\n  \"name\": \"Güncellenmiş Ürün\",\n  \"description\": \"Yeni açıklama\",\n  \"price\": 120.0\n}\n\n ```\n\n---\n\n## **9\\. Ürün Silme (Delete Product)**\n\n**Bir ürünü sistemden siler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/product/delete/{productId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `productId`: Silinecek ürünün ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/product/delete/123\n\n ```\n\n---\n\n## **10\\. Ürün Beğeni Sayısını Artırma (Increase Product Like Count)**\n\n**Bir ürünün beğeni sayısını artırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/product/increase-like/{productId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `productId`: Beğeni sayısı artırılacak ürün ID’si\n        \n\n---\n\n## **11\\. Ürün Tıklama Sayısını Artırma (Increase Product Click Count)**\n\n**Bir ürünün tıklanma sayısını artırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/product/increase-click/{productId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n\n---\n\n## **12\\. Ürün Görüntülenme Sayısını Artırma (Increase Product View Count)**\n\n**Bir ürünün görüntülenme sayısını artırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/product/increase-view/{productId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n\n---\n\n## **13\\. Ürün Kategorisi Ekleme (Add Product Category)**\n\n**Mevcut bir ürüne kategori ekler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/product/add-category`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"productId\": 123,\n  \"categoryId\": 5\n}\n\n ```\n\n---\n\n## **14\\. Ürün Kategorisi Kaldırma (Remove Product Category)**\n\n**Bir üründen kategori kaldırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/product/remove-category`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n\n---\n\n## **15\\. Ürün Etiketi Ekleme (Add Product Tag)**\n\n**Mevcut bir ürüne etiket ekler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/product/add-tag`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n```\n{\n  \"productId\": 123,\n  \"tagId\": 10\n}\n\n ```\n\n---\n\n## **16\\. Ürün Etiketi Kaldırma (Remove Product Tag)**\n\n**Bir üründen belirli bir etiketi kaldırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/product/remove-tag`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Ürünle ilgili işlemler** **`Admin`** **ve** **`BusinessOwner`** **yetkilendirmesi ile yapılabilir.**\n    \n- **Yanıt Formatı:** Başarılı isteklerde `200 OK`, başarısız isteklerde `400 Bad Request` veya `403 Forbidden` dönebilir.\n    \n\n_\\*\\\\_\n\n# **ReviewController**\n\n**Base URL:** `http://localhost:5009/api/review`\n\nBu bölümde **ReviewController** içerisindeki **9 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Yorum Oluşturma (Create Review)**\n\n**Kullanıcı veya işletme sahibi bir hizmet veya ürün için yorum yapabilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/review/create`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n``` json\n{\n  \"userId\": \"12345\",\n  \"productId\": 6789,\n  \"serviceId\": null,\n  \"rating\": 4.5,\n  \"comment\": \"Harika bir ürün!\"\n}\n\n ```\n\n- **Not:** `productId` veya `serviceId` alanlarından biri dolu olmalıdır.\n    \n\n---\n\n## **2\\. Yorum Güncelleme (Update Review)**\n\n**Kullanıcı veya işletme sahibi daha önce yaptığı yorumu güncelleyebilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `PUT http://localhost:5009/api/review/update`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n``` json\n{\n  \"reviewId\": 123,\n  \"rating\": 5,\n  \"comment\": \"Ürün beklediğimden daha iyi!\"\n}\n\n ```\n\n---\n\n## **3\\. Yorum Silme (Delete Review)**\n\n**Kullanıcı veya işletme sahibi kendi yaptığı yorumu silebilir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/review/delete/{reviewId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `reviewId`: Silinecek yorumun ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/review/delete/123\n\n ```\n\n---\n\n## **4\\. Ürün İçin Yorumları Getirme (Get Reviews By Product Id)**\n\n**Belirtilen ürüne ait tüm yorumları getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/review/product/{productId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `productId`: Yorumları getirilecek ürünün ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/review/product/6789\n\n ```\n\n---\n\n## **5\\. Hizmet İçin Yorumları Getirme (Get Reviews By Service Id)**\n\n**Belirtilen hizmete ait tüm yorumları getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/review/service/{serviceId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `serviceId`: Yorumları getirilecek hizmetin ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/review/service/9876\n\n ```\n\n---\n\n## **6\\. Kullanıcının Yorumlarını Getirme (Get User Reviews)**\n\n**Belirtilen kullanıcının tüm yorumlarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/review/user/{userId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Kullanıcının ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/review/user/12345\n\n ```\n\n---\n\n## **7\\. Yorum Detaylarını Getirme (Get Review By Id)**\n\n**Belirtilen yorumun detaylarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/review/{reviewId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `reviewId`: Yorumun ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/review/123\n\n ```\n\n---\n\n## **8\\. Ürünün Ortalama Puanını Getirme (Get Average Rating For Product)**\n\n**Belirtilen ürünün ortalama puanını döndürür.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/review/product/{productId}/average-rating`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `productId`: Ürünün ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/review/product/6789/average-rating\n\n ```\n\n---\n\n## **9\\. Hizmetin Ortalama Puanını Getirme (Get Average Rating For Service)**\n\n**Belirtilen hizmetin ortalama puanını döndürür.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/review/service/{serviceId}/average-rating`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `serviceId`: Hizmetin ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/review/service/9876/average-rating\n\n ```\n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Yorumları** **`User`** **ve** **`BusinessOwner`** **rollerine sahip kullanıcılar oluşturabilir ve güncelleyebilir.**\n    \n- **Başarılı isteklerde** **`200 OK`****, başarısız isteklerde** **`400 Bad Request`** **veya** **`403 Forbidden`** **yanıtları alınabilir.**\n    \n\n_\\*\\\\_\n\n# **SearchController**\n\n**Base URL:** `http://localhost:5009/api/search`\n\nBu bölümde **SearchController** içerisindeki **4 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Genel Arama (Search)**\n\n**Belirtilen sorguya göre genel arama yapar.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/search/search`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Query Parametreleri:**\n    \n    - `query` (string): Arama yapılacak kelime veya cümle.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/search/search?query=elektronik\n\n ```\n\n---\n\n## **2\\. Arama Geçmişini Kaydetme (Save Search History)**\n\n**Kullanıcının yaptığı aramayı geçmişe kaydeder.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/search/save-history`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Query Parametreleri:**\n    \n    - `userId` (string): Kullanıcının kimliği.\n        \n- **Body Parametreleri:**\n    \n\n``` json\n\"query\": \"telefon\"\n\n ```\n\n#### **Örnek İstek:**\n\n```\nPOST http://localhost:5009/api/search/save-history?userId=12345\nBody: \"telefon\"\n\n ```\n\n---\n\n## **3\\. Kullanıcının Arama Geçmişini Getirme (Get User Search History)**\n\n**Belirtilen kullanıcının yaptığı aramaların geçmişini getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/search/user/{userId}/history`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId`: Arama geçmişi getirilecek kullanıcının ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/search/user/12345/history\n\n ```\n\n---\n\n## **4\\. Etikete Göre Arama (Search By Tag)**\n\n**Belirtilen etiket ID’sine göre arama yapar.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/search/search-by-tag/{tagId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `tagId`: Arama yapılacak etiketin ID’si\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/search/search-by-tag/42\n\n ```\n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Arama sonuçları dinamik olarak dönebilir ve filtreleme desteği içerebilir.**\n    \n- **Başarılı isteklerde** **`200 OK`****, başarısız isteklerde** **`400 Bad Request`** **veya** **`403 Forbidden`** **yanıtları alınabilir.**\n    \n\n**\\*\n\n# **TagController**\n\n**Base URL:** `http://localhost:5009/api/tag`\n\nBu bölümde **TagController** içerisindeki **10 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Etiket Detaylarını ID ile Getirme (Get Tag By ID)**\n\n**Belirtilen etiketin detaylarını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/tag/{tagId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `tagId` (int): Etiketin ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/tag/12\n\n ```\n\n---\n\n## **2\\. Tüm Etiketleri Getirme (Get All Tags)**\n\n**Sistemde bulunan tüm etiketleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/tag/all`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/tag/all\n\n ```\n\n---\n\n## **3\\. Etiket Oluşturma (Create Tag)**\n\n**Yeni bir etiket oluşturur.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/tag/create`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n``` json\n{\n  \"name\": \"Yeni Etiket\"\n}\n\n ```\n\n#### **Örnek İstek:**\n\n```\nPOST http://localhost:5009/api/tag/create\nBody: {\n  \"name\": \"Yeni Etiket\"\n}\n\n ```\n\n---\n\n## **4\\. Etiket Güncelleme (Update Tag)**\n\n**Mevcut bir etiketi günceller.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `PUT http://localhost:5009/api/tag/update`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n``` json\n{\n  \"tagId\": 12,\n  \"name\": \"Güncellenmiş Etiket\"\n}\n\n ```\n\n#### **Örnek İstek:**\n\n```\nPUT http://localhost:5009/api/tag/update\nBody: {\n  \"tagId\": 12,\n  \"name\": \"Güncellenmiş Etiket\"\n}\n\n ```\n\n---\n\n## **5\\. Etiket Silme (Delete Tag)**\n\n**Belirtilen etiketi sistemden kaldırır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `DELETE http://localhost:5009/api/tag/delete/{tagId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `tagId` (int): Silinecek etiketin ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nDELETE http://localhost:5009/api/tag/delete/12\n\n ```\n\n---\n\n## **6\\. Etiket ile Bağlantılı Ürünleri Getirme (Get Products by Tag)**\n\n**Belirtilen etikete sahip ürünleri listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/tag/{tagId}/products`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `tagId` (int): İlgili etiketin ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/tag/12/products\n\n ```\n\n---\n\n## **7\\. Etiket ile Bağlantılı Hizmetleri Getirme (Get Services by Tag)**\n\n**Belirtilen etikete sahip hizmetleri listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/tag/{tagId}/services`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `tagId` (int): İlgili etiketin ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/tag/12/services\n\n ```\n\n---\n\n## **8\\. Etiket ile Bağlantılı İşletmeleri Getirme (Get Businesses by Tag)**\n\n**Belirtilen etikete sahip işletmeleri listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/tag/{tagId}/businesses`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `tagId` (int): İlgili etiketin ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/tag/12/businesses\n\n ```\n\n---\n\n## **9\\. En Popüler Etiketleri Getirme (Get Top Tags)**\n\n**Sistemde en popüler etiketleri getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/tag/top`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Query Parametreleri:**\n    \n    - `count` (int): Kaç adet popüler etiketin listeleneceği.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/tag/top?count=5\n\n ```\n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Başarılı isteklerde** **`200 OK`****, başarısız isteklerde** **`400 Bad Request`** **veya** **`403 Forbidden`** **yanıtları alınabilir.**\n    \n\n_\\*\\\\_\n\n# **UserFollowController**\n\n**Base URL:** `http://localhost:5009/api/user-follow`\n\nBu bölümde **UserFollowController** içerisindeki **7 API isteği** detaylandırılmıştır.\n\n---\n\n## **1\\. Kullanıcı Takip Etme (Follow User)**\n\n**Bir kullanıcının başka bir kullanıcıyı takip etmesini sağlar.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/user-follow/follow`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Body Parametreleri:**\n    \n\n``` json\n{\n  \"followerId\": \"kullanici1\",\n  \"followedId\": \"kullanici2\"\n}\n\n ```\n\n#### **Örnek İstek:**\n\n```\nPOST http://localhost:5009/api/user-follow/follow\nBody: {\n  \"followerId\": \"kullanici1\",\n  \"followedId\": \"kullanici2\"\n}\n\n ```\n\n---\n\n## **2\\. Kullanıcı Takipten Çıkma (Unfollow User)**\n\n**Takip edilen bir kullanıcıyı takipten çıkarır.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `POST http://localhost:5009/api/user-follow/unfollow`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Query Parametreleri:**\n    \n    - `followerId` (string): Takip eden kullanıcı ID’si.\n        \n    - `followedId` (string): Takip edilen kullanıcı ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nPOST http://localhost:5009/api/user-follow/unfollow?followerId=kullanici1&followedId=kullanici2\n\n ```\n\n---\n\n## **3\\. Kullanıcının Takipçilerini Getirme (Get Followers)**\n\n**Belirtilen kullanıcının takipçilerini listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/user-follow/followers/{userId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId` (string): Takipçileri listelenecek kullanıcı ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/user-follow/followers/kullanici1\n\n ```\n\n---\n\n## **4\\. Kullanıcının Takip Ettiklerini Getirme (Get Following)**\n\n**Belirtilen kullanıcının takip ettiği kullanıcıları listeler.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/user-follow/following/{userId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId` (string): Takip edilenlerin listeleneceği kullanıcı ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/user-follow/following/kullanici1\n\n ```\n\n---\n\n## **5\\. Kullanıcının Takip Durumunu Kontrol Etme (Is User Following)**\n\n**Belirtilen bir kullanıcının diğerini takip edip etmediğini kontrol eder.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/user-follow/is-following`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Query Parametreleri:**\n    \n    - `followerId` (string): Takip eden kullanıcı ID’si.\n        \n    - `followedId` (string): Takip edilen kullanıcı ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/user-follow/is-following?followerId=kullanici1&followedId=kullanici2\n\n ```\n\n---\n\n## **6\\. Kullanıcının Takipçi Sayısını Getirme (Get Follower Count)**\n\n**Belirtilen kullanıcının toplam takipçi sayısını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/user-follow/follower-count/{userId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId` (string): Takipçi sayısı alınacak kullanıcının ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/user-follow/follower-count/kullanici1\n\n ```\n\n---\n\n## **7\\. Kullanıcının Takip Edilen Sayısını Getirme (Get Following Count)**\n\n**Belirtilen kullanıcının takip ettiği kişi sayısını getirir.**\n\n### **İstek Detayları:**\n\n- **Endpoint:** `GET http://localhost:5009/api/user-follow/following-count/{userId}`\n    \n- **Authorization:** **Gerekli (****`Bearer Token`****)**\n    \n- **Parametreler:**\n    \n    - `userId` (string): Takip edilen sayısı alınacak kullanıcının ID’si.\n        \n\n#### **Örnek İstek:**\n\n```\nGET http://localhost:5009/api/user-follow/following-count/kullanici1\n\n ```\n\n---\n\n### **Açıklamalar:**\n\n- **Tüm istekler için JWT token gereklidir.**\n    \n- **Başarılı isteklerde** **`200 OK`****, başarısız isteklerde** **`400 Bad Request`** **veya** **`403 Forbidden`** **yanıtları alınabilir.**\n    \n\n_\\*\\\\_\n\n# Kapanış\n\nBu dokümantasyon, **Commercium API** içerisindeki genel API istekleri hakkında detaylı bilgiler sunmaktadır.\n\n**Güvenlik, erişim kontrolü ve performans optimizasyonları göz önünde bulundurularak** hazırlanmıştır. API kullanımında yetkilendirme gereklilikleri, isteklerin doğru yapılandırılması ve hata kodlarının doğru şekilde ele alınması önemlidir.\n\nCommercium API, kullanıcıların işletmeler, ürünler, hizmetler ve sosyal etkileşimler üzerine kapsamlı bir dijital ekosistem oluşturmasına olanak tanır. API'nin sürekli gelişimini takip etmek ve en iyi kullanım senaryolarını oluşturmak için dokümantasyonu düzenli olarak incelemenizi öneririz.\n\nHerhangi bir teknik destek veya geliştirme ihtiyacınız olduğunda, benimle iletişime geçmekten çekinmeyin.\n\n**Başarılı entegrasyonlar ve sorunsuz geliştirmeler dileriz! 🚀**\n\n## Eray Gülüçmen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40565076"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/account/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"email\": \"user@example.com\",\r\n  \"phoneNumber\": \"+1234567890\",\r\n  \"password\": \"Password123!\",\r\n  \"confirmPassword\": \"Password123!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/account/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"resetToken\": \"example-reset-token\",\r\n  \"newPassword\": \"NewPassword123!\",\r\n  \"confirmNewPassword\": \"NewPassword123!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/account/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"user-id\",\r\n  \"currentEmail\": \"old@example.com\",\r\n  \"newEmail\": \"new@example.com\",\r\n  \"verificationCode\": \"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/account/change-email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"change-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"user-id\",\r\n  \"currentPassword\": \"OldPassword123!\",\r\n  \"newPassword\": \"NewPassword123!\",\r\n  \"confirmNewPassword\": \"NewPassword123!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/account/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-user-role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"user-id\",\r\n  \"newRole\": \"Admin\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/account/change-user-role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"change-user-role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customize-profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"user-id\",\r\n  \"customProfileImage\": \"profile-image-url\",\r\n  \"customBackgroundImage\": \"background-image-url\",\r\n  \"customDescription\": \"This is my profile.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/account/customize-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"customize-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"user-id\",\r\n  \"firstName\": \"John\",\r\n  \"middleName\": \"Middle\",\r\n  \"lastName\": \"Doe\",\r\n  \"phoneNumber\": \"+1234567890\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/account/update-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ban-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/account/ban-user?userId=example-user-id&isPermanent=true\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"ban-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "example-user-id"
+								},
+								{
+									"key": "isPermanent",
+									"value": "true\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unban-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/account/unban-user?userId=example-user-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"unban-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "example-user-id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/account/approve-user/{userId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"approve-user",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirm-email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/account/confirm-email?token=example-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"confirm-email"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "example-token"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/account/get-all-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"get-all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-users-with-business-info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/account/get-users-with-business-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"get-users-with-business-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user-with-business-info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/account/get-user-with-business-info/{userId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"get-user-with-business-info",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/account/get-user/{userId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"account",
+								"get-user",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Hesap İşlemleri (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "Activity Log",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"activityType\": \"Login\",\r\n  \"activityDate\": \"2024-03-01T12:00:00Z\",\r\n  \"details\": \"Kullanıcı giriş yaptı.\",\r\n  \"entityId\": 1,\r\n  \"entityType\": \"User\",\r\n  \"userId\": \"user-id\",\r\n  \"entityName\": \"John Doe\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/activity-log/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"activity-log",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Activity By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/activity-log/{activityLogId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"activity-log",
+								"{activityLogId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Activities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/activity-log/user/{userId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"activity-log",
+								"user",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Activities By Entity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/activity-log/entity/{entityId}/{entityType}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"activity-log",
+								"entity",
+								"{entityId}",
+								"{entityType}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recent User Activities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/activity-log/user/{userId}/recent/{count}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"activity-log",
+								"user",
+								"{userId}",
+								"recent",
+								"{count}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Activities By Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/activity-log/type/{activityType}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"activity-log",
+								"type",
+								"{activityType}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Activities By Date Range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/activity-log/date-range?startDate=2024-01-01T00:00:00Z&endDate=2024-03-01T23:59:59Z",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"activity-log",
+								"date-range"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2024-01-01T00:00:00Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-03-01T23:59:59Z"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Aktivite Günlüğü (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "BusinessProfile",
+			"item": [
+				{
+					"name": "Get Business By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/{businessProfileId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"{businessProfileId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Businesses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/service/{serviceId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"service",
+								"{serviceId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Services By Business",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/business/{businessProfileId}/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"business",
+								"{businessProfileId}",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Business Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessProfileId\": 1,\r\n  \"tagId\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/add-business-tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"add-business-tag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Business Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessName\": \"Örnek İşletme\",\r\n  \"businessDescription\": \"Bu bir örnek işletme açıklamasıdır.\",\r\n  \"contactInfo\": \"info@ornekisletme.com\",\r\n  \"location\": \"İstanbul, Türkiye\",\r\n  \"ownerId\": \"user-id\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"serviceName\": \"Örnek Hizmet\",\r\n  \"description\": \"Bu bir örnek hizmettir.\",\r\n  \"price\": 100.0,\r\n  \"businessProfileId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/service/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"service",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customize Business Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessProfileCustomizationId\": 1,\r\n  \"customProfileImage\": \"profile.jpg\",\r\n  \"customBackgroundImage\": \"background.jpg\",\r\n  \"customDescription\": \"Özelleştirilmiş açıklama\",\r\n  \"businessProfileId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/customize-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"customize-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase Business Like Count",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/increase-like/{businessProfileId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"increase-like",
+								"{businessProfileId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase Business Click Count",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/increase-click/{businessProfileId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"increase-click",
+								"{businessProfileId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase Business View Count",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/increase-view/{businessProfileId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"increase-view",
+								"{businessProfileId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessProfileId\": 1,\r\n  \"businessName\": \"Güncellenmiş İşletme\",\r\n  \"businessDescription\": \"Güncellenmiş açıklama.\",\r\n  \"contactInfo\": \"info@guncellenmis.com\",\r\n  \"location\": \"Ankara, Türkiye\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Service",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"serviceId\": 1,\r\n  \"serviceName\": \"Güncellenmiş Hizmet\",\r\n  \"description\": \"Güncellenmiş açıklama.\",\r\n  \"price\": 120.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/service/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"service",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Business Profile",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/delete/{businessProfileId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"delete",
+								"{businessProfileId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Service",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/service/delete/{serviceId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"service",
+								"delete",
+								"{serviceId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove-business-tag",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessProfileId\": 1,\r\n  \"tagId\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/business-profile/remove-business-tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"business-profile",
+								"remove-business-tag"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "İşletme Profili (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "Campaign",
+			"item": [
+				{
+					"name": "delete campaign",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/campaign/delete/{campaignId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"campaign",
+								"delete",
+								"{campaignId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Campaign By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/campaign/{campaignId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"campaign",
+								"{campaignId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Campaigns",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/campaign/all\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"campaign",
+								"all\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Campaign ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/campaign/{campaignId}/products\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"campaign",
+								"{campaignId}",
+								"products\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Campaigns By Business Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/campaign/business/{businessProfileId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"campaign",
+								"business",
+								"{businessProfileId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Campaigns By Date Range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/campaign/date-range?startDate=2025-01-01&endDate=2025-01-31\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"campaign",
+								"date-range"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-01-31\nAuthorization: Bearer {token}\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Campaign",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Kış İndirimi\",\r\n  \"description\": \"Tüm ürünlerde %20 indirim!\",\r\n  \"startDate\": \"2025-01-01T00:00:00Z\",\r\n  \"endDate\": \"2025-01-31T23:59:59Z\",\r\n  \"discountPercentage\": 20.0,\r\n  \"businessProfileId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/campaign/create\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"campaign",
+								"create\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Campaign",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"campaignId\": 1,\r\n  \"title\": \"Güncellenmiş Kış İndirimi\",\r\n  \"description\": \"Tüm ürünlerde %25 indirim!\",\r\n  \"startDate\": \"2025-01-01T00:00:00Z\",\r\n  \"endDate\": \"2025-02-01T23:59:59Z\",\r\n  \"discountPercentage\": 25.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/campaign/update\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"campaign",
+								"update\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Campaign Products",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productIds\": [1, 2, 3, 4, 5]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "PUT http://localhost:5009/api/campaign/{campaignId}/update-products\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "PUT http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"campaign",
+								"{campaignId}",
+								"update-products\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Kampanya (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get Category By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/category/{categoryId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"category",
+								"{categoryId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/category/all\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"category",
+								"all\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/category/{categoryId}/products\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"category",
+								"{categoryId}",
+								"products\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Count By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/category/{categoryId}/product-count\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"category",
+								"{categoryId}",
+								"product-count\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/category/top?count=5\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"category",
+								"top"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "5\nAuthorization: Bearer {token}\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Elektronik\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/category/create\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"category",
+								"create\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"categoryId\": 1,\r\n  \"name\": \"Güncellenmiş Elektronik\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/category/update\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"category",
+								"update\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/category/delete/{categoryId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"category",
+								"delete",
+								"{categoryId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Kategori (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "Favorite",
+			"item": [
+				{
+					"name": "Add Favorite Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"12345\",\r\n  \"productId\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/favorite/add-product\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"favorite",
+								"add-product\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Favorite Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"12345\",\r\n  \"productId\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/favorite/remove-product\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"favorite",
+								"remove-product\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Favorite Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"12345\",\r\n  \"serviceId\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/favorite/add-service\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"favorite",
+								"add-service\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Favorite Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"12345\",\r\n  \"serviceId\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/favorite/remove-service\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"favorite",
+								"remove-service\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Favorite Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/favorite/user/{userId}/products\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"favorite",
+								"user",
+								"{userId}",
+								"products\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Favorite Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/favorite/user/{userId}/services\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"favorite",
+								"user",
+								"{userId}",
+								"services\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Favorites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/favorite/user/{userId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"favorite",
+								"user",
+								"{userId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favorite Count For Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/favorite/product/{productId}/count\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"favorite",
+								"product",
+								"{productId}",
+								"count\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favorite Count For Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/favorite/service/{serviceId}/count\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"favorite",
+								"service",
+								"{serviceId}",
+								"count\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Favori (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "Send Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "SenderId",
+									"value": "\"12345\"",
+									"type": "text"
+								},
+								{
+									"key": "ReceiverId",
+									"value": "\"Merhaba, nasılsın?\"",
+									"type": "text"
+								},
+								{
+									"key": "File",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/message/send\nContent-Type: multipart/form-data\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"message",
+								"send\nContent-Type: multipart",
+								"form-data\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Message",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"messageId\": 1,\r\n  \"content\": \"Güncellenmiş mesaj içeriği\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/message/update\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"message",
+								"update\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Message",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/message/delete/{messageId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"message",
+								"delete",
+								"{messageId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Messages In Conversation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/message/delete-all/{conversationId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"message",
+								"delete-all",
+								"{conversationId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Conversations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/message/user/{userId}/conversations\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"message",
+								"user",
+								"{userId}",
+								"conversations\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Messages By Conversation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/message/conversation/{conversationId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"message",
+								"conversation",
+								"{conversationId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Last Message By Conversation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/message/conversation/{conversationId}/last\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"message",
+								"conversation",
+								"{conversationId}",
+								"last\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Unread Messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/message/user/{userId}/unread\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"message",
+								"user",
+								"{userId}",
+								"unread\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Message As Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/message/mark-as-read/{messageId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"message",
+								"mark-as-read",
+								"{messageId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Mesajlaşma (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Create Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"12345\",\r\n  \"notificationType\": 1,\r\n  \"message\": \"Yeni bir kampanya var!\",\r\n  \"dateCreated\": \"2024-03-01T12:00:00Z\",\r\n  \"isRead\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/notification/create\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"create\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Notification As Read",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/notification/mark-as-read/{notificationId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"mark-as-read",
+								"{notificationId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark All Notifications As Readt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/notification/mark-all-as-read/{userId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"mark-all-as-read",
+								"{userId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/notification/user/{userId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"user",
+								"{userId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/notification/{notificationId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"{notificationId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Unread Notification Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/notification/user/{userId}/unread-count\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"user",
+								"{userId}",
+								"unread-count\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Unread Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/notification/user/{userId}/unread\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"user",
+								"{userId}",
+								"unread\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/notification/user/{userId}/latest?count={count}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"user",
+								"{userId}",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "{count}\nAuthorization: Bearer {token}\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear User Notifications",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/notification/clear-user/{userId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"clear-user",
+								"{userId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Notification",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/notification/{notificationId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"notification",
+								"{notificationId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Bildirim (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get Product By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/{productId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"{productId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/all\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"all\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Business",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/business/{businessProfileId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"business",
+								"{businessProfileId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/category/{categoryId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"category",
+								"{categoryId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/tag/{tagId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"tag",
+								"{tagId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/latest?count={count}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "{count}\nAuthorization: Bearer {token}\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Ürün Adı\",\r\n  \"description\": \"Ürün Açıklaması\",\r\n  \"price\": 100.0,\r\n  \"businessProfileId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/product/create\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"create\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase Product Like Count",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/increase-like/{productId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"increase-like",
+								"{productId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase Product Click Count",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/increase-click/{productId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"increase-click",
+								"{productId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase Product View Count",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/increase-view/{productId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"increase-view",
+								"{productId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1,\r\n  \"categoryId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/product/remove-category\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"remove-category\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1,\r\n  \"categoryId\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/product/add-category\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"add-category\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1,\r\n  \"tagId\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/product/add-tag\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"add-tag\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1,\r\n  \"tagId\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/product/remove-tag\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"remove-tag\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/product/delete/{productId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"delete",
+								"{productId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 1,\r\n  \"name\": \"Güncellenmiş Ürün Adı\",\r\n  \"description\": \"Yeni açıklama\",\r\n  \"price\": 120.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/product/update\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"product",
+								"update\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Ürün İşlemleri (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Create Review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"rating\": 5,\r\n  \"comment\": \"Harika bir ürün!\",\r\n  \"productId\": 1,\r\n  \"serviceId\": null\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/review/create\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"review",
+								"create\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"reviewId\": 1,\r\n  \"rating\": 4,\r\n  \"comment\": \"Ürün güzel ama teslimat gecikti.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/review/update\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"review",
+								"update\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/review/delete/{reviewId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"review",
+								"delete",
+								"{reviewId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reviews By Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/review/product/{productId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"review",
+								"product",
+								"{productId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reviews By Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/review/service/{serviceId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"review",
+								"service",
+								"{serviceId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/review/user/{userId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"review",
+								"user",
+								"{userId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Review By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/review/{reviewId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"review",
+								"{reviewId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Average Rating For Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/review/product/{productId}/average-rating\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"review",
+								"product",
+								"{productId}",
+								"average-rating\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Average Rating For Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/review/service/{serviceId}/average-rating\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"review",
+								"service",
+								"{serviceId}",
+								"average-rating\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Yorum (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/search/search?query={aramaMetni}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"search",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "{aramaMetni}\nAuthorization: Bearer {token}\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Search History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"query\": \"Telefon\",\r\n  \"userId\": \"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/search/save-history\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"search",
+								"save-history\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Search History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/search/user/{userId}/history\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"search",
+								"user",
+								"{userId}",
+								"history\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/search/search-by-tag/{tagId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"search",
+								"search-by-tag",
+								"{tagId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Arama (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "TAG",
+			"item": [
+				{
+					"name": "Get Tag By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/tag/{tagId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"tag",
+								"{tagId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/tag/all\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"tag",
+								"all\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/tag/{tagId}/products\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"tag",
+								"{tagId}",
+								"products\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Services By Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/tag/{tagId}/services\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"tag",
+								"{tagId}",
+								"services\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Businesses By Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/tag/{tagId}/businesses\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"tag",
+								"{tagId}",
+								"businesses\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top Tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/tag/top?count={sayi}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"tag",
+								"top"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "{sayi}\nAuthorization: Bearer {token}\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Yeni Etiket\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/tag/create\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"tag",
+								"create\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tag",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tagId\": 1,\r\n  \"name\": \"Güncellenmiş Etiket\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/tag/update\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"tag",
+								"update\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tag",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/tag/delete/{tagId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"tag",
+								"delete",
+								"{tagId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Etiket (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		},
+		{
+			"name": "User Follow",
+			"item": [
+				{
+					"name": "Follow User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"followerId\": \"takipEdenKullaniciId\",\r\n  \"followedId\": \"takipEdilenKullaniciId\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5009/api/user-follow/follow\nContent-Type: application/json\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"user-follow",
+								"follow\nContent-Type: application",
+								"json\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/user-follow/unfollow?followerId={takipEdenKullaniciId}&followedId={takipEdilenKullaniciId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"user-follow",
+								"unfollow"
+							],
+							"query": [
+								{
+									"key": "followerId",
+									"value": "{takipEdenKullaniciId}"
+								},
+								{
+									"key": "followedId",
+									"value": "{takipEdilenKullaniciId}\nAuthorization: Bearer {token}\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/user-follow/followers/{userId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"user-follow",
+								"followers",
+								"{userId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Following",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/user-follow/following/{userId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"user-follow",
+								"following",
+								"{userId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is User Following",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/user-follow/is-following?followerId={takipEdenKullaniciId}&followedId={takipEdilenKullaniciId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"user-follow",
+								"is-following"
+							],
+							"query": [
+								{
+									"key": "followerId",
+									"value": "{takipEdenKullaniciId}"
+								},
+								{
+									"key": "followedId",
+									"value": "{takipEdilenKullaniciId}\nAuthorization: Bearer {token}\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Follower Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/user-follow/follower-count/{userId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"user-follow",
+								"follower-count",
+								"{userId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Following Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5009/api/user-follow/following-count/{userId}\nAuthorization: Bearer {token}\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5009",
+							"path": [
+								"api",
+								"user-follow",
+								"following-count",
+								"{userId}\nAuthorization: Bearer {token}\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Kullanıcı Takip (İlgili isteklerin detayları dökümantasyonda mevcuttur)"
+		}
+	]
+}

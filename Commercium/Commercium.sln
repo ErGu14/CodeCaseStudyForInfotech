@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commercium.Data", "Commerci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commercium.Service", "Commercium.Service\Commercium.Service.csproj", "{6D221575-FC73-4A75-8361-3422CC72A7A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{A1848C2D-9811-4475-BE49-90A979B20833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommerciumWeb", "..\Frontend\CommerciumWeb\CommerciumWeb.csproj", "{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{6D221575-FC73-4A75-8361-3422CC72A7A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D221575-FC73-4A75-8361-3422CC72A7A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D221575-FC73-4A75-8361-3422CC72A7A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +59,6 @@ Global
 		{CCF829AB-3EF9-423B-99F0-0F5E56493E3A} = {E61D3930-64AC-4563-8887-AD0207B0C612}
 		{A11D1D71-BE8E-49FB-9CE0-7844EBB36B52} = {E61D3930-64AC-4563-8887-AD0207B0C612}
 		{6D221575-FC73-4A75-8361-3422CC72A7A1} = {E61D3930-64AC-4563-8887-AD0207B0C612}
+		{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01} = {A1848C2D-9811-4475-BE49-90A979B20833}
 	EndGlobalSection
 EndGlobal
