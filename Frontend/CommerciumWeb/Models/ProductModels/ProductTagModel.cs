@@ -10,7 +10,7 @@ namespace CommerciumWeb.Models.ProductModels
         [JsonPropertyName("tagId")]
         public int TagId { get; set; }
 
-        [JsonPropertyName("tag")]
+       
 
     }
 }

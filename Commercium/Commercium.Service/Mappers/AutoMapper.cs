@@ -120,9 +120,11 @@ public class AppMappingProfile : Profile
             .ReverseMap();
         CreateMap<BusinessProfileTagRM, BusinessProfileTag>().ReverseMap();
         CreateMap<BusinessProfileTag, BusinessProfileTagRM>()
-    .ForMember(dest => dest.TagId, opt => opt.MapFrom(src => src.Tag.TagId))  // TagId'yi Tag'den alıyoruz
-    .ForMember(dest => dest.Tag.Name, opt => opt.MapFrom(src => src.Tag.Name))  // TagName'i Tag'den alıyoruz
-    .ReverseMap();
+     .ForPath(dest => dest.Tag.TagId, opt => opt.MapFrom(src => src.Tag.TagId))
+     .ForPath(dest => dest.Tag.Name, opt => opt.MapFrom(src => src.Tag.Name))
+     .ReverseMap();
+
+  
        
 
         CreateMap<ProductTag, ProductTagRM>().ReverseMap();

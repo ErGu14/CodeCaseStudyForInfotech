@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Commercium.Shared.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -13,11 +14,11 @@ public class CreateActivityLogModel
 
     [JsonPropertyName("entityType")]
     [Required(ErrorMessage = "Varlık tipi gereklidir.")]
-    public int EntityType { get; set; } // Backend Enum alıyor
+    public EntityType EntityType { get; set; } // Backend Enum alıyor
 
     [JsonPropertyName("activityType")]
     [Required(ErrorMessage = "Aktivite tipi gereklidir.")]
-    public int ActivityType { get; set; } // Backend Enum alıyor
+    public ActivityType ActivityType { get; set; } // Backend Enum alıyor
 
     [JsonPropertyName("description")]
     [StringLength(500, ErrorMessage = "Açıklama en fazla 500 karakter olabilir.")]

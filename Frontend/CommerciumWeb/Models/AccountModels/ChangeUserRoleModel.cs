@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Commercium.Shared.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 public class ChangeUserRoleModel
@@ -9,5 +10,5 @@ public class ChangeUserRoleModel
 
     [JsonPropertyName("newRole")]
     [Required]
-    public int NewRole { get; set; } // Enum yerine int kullanıyoruz
+    public UserRole NewRole { get; set; } // Enum yerine int kullanıyoruz
 }

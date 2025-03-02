@@ -1,0 +1,10 @@
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.csproj.AssemblyReference.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.GeneratedMSBuildEditorConfig.editorconfig
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.AssemblyInfoInputs.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.AssemblyInfo.cs
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.csproj.CoreCompileInputs.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.MvcApplicationPartsAssemblyInfo.cs
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.MvcApplicationPartsAssemblyInfo.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.RazorAssemblyInfo.cache
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.RazorAssemblyInfo.cs
+F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Frontend\CommerciumWeb\obj\Debug\net8.0\CommerciumWeb.sourcelink.json

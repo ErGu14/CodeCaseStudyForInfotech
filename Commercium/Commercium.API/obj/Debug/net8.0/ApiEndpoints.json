@@ -2,7 +2,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "ApproveUser",
-    "RelativePath": "api/account/approve-user/{userId}",
+    "RelativePath": "api/Account/approve-user/{userId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "BanUser",
-    "RelativePath": "api/account/ban-user",
+    "RelativePath": "api/Account/ban-user",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -39,7 +39,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "ChangeEmail",
-    "RelativePath": "api/account/change-email",
+    "RelativePath": "api/Account/change-email",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -55,7 +55,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "ChangePassword",
-    "RelativePath": "api/account/change-password",
+    "RelativePath": "api/Account/change-password",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -71,7 +71,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "ChangeUserRole",
-    "RelativePath": "api/account/change-user-role",
+    "RelativePath": "api/Account/change-user-role",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -87,7 +87,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "ConfirmEmail",
-    "RelativePath": "api/account/confirm-email",
+    "RelativePath": "api/Account/confirm-email",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -103,7 +103,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "CustomizeProfile",
-    "RelativePath": "api/account/customize-profile",
+    "RelativePath": "api/Account/customize-profile",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -119,7 +119,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "GetAllUsers",
-    "RelativePath": "api/account/get-all-users",
+    "RelativePath": "api/Account/get-all-users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -129,7 +129,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "GetUserWithBusinessInfo",
-    "RelativePath": "api/account/get-user-with-business-info/{userId}",
+    "RelativePath": "api/Account/get-user-with-business-info/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -145,7 +145,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "GetUser",
-    "RelativePath": "api/account/get-user/{userId}",
+    "RelativePath": "api/Account/get-user/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -161,7 +161,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "GetUsersWithBusinessInfo",
-    "RelativePath": "api/account/get-users-with-business-info",
+    "RelativePath": "api/Account/get-users-with-business-info",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -171,7 +171,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "Login",
-    "RelativePath": "api/account/login",
+    "RelativePath": "api/Account/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -187,7 +187,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "Register",
-    "RelativePath": "api/account/register",
+    "RelativePath": "api/Account/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -203,7 +203,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "ResetPassword",
-    "RelativePath": "api/account/reset-password",
+    "RelativePath": "api/Account/reset-password",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -219,7 +219,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "UnbanUser",
-    "RelativePath": "api/account/unban-user",
+    "RelativePath": "api/Account/unban-user",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -235,7 +235,7 @@
   {
     "ContainingType": "Commercium.API.Controllers.AccountController",
     "Method": "UpdateUserProfile",
-    "RelativePath": "api/account/update-profile",
+    "RelativePath": "api/Account/update-profile",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

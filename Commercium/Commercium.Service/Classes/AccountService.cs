@@ -333,11 +333,9 @@ public class AccountService : IAccountService
             signingCredentials: credential
         );
 
-        return new TokenRM
-        {
-            AccessToken = new JwtSecurityTokenHandler().WriteToken(token),
-            ExpirationDate = expires
-        };
+        var tokenRM = new TokenRM {AccessToken = new JwtSecurityTokenHandler().WriteToken(token),ExpirationDate = expires };
+        
+        return tokenRM;
 
     }
     private string GenerateEmailVerificationToken(AppUser user)

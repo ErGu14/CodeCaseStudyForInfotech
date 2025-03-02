@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using Commercium.Shared.Enums;
+using System.Text.Json.Serialization;
 
 public class GetActivitiesByEntityModel
 {
@@ -6,5 +7,5 @@ public class GetActivitiesByEntityModel
     public int EntityId { get; set; }
 
     [JsonPropertyName("entityType")]
-    public int EntityType { get; set; } // Backend Enum alıyor
+    public EntityType EntityType { get; set; } // Backend Enum alıyor
 }

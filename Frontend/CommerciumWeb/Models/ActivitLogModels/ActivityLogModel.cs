@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Commercium.Shared.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -15,10 +16,10 @@ public class ActivityLogModel
     public int EntityId { get; set; }
 
     [JsonPropertyName("entityType")]
-    public int EntityType { get; set; } // Backend Enum olarak alıyor
+    public EntityType EntityType { get; set; } // Backend Enum olarak alıyor
 
     [JsonPropertyName("activityType")]
-    public int ActivityType { get; set; } // Backend Enum olarak alıyor
+    public ActivityType ActivityType { get; set; } // Backend Enum olarak alıyor
 
     [JsonPropertyName("description")]
     [StringLength(500, ErrorMessage = "Açıklama en fazla 500 karakter olabilir.")]

@@ -40,11 +40,10 @@ builder.Services.AddIdentity<AppUser, AppRole>(x =>
     x.Password.RequireNonAlphanumeric = true;
     x.Password.RequireDigit = true;
     x.Password.RequireLowercase = true;
-}).AddEntityFrameworkStores<CommerciumDbContext>().AddDefaultTokenProviders(); 
+}).AddEntityFrameworkStores<CommerciumDbContext>().AddDefaultTokenProviders();
 
-builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("JwtConfig")); 
+builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("JwtConfig"));
 var jwtConfig = builder.Configuration.GetSection("JwtConfig").Get<JWTConfig>();
-
 
 builder.Services.AddAuthentication(x =>
 {
@@ -101,8 +100,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();

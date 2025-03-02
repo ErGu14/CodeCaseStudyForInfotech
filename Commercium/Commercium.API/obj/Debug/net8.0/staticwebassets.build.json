@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "CDI8PjvOQWLo0xgc5sM1AsSkhyelupUZl1KmHctI+SY=",
+  "Hash": "bgZ8xOo0NqlvTAo4N7wpbxLNEtcwsDEyPHvJuD+xKA0=",
   "Source": "Commercium.API",
   "BasePath": "_content/Commercium.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Commercium.API\\wwwroot",
+      "Source": "Commercium.API",
+      "ContentRoot": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\",
+      "BasePath": "_content/Commercium.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }

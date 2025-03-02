@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
     using Newtonsoft.Json;
-    using ECommerce.MVC.Enums; // Eğer `UserRole` ve `UserStatus` bir enum olarak tanımlandıysa
+
 
     namespace ECommerce.MVC.Models
     {

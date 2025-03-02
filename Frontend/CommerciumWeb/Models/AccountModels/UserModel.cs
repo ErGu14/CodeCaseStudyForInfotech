@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Commercium.Shared.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
@@ -35,7 +36,7 @@ public class UserModel
 
     [JsonPropertyName("role")]
     [Required(ErrorMessage = "Rol bilgisi gereklidir.")]
-    public int Role { get; set; } // Kullanıcı rolü (Admin, User, BusinessOwner vb.)
+    public UserRole Role { get; set; } // Kullanıcı rolü (Admin, User, BusinessOwner vb.)
 
     [JsonPropertyName("status")]
     [Required(ErrorMessage = "Kullanıcı durumu gereklidir.")]
@@ -46,9 +47,6 @@ public class UserModel
 
     [JsonPropertyName("createdAt")]
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Kullanıcı hesabının oluşturulma tarihi
-
-    [JsonPropertyName("lastLoginAt")]
-    public DateTime? LastLoginAt { get; set; } // Son giriş zamanı (Opsiyonel)
 
     [JsonPropertyName("followers")]
     public List<UserModel>? Followers { get; set; } // Kullanıcının takipçileri
