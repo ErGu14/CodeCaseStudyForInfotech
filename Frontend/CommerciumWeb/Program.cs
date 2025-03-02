@@ -1,3 +1,5 @@
+using CommerciumWeb.Interfaces;
+using CommerciumWeb.Normal_Classes;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
 using NToastNotify;
@@ -19,7 +21,19 @@ builder.Services.AddControllersWithViews().AddNToastNotifyToastr(new NToastNotif
     HideMethod = "fadeOut" 
 });
 #region AddScoped
-
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IActivityLogService, ActivityLogService>();
+builder.Services.AddScoped<IBusinessService, BusinessService>();
+builder.Services.AddScoped<ICampaignService, CampaignService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IFavoriteService, FavoriteService>();
+builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
+builder.Services.AddScoped<ISearchService, SearchService>();
+builder.Services.AddScoped<ITagService, TagService>();
+builder.Services.AddScoped<IUserFollowService, UserFollowService>();
 #endregion
 
 builder
