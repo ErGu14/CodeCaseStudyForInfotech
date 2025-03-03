@@ -42,7 +42,7 @@
     <li><strong>Projeyi Klonlayın:</strong><br>
       <code>git clone https://github.com/ErGu14/CodeCaseStudyForInfotech.git</code>
     </li>
-     <li><strong>Projeyi Klonlayın:</strong><br>
+     <li><strong>Appsettins.Json Ayarlayın:</strong><br>
       <p>Commercium.API kısmında appsettings.json dosyasındaki SQLServer bilgilerini kendi bilgilerinizle doldurunuz.</p>
     </li>
     <li><strong>Bağımlılıkları Yükleyin:</strong><br>
