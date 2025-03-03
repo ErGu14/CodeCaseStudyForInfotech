@@ -57,7 +57,7 @@
     </li>
   </ol>
 
-  <p><strong>API'ye Erişim:</strong> Proje, <strong>localhost:5009</strong> üzerinde çalışmaktadır. API'ye Postman veya benzeri bir araçla erişebilirsiniz.</p>
+  <p><strong>API'ye Erişim:</strong> Proje, <strong>localhost:5009</strong> üzerinde çalışmaktadır. API'ye Postman üzerinden dosya içerisindeki dökümantasyonu inceleyerek istekte bulunabilirsiniz.</p>
 
   <h2>🤝 Katkıda Bulunma</h2>
   <p>Bu projeye katkıda bulunmak isterseniz aşağıdaki adımları takip edebilirsiniz:</p>
