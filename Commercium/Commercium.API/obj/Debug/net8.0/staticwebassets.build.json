@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bgZ8xOo0NqlvTAo4N7wpbxLNEtcwsDEyPHvJuD+xKA0=",
+  "Hash": "OEAWVBE5WR7oWNXwX0t0EhYtO0UBMSTfqaOOoi0WHxg=",
   "Source": "Commercium.API",
   "BasePath": "_content/Commercium.API",
   "Mode": "Default",
@@ -15,6 +15,729 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\businnesBackground.png",
+      "SourceId": "Commercium.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\",
+      "BasePath": "_content/Commercium.API",
+      "RelativePath": "images/businnesBackground#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pkiwpt8hxw",
+      "Integrity": "CTMocoEmAURweZqiivddCRQb6ToZ2rQGyoIQ7ZeGb7o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\businnesBackground.png"
+    },
+    {
+      "Identity": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\businnesProfile.png",
+      "SourceId": "Commercium.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\",
+      "BasePath": "_content/Commercium.API",
+      "RelativePath": "images/businnesProfile#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "35bskztst7",
+      "Integrity": "mQjKRy+oBZeQ8nVH+100aLBs7bXYCM4ulN5woDkgZ9Y=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\businnesProfile.png"
+    },
+    {
+      "Identity": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\product.jpg",
+      "SourceId": "Commercium.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\",
+      "BasePath": "_content/Commercium.API",
+      "RelativePath": "images/product#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e40jrhh0aa",
+      "Integrity": "XnaY6cen8XMngc+Dp8/nYp4YfXitTAPI+EqhkJchJMk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product.jpg"
+    },
+    {
+      "Identity": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user1.jpg",
+      "SourceId": "Commercium.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\",
+      "BasePath": "_content/Commercium.API",
+      "RelativePath": "images/user1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "93f3bqy4r1",
+      "Integrity": "JSKJK+LCECJH2uEl2OTE2vjldHF5wLURfRruiNi9P2A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\user1.jpg"
+    },
+    {
+      "Identity": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user2.jpg",
+      "SourceId": "Commercium.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\",
+      "BasePath": "_content/Commercium.API",
+      "RelativePath": "images/user2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3q20nyho5n",
+      "Integrity": "NaMhk+YyN2fN7N8Y2FvNim0HlwCBB9jKmVbUv1F9+OQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\user2.jpg"
+    },
+    {
+      "Identity": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user3.jpg",
+      "SourceId": "Commercium.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\",
+      "BasePath": "_content/Commercium.API",
+      "RelativePath": "images/user3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dk5vwan9ws",
+      "Integrity": "E5rw6c4O6RXvhstcfIi1rfwADryx9b1Mp11UHHNd1C8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\user3.jpg"
+    },
+    {
+      "Identity": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user4.jpg",
+      "SourceId": "Commercium.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\",
+      "BasePath": "_content/Commercium.API",
+      "RelativePath": "images/user4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9zcdum5gch",
+      "Integrity": "9chjnySzd54vaevkmF35Wo3IeYqDmE61NIuZdoGY9yM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\user4.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "images/businnesBackground.pkiwpt8hxw.png",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\businnesBackground.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2287"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CTMocoEmAURweZqiivddCRQb6ToZ2rQGyoIQ7ZeGb7o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:25:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pkiwpt8hxw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/businnesBackground.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CTMocoEmAURweZqiivddCRQb6ToZ2rQGyoIQ7ZeGb7o="
+        }
+      ]
+    },
+    {
+      "Route": "images/businnesBackground.png",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\businnesBackground.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2287"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CTMocoEmAURweZqiivddCRQb6ToZ2rQGyoIQ7ZeGb7o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:25:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CTMocoEmAURweZqiivddCRQb6ToZ2rQGyoIQ7ZeGb7o="
+        }
+      ]
+    },
+    {
+      "Route": "images/businnesProfile.35bskztst7.png",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\businnesProfile.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "158699"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mQjKRy+oBZeQ8nVH+100aLBs7bXYCM4ulN5woDkgZ9Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:29:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "35bskztst7"
+        },
+        {
+          "Name": "label",
+          "Value": "images/businnesProfile.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mQjKRy+oBZeQ8nVH+100aLBs7bXYCM4ulN5woDkgZ9Y="
+        }
+      ]
+    },
+    {
+      "Route": "images/businnesProfile.png",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\businnesProfile.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "158699"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mQjKRy+oBZeQ8nVH+100aLBs7bXYCM4ulN5woDkgZ9Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:29:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mQjKRy+oBZeQ8nVH+100aLBs7bXYCM4ulN5woDkgZ9Y="
+        }
+      ]
+    },
+    {
+      "Route": "images/product.e40jrhh0aa.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\product.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "501158"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XnaY6cen8XMngc+Dp8/nYp4YfXitTAPI+EqhkJchJMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:43:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e40jrhh0aa"
+        },
+        {
+          "Name": "label",
+          "Value": "images/product.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XnaY6cen8XMngc+Dp8/nYp4YfXitTAPI+EqhkJchJMk="
+        }
+      ]
+    },
+    {
+      "Route": "images/product.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\product.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "501158"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XnaY6cen8XMngc+Dp8/nYp4YfXitTAPI+EqhkJchJMk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:43:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XnaY6cen8XMngc+Dp8/nYp4YfXitTAPI+EqhkJchJMk="
+        }
+      ]
+    },
+    {
+      "Route": "images/user1.93f3bqy4r1.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JSKJK+LCECJH2uEl2OTE2vjldHF5wLURfRruiNi9P2A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:20:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "93f3bqy4r1"
+        },
+        {
+          "Name": "label",
+          "Value": "images/user1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JSKJK+LCECJH2uEl2OTE2vjldHF5wLURfRruiNi9P2A="
+        }
+      ]
+    },
+    {
+      "Route": "images/user1.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4273"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JSKJK+LCECJH2uEl2OTE2vjldHF5wLURfRruiNi9P2A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:20:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JSKJK+LCECJH2uEl2OTE2vjldHF5wLURfRruiNi9P2A="
+        }
+      ]
+    },
+    {
+      "Route": "images/user2.3q20nyho5n.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6756"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NaMhk+YyN2fN7N8Y2FvNim0HlwCBB9jKmVbUv1F9+OQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:20:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3q20nyho5n"
+        },
+        {
+          "Name": "label",
+          "Value": "images/user2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NaMhk+YyN2fN7N8Y2FvNim0HlwCBB9jKmVbUv1F9+OQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/user2.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6756"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NaMhk+YyN2fN7N8Y2FvNim0HlwCBB9jKmVbUv1F9+OQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:20:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NaMhk+YyN2fN7N8Y2FvNim0HlwCBB9jKmVbUv1F9+OQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/user3.dk5vwan9ws.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"E5rw6c4O6RXvhstcfIi1rfwADryx9b1Mp11UHHNd1C8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:20:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dk5vwan9ws"
+        },
+        {
+          "Name": "label",
+          "Value": "images/user3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-E5rw6c4O6RXvhstcfIi1rfwADryx9b1Mp11UHHNd1C8="
+        }
+      ]
+    },
+    {
+      "Route": "images/user3.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"E5rw6c4O6RXvhstcfIi1rfwADryx9b1Mp11UHHNd1C8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:20:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-E5rw6c4O6RXvhstcfIi1rfwADryx9b1Mp11UHHNd1C8="
+        }
+      ]
+    },
+    {
+      "Route": "images/user4.9zcdum5gch.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4987"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9chjnySzd54vaevkmF35Wo3IeYqDmE61NIuZdoGY9yM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:21:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9zcdum5gch"
+        },
+        {
+          "Name": "label",
+          "Value": "images/user4.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9chjnySzd54vaevkmF35Wo3IeYqDmE61NIuZdoGY9yM="
+        }
+      ]
+    },
+    {
+      "Route": "images/user4.jpg",
+      "AssetFile": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\Commercium.API\\wwwroot\\images\\user4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4987"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9chjnySzd54vaevkmF35Wo3IeYqDmE61NIuZdoGY9yM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Mar 2025 13:21:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9chjnySzd54vaevkmF35Wo3IeYqDmE61NIuZdoGY9yM="
+        }
+      ]
+    }
+  ]
 }

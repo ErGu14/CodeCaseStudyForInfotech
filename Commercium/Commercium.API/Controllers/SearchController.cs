@@ -17,7 +17,7 @@ namespace Commercium.API.Controllers
             _searchService = searchService;
         }
 
-        // Genel Arama - Tüm roller erişebilir
+      
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("search")]
         public async Task<IActionResult> Search([FromQuery] string query)
@@ -26,7 +26,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Arama Geçmişini Kaydetme - Kullanıcı kendi arama geçmişini kaydedebilir
+
         [Authorize(Roles = "User")]
         [HttpPost("save-history")]
         public async Task<IActionResult> SaveSearchHistory([FromBody] string query, [FromQuery] string userId)
@@ -35,7 +35,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Arama Geçmişini Getirme - Kullanıcı kendi arama geçmişini görebilir
         [Authorize(Roles = "User")]
         [HttpGet("user/{userId}/history")]
         public async Task<IActionResult> GetUserSearchHistory(string userId)
@@ -44,7 +43,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Etikete Göre Arama - Tüm roller erişebilir
+     
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("search-by-tag/{tagId}")]
         public async Task<IActionResult> SearchByTag(int tagId)

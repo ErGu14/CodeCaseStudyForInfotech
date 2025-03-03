@@ -17,8 +17,8 @@ namespace Commercium.Entity.User
         public string ReceiverId { get; set; }
         public AppUser Receiver { get; set; }
 
-        public DateTime LastMessageDate { get; set; }  // Son mesajın tarihi
-        public ICollection<Message> Messages { get; set; }  // Konuşma içindeki mesajlar
+        public DateTime LastMessageDate { get; set; }  
+        public ICollection<Message> Messages { get; set; } 
     }
 
 }

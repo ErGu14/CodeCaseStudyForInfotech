@@ -11,7 +11,7 @@ namespace Commercium.Entity.User
     public class Review
     {
         public int ReviewId { get; set; }
-        public int Rating { get; set; } // 1-5 arasında puan
+        public int Rating { get; set; } 
         public string Comment { get; set; }
         public DateTime DateCreated { get; set; }
 

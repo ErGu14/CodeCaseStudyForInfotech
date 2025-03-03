@@ -18,7 +18,7 @@ namespace Commercium.API.Controllers
             _campaignService = campaignService;
         }
 
-        // Kampanya Oluşturma - Yalnızca Admin ve BusinessOwner
+
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("create")]
         public async Task<IActionResult> CreateCampaign([FromBody] CreateCampaignRM createCampaignRM)
@@ -27,7 +27,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kampanya Güncelleme - Yalnızca Admin ve BusinessOwner
+       
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPut("update")]
         public async Task<IActionResult> UpdateCampaign([FromBody] UpdateCampaignRM updateCampaignRM)
@@ -36,7 +36,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kampanya Silme - Yalnızca Admin
+       
         [Authorize(Roles = "Admin")]
         [HttpDelete("delete/{campaignId}")]
         public async Task<IActionResult> DeleteCampaign(int campaignId)
@@ -45,7 +45,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kampanyayı ID ile Getirme - Tüm roller erişebilir
+    
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("{campaignId}")]
         public async Task<IActionResult> GetCampaignById(int campaignId)
@@ -54,7 +54,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Tüm Kampanyaları Listeleme - Tüm roller erişebilir
+        
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("all")]
         public async Task<IActionResult> GetAllCampaigns()
@@ -63,7 +63,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kampanyaya Ait Ürünleri Getirme - Tüm roller erişebilir
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("{campaignId}/products")]
         public async Task<IActionResult> GetProductsByCampaignId(int campaignId)
@@ -72,7 +71,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // İşletme Profili ID'sine Göre Kampanyaları Getirme - Admin ve BusinessOwner erişebilir
+       
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpGet("business/{businessProfileId}")]
         public async Task<IActionResult> GetCampaignsByBusinessProfileId(int businessProfileId)
@@ -81,7 +80,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kampanyaları Tarih Aralığına Göre Filtreleme - Admin ve BusinessOwner erişebilir
+        
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpGet("date-range")]
         public async Task<IActionResult> GetCampaignsByDateRange([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
@@ -90,7 +89,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kampanyaya Ürün Ekleme ya da Güncelleme - Admin ve BusinessOwner erişebilir
+
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPut("{campaignId}/update-products")]
         public async Task<IActionResult> UpdateCampaignProducts(int campaignId, [FromBody] IEnumerable<int> productIds)

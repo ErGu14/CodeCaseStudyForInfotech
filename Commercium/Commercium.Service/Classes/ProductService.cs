@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Commercium.Shared.Tags.ProductTagRMs;
+using Commercium.Shared.Other.Enums;
 
 namespace Commercium.Service.Classes
 {
@@ -23,19 +24,22 @@ namespace Commercium.Service.Classes
         private readonly IGenericManager<ProductTag> _productTagManager;
         private readonly ITransactionManager _transactionManager;
         private readonly IMapper _mapper;
+        private readonly IFileService _fileService;
 
         public ProductService(
             IGenericManager<Product> productManager,
             IGenericManager<ProductCategory> productCategoryManager,
             IGenericManager<ProductTag> productTagManager,
             ITransactionManager transactionManager,
-            IMapper mapper)
+            IMapper mapper,
+            IFileService fileService)
         {
             _productManager = productManager;
             _productCategoryManager = productCategoryManager;
             _productTagManager = productTagManager;
             _transactionManager = transactionManager;
             _mapper = mapper;
+            _fileService = fileService;
         }
 
         //  Ürün ID'sine göre getirme
@@ -156,7 +160,12 @@ namespace Commercium.Service.Classes
         {
             var product = _mapper.Map<Product>(createProductRM);
 
-            // Ürünü kaydet
+            if (createProductRM.imgUrl != null)
+            {
+                var imageUrl = await _fileService.UploadFileAsync(createProductRM.imgUrl, FileType.Image);
+                product.imgUrl = imageUrl;
+            }
+
             await _productManager.AddAsync(product);
             var save = await _transactionManager.SaveAsync();
 
@@ -178,7 +187,14 @@ namespace Commercium.Service.Classes
                 return ReturnRM<string>.Fail("Ürün bulunamadı.", 404);
             }
 
+
             _mapper.Map(updateProductRM, product);
+
+            if (updateProductRM.imgUrl != null)
+            {
+                var imageUrl = await _fileService.UploadFileAsync(updateProductRM.imgUrl, FileType.Image);
+                product.imgUrl = imageUrl;
+            }
             _productManager.Update(product);
             var save = await _transactionManager.SaveAsync();
 

@@ -15,14 +15,14 @@ namespace Commercium.Entity.Businness
         public string Description { get; set; }
         public decimal Price { get; set; }
 
-        public int ClickCount { get; set; }  // Tıklanma sayısı
-        public int LikeCount { get; set; }   // Beğenilme sayısı
+        public int ClickCount { get; set; }  
+        public int LikeCount { get; set; }  
 
         public BusinessProfile BusinessProfile { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public int? FavoriteId { get; set; }
         public Favorite? Favorite { get; set; }
-        // Etiketler
+       
         public ICollection<ServiceTag> ServiceTags { get; set; }
         public int BusinessProfileId { get; set; }
     }

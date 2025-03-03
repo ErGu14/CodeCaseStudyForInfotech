@@ -18,7 +18,7 @@ namespace Commercium.API.Controllers
             _userFollowService = userFollowService;
         }
 
-        // Kullanıcı Takip Etme - User ve SalesRepresentative erişebilir
+        
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("follow")]
         public async Task<IActionResult> FollowUser([FromBody] CreateUserFollowRM createUserFollowRM)
@@ -27,7 +27,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcı Takipten Çıkma - User ve SalesRepresentative erişebilir
+      
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("unfollow")]
         public async Task<IActionResult> UnfollowUser([FromQuery] string followerId, [FromQuery] string followedId)
@@ -36,7 +36,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Takipçilerini Getirme - User ve Admin erişebilir
+    
         [Authorize(Roles = "User, Admin")]
         [HttpGet("followers/{userId}")]
         public async Task<IActionResult> GetFollowers(string userId)
@@ -45,7 +45,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Takip Ettiklerini Getirme - User ve Admin erişebilir
+       
         [Authorize(Roles = "User, Admin")]
         [HttpGet("following/{userId}")]
         public async Task<IActionResult> GetFollowing(string userId)
@@ -54,7 +54,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Takip Durumunu Kontrol Etme - User ve Admin erişebilir
+        
         [Authorize(Roles = "User, Admin")]
         [HttpGet("is-following")]
         public async Task<IActionResult> IsUserFollowing([FromQuery] string followerId, [FromQuery] string followedId)
@@ -63,7 +63,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Takipçi Sayısını Getirme - User ve Admin erişebilir
+       
         [Authorize(Roles = "User, Admin")]
         [HttpGet("follower-count/{userId}")]
         public async Task<IActionResult> GetFollowerCount(string userId)
@@ -72,7 +72,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Takip Edilen Sayısını Getirme - User ve Admin erişebilir
+       
         [Authorize(Roles = "User, Admin")]
         [HttpGet("following-count/{userId}")]
         public async Task<IActionResult> GetFollowingCount(string userId)

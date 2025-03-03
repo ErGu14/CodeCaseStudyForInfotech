@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Commercium.Shared.ProductRMs
     public class CreateProductRM
     {
         public string Name { get; set; }
+        public IFormFile imgUrl { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int ClickCount { get; set; } = 0;

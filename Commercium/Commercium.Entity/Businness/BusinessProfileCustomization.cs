@@ -13,7 +13,7 @@ namespace Commercium.Entity.Businness
         public string CustomBackgroundImage { get; set; }  // İşletme arka plan resmi
         public string CustomDescription { get; set; }  // İşletme açıklaması
 
-        // İlişkili işletme profili
+      
         public int BusinessProfileId { get; set; }
         public BusinessProfile BusinessProfile { get; set; }
     }

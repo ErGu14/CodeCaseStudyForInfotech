@@ -21,7 +21,7 @@ namespace Commercium.API.Controllers
             _businessService = businessService;
         }
 
-        // Admin, BusinessOwner kendi işletmesini görüntüleyebilir, SalesRepresentative ve User sadece okuma yetkisine sahip
+        
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("{businessProfileId}")]
         public async Task<IActionResult> GetBusinessById(int businessProfileId)
@@ -30,7 +30,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Admin ve BusinessOwner tüm işletmeleri listeleyebilir, SalesRepresentative sadece kendi işletmesini görebilir
+       
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative")]
         [HttpGet("all")]
         public async Task<IActionResult> GetAllBusinesses()
@@ -39,7 +39,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Yalnızca Admin BusinessProfile oluşturabilir
+      
         [Authorize(Roles = "Admin")]
         [HttpPost("create")]
         public async Task<IActionResult> CreateBusiness([FromBody] CreateBusinessProfileRM createBusinessProfileRM)
@@ -48,7 +48,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // BusinessOwner yalnızca kendi işletmesini güncelleyebilir, Admin her türlü güncellemeyi yapabilir
+     
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPut("update")]
         public async Task<IActionResult> UpdateBusiness([FromBody] UpdateBusinessProfileRM updateBusinessProfileRM)
@@ -57,7 +57,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Yalnızca Admin işletmeleri silebilir
+       
         [Authorize(Roles = "Admin")]
         [HttpDelete("delete/{businessProfileId}")]
         public async Task<IActionResult> DeleteBusiness(int businessProfileId)
@@ -66,7 +66,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Beğenme Sayısı Artırma: Yalnızca User ve SalesRepresentative, BusinessOwner ve Admin bu sayıyı artırmaz
+       
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("increase-like/{businessProfileId}")]
         public async Task<IActionResult> IncreaseBusinessLikeCount(int businessProfileId)
@@ -75,7 +75,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Tıklama Sayısı Artırma: Yalnızca User ve SalesRepresentative, BusinessOwner ve Admin bu sayıyı artırmaz
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("increase-click/{businessProfileId}")]
         public async Task<IActionResult> IncreaseBusinessClickCount(int businessProfileId)
@@ -84,7 +83,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Görüntülenme Sayısı Artırma: Yalnızca User ve SalesRepresentative, BusinessOwner ve Admin bu sayıyı artırmaz
+        
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("increase-view/{businessProfileId}")]
         public async Task<IActionResult> IncreaseBusinessViewCount(int businessProfileId)
@@ -93,7 +92,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // BusinessOwner ve Admin işletme hizmetlerini yönetebilir
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpGet("service/{serviceId}")]
         public async Task<IActionResult> GetServiceById(int serviceId)
@@ -102,7 +100,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Admin ve BusinessOwner tüm hizmetleri görebilir, SalesRepresentative de erişebilir
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative")]
         [HttpGet("services")]
         public async Task<IActionResult> GetAllServices()
@@ -111,7 +108,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Admin ve BusinessOwner kendi işletmelerine ait hizmetleri görebilir
+     
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpGet("business/{businessProfileId}/services")]
         public async Task<IActionResult> GetServicesByBusiness(int businessProfileId)
@@ -120,7 +117,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Admin BusinessService oluşturabilir, BusinessOwner kendi hizmetini oluşturabilir
+       
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("service/create")]
         public async Task<IActionResult> CreateService([FromBody] CreateServiceRM createServiceRM)
@@ -129,7 +126,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Admin ve BusinessOwner hizmet güncelleyebilir
+
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPut("service/update")]
         public async Task<IActionResult> UpdateService([FromBody] UpdateServiceRM updateServiceRM)
@@ -138,7 +135,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Admin ve BusinessOwner hizmet silebilir
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpDelete("service/delete/{serviceId}")]
         public async Task<IActionResult> DeleteService(int serviceId)
@@ -147,7 +143,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Admin ve BusinessOwner işletme profilini özelleştirebilir
+    
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("customize-profile")]
         public async Task<IActionResult> CustomizeBusinessProfile([FromBody] UpdateBusinessProfileCustomizationRM updateBusinessProfileCustomizationRM)
@@ -156,7 +152,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Admin ve BusinessOwner işletme etiketlerini yönetebilir
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("add-business-tag")]
         public async Task<IActionResult> AddBusinessTag([FromBody] CreateBusinessProfileTagRM createBusinessProfileTagRM)
@@ -165,7 +160,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Admin ve BusinessOwner işletme etiketlerini kaldırabilir
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("remove-business-tag")]
         public async Task<IActionResult> RemoveBusinessTag([FromBody] UpdateBusinessProfileTagRM updateBusinessProfileTagRM)

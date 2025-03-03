@@ -21,7 +21,7 @@ namespace Commercium.Entity.User
         public DateTime SentDate { get; set; }
         public bool IsRead { get; set; }
 
-        public string? FileUrl { get; set; } // Mesaja eklenen dosyanın yolu (opsiyonel)
+        public string? FileUrl { get; set; } 
         public int ConversationId { get; set; }
         public ICollection<Conversation> Conversations { get; set; }
     }

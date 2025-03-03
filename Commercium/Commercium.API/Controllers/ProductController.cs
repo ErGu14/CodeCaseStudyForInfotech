@@ -20,7 +20,7 @@ namespace Commercium.API.Controllers
             _productService = productService;
         }
 
-        // Ürün Detaylarını ID ile Getirme - Tüm roller erişebilir
+      
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("{productId}")]
         public async Task<IActionResult> GetProductById(int productId)
@@ -29,7 +29,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Tüm Ürünleri Getirme - Admin ve BusinessOwner erişebilir
+       
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("all")]
         public async Task<IActionResult> GetAllProducts()
@@ -38,7 +38,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // İşletme Profili ID'sine Göre Ürünleri Getirme - Admin ve BusinessOwner erişebilir
+  
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpGet("business/{businessProfileId}")]
         public async Task<IActionResult> GetProductsByBusiness(int businessProfileId)
@@ -47,7 +47,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kategori ID'sine Göre Ürünleri Getirme - Admin ve BusinessOwner erişebilir
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpGet("category/{categoryId}")]
         public async Task<IActionResult> GetProductsByCategory(int categoryId)
@@ -56,7 +55,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Etiket ID'sine Göre Ürünleri Getirme - Admin ve BusinessOwner erişebilir
+        
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpGet("tag/{tagId}")]
         public async Task<IActionResult> GetProductsByTag(int tagId)
@@ -65,7 +64,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Son Eklenen Ürünleri Getirme - Tüm roller erişebilir
+      
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("latest")]
         public async Task<IActionResult> GetLatestProducts([FromQuery] int count)
@@ -74,7 +73,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Oluşturma - Admin ve BusinessOwner erişebilir
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("create")]
         public async Task<IActionResult> CreateProduct([FromBody] CreateProductRM createProductRM)
@@ -83,7 +81,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Güncelleme - Admin ve BusinessOwner erişebilir
+    
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPut("update")]
         public async Task<IActionResult> UpdateProduct([FromBody] UpdateProductRM updateProductRM)
@@ -92,7 +90,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Silme - Admin ve BusinessOwner erişebilir
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpDelete("delete/{productId}")]
         public async Task<IActionResult> DeleteProduct(int productId)
@@ -101,7 +98,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Beğeni Sayısını Artırma - Tüm roller erişebilir
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpPost("increase-like/{productId}")]
         public async Task<IActionResult> IncreaseProductLikeCount(int productId)
@@ -110,7 +106,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Tıklama Sayısını Artırma - Tüm roller erişebilir
+    
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpPost("increase-click/{productId}")]
         public async Task<IActionResult> IncreaseProductClickCount(int productId)
@@ -119,7 +115,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Görüntülenme Sayısını Artırma - Tüm roller erişebilir
+       
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpPost("increase-view/{productId}")]
         public async Task<IActionResult> IncreaseProductViewCount(int productId)
@@ -128,7 +124,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Kategorisi Ekleme - Admin ve BusinessOwner erişebilir
+      
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("add-category")]
         public async Task<IActionResult> AddProductCategory([FromBody] ProductCategoryRM productCategoryRM)
@@ -137,7 +133,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Kategorisi Kaldırma - Admin ve BusinessOwner erişebilir
+      
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("remove-category")]
         public async Task<IActionResult> RemoveProductCategory([FromBody] ProductCategoryRM productCategoryRM)
@@ -146,7 +142,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Etiketi Ekleme - Admin ve BusinessOwner erişebilir
+       
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("add-tag")]
         public async Task<IActionResult> AddProductTag([FromBody] CreateProductTagRM createProductTagRM)
@@ -155,7 +151,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürün Etiketi Kaldırma - Admin ve BusinessOwner erişebilir
+        
         [Authorize(Roles = "Admin, BusinessOwner")]
         [HttpPost("remove-tag")]
         public async Task<IActionResult> RemoveProductTag([FromBody] UpdateProductTagRM updateProductTagRM)

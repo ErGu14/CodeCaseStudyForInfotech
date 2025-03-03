@@ -176,4 +176,3 @@ F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commerc
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.API\obj\Debug\net8.0\Commercium.API.genruntimeconfig.cache
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.API\obj\Debug\net8.0\ref\Commercium.API.dll
 F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.API\bin\Debug\net8.0\Commercium.API.staticwebassets.runtime.json
-F:\Kodlama\My Projects\CodeCaseStudy\CodeCaseStudyForInfotech\Commercium\Commercium.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

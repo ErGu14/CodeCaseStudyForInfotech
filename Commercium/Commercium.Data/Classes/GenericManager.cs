@@ -22,13 +22,12 @@ namespace Commercium.Data.Classes
             _dbSet = _context.Set<T>();
         }
 
-        // ID'ye göre tek bir nesne getirme
         public async Task<T> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-        // Tek bir nesne getirme (dinamik filtreleme)
+       
         public async Task<T> GetAsync(Expression<Func<T, bool>> expression, params Func<IQueryable<T>, IQueryable<T>>[] includes)
         {
             IQueryable<T> query = _dbSet;
@@ -36,13 +35,12 @@ namespace Commercium.Data.Classes
             return await query.FirstOrDefaultAsync(expression);
         }
 
-        // Tüm nesneleri getirme
         public async Task<IEnumerable<T>> GetAllAsync()
         {
             return await _dbSet.ToListAsync();
         }
 
-        // Tüm nesneleri getirme (dinamik filtreleme)
+        
         public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>>? expression = null,
                                                       Func<IQueryable<T>, IOrderedQueryable<T>>? values = null,
                                                       params Func<IQueryable<T>, IQueryable<T>>[] includes)
@@ -60,19 +58,19 @@ namespace Commercium.Data.Classes
             return await query.ToListAsync();
         }
 
-        // Bir nesne bulma
+  
         public async Task<T> FindAsync(Expression<Func<T, bool>> expression)
         {
             return await _dbSet.FirstOrDefaultAsync(expression);
         }
 
-        // Belirli bir nesnenin olup olmadığını kontrol etme
+  
         public async Task<bool> ExistsAsync(Expression<Func<T, bool>> expression)
         {
             return await _dbSet.AnyAsync(expression);
         }
 
-        // Yeni nesne ekleme
+     
         public async Task<T> AddAsync(T item)
         {
             await _dbSet.AddAsync(item);
@@ -80,47 +78,46 @@ namespace Commercium.Data.Classes
             return item;
         }
 
-        // Toplu nesne ekleme
+   
         public async Task AddRangeAsync(IEnumerable<T> items)
         {
             await _dbSet.AddRangeAsync(items);
             await _context.SaveChangesAsync();
         }
 
-        // Güncelleme işlemi
+        
         public void Update(T item)
         {
             _dbSet.Update(item);
             _context.SaveChanges();
         }
 
-        // Nesneyi silme
+
         public void Delete(T item)
         {
             _dbSet.Remove(item);
             _context.SaveChanges();
         }
 
-        // Toplu nesne silme
+  
         public async Task DeleteRangeAsync(IEnumerable<T> items)
         {
             _dbSet.RemoveRange(items);
             await _context.SaveChangesAsync();
         }
 
-        // Toplam nesne sayısını alma
+       
         public async Task<int> CountAsync()
         {
             return await _dbSet.CountAsync();
         }
 
-        // Belirli bir filtreye göre nesne sayısını alma
+      
         public async Task<int> CountAsync(Expression<Func<T, bool>> expression)
         {
             return await _dbSet.CountAsync(expression);
         }
 
-        // En çok istenen nesneleri getirme (örneğin en çok beğenilen ürünler)
         public async Task<IEnumerable<T>> GetTopAsync(int count,
                                                       Expression<Func<T, bool>>? expression = null,
                                                       Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
@@ -147,13 +144,13 @@ namespace Commercium.Data.Classes
 
         public async Task<T?> GetByIdAsync(string followedId)
         {
-            // T'nin türü AppUser ise, string türünde ID ile sorgu yapıyoruz.
+        
             if (typeof(T) == typeof(AppUser))
             {
                 return await _dbSet.FirstOrDefaultAsync(entity => EF.Property<string>(entity, "Id") == followedId);
             }
 
-            // Eğer T farklı bir türdeyse (genel kullanım için)
+            
             throw new InvalidOperationException("Bu metod yalnızca AppUser nesnesi için kullanılabilir.");
         }
 

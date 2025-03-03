@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Commercium.Data.Migrations
 {
     [DbContext(typeof(CommerciumDbContext))]
-    [Migration("20250226111032_mig-01")]
-    partial class mig01
+    [Migration("20250303143751_firstDB")]
+    partial class firstDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,24 +72,24 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             BusinessProfileId = 1,
-                            BusinessDescription = "Yüksek kaliteli elektronik ürünler.",
-                            BusinessName = "Ahmet'in Teknoloji Mağazası",
-                            ClickCount = 150,
-                            ContactInfo = "info@ahmetteknoloji.com",
-                            LikeCount = 50,
-                            Location = "İstanbul, Kadıköy",
-                            OwnerId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
+                            BusinessDescription = "En yeni teknolojik ürünleri bulabileceğiniz mağaza.",
+                            BusinessName = "TechWorld",
+                            ClickCount = 0,
+                            ContactInfo = "techworld@business.com - 0212 123 45 67",
+                            LikeCount = 0,
+                            Location = "İstanbul, Türkiye",
+                            OwnerId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"
                         },
                         new
                         {
                             BusinessProfileId = 2,
-                            BusinessDescription = "Son trendlere uygun giyim ve aksesuarlar.",
-                            BusinessName = "Mehmet'in Moda Mağazası",
-                            ClickCount = 100,
-                            ContactInfo = "info@mehmetmoda.com",
-                            LikeCount = 30,
-                            Location = "Ankara, Çankaya",
-                            OwnerId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
+                            BusinessDescription = "Kozmetik ve cilt bakım ürünleri üzerine uzmanlaşmış bir mağaza.",
+                            BusinessName = "BeautyGlow",
+                            ClickCount = 0,
+                            ContactInfo = "beautyglow@business.com - 0216 765 43 21",
+                            LikeCount = 0,
+                            Location = "Ankara, Türkiye",
+                            OwnerId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"
                         });
                 });
 
@@ -127,17 +127,17 @@ namespace Commercium.Data.Migrations
                         {
                             BusinessProfileCustomizationId = 1,
                             BusinessProfileId = 1,
-                            CustomBackgroundImage = "https://example.com/businessbackground1.jpg",
-                            CustomDescription = "Ahmet'in teknoloji mağazası için özel açıklama.",
-                            CustomProfileImage = "https://example.com/businessprofile1.jpg"
+                            CustomBackgroundImage = "/images/businnesBackground.png",
+                            CustomDescription = "Teknoloji severler için en yeni ürünleri sunuyoruz.",
+                            CustomProfileImage = "/images/businnesProfile.png"
                         },
                         new
                         {
                             BusinessProfileCustomizationId = 2,
                             BusinessProfileId = 2,
-                            CustomBackgroundImage = "https://example.com/businessbackground2.jpg",
-                            CustomDescription = "Mehmet'in moda mağazası için özelleştirilmiş profil.",
-                            CustomProfileImage = "https://example.com/businessprofile2.jpg"
+                            CustomBackgroundImage = "/images/businnesBackground.png",
+                            CustomDescription = "Cilt bakımında en kaliteli ürünleri sizin için seçiyoruz.",
+                            CustomProfileImage = "/images/businnesProfile.png"
                         });
                 });
 
@@ -154,28 +154,6 @@ namespace Commercium.Data.Migrations
                     b.HasIndex("TagId");
 
                     b.ToTable("BusinessProfileTags");
-
-                    b.HasData(
-                        new
-                        {
-                            BusinessProfileId = 1,
-                            TagId = 1
-                        },
-                        new
-                        {
-                            BusinessProfileId = 1,
-                            TagId = 2
-                        },
-                        new
-                        {
-                            BusinessProfileId = 2,
-                            TagId = 3
-                        },
-                        new
-                        {
-                            BusinessProfileId = 2,
-                            TagId = 4
-                        });
                 });
 
             modelBuilder.Entity("Commercium.Entity.Businness.Campaign", b =>
@@ -226,27 +204,27 @@ namespace Commercium.Data.Migrations
                         {
                             CampaignId = 1,
                             BusinessProfileId = 1,
-                            ClickCount = 150,
-                            Description = "Yaz aylarına özel %20 indirim fırsatı!",
-                            DiscountPercentage = 20m,
-                            EndDate = new DateTime(2025, 3, 8, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8681),
-                            LikeCount = 50,
-                            StartDate = new DateTime(2025, 2, 21, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8678),
-                            Title = "Yaz İndirimi",
-                            ViewCount = 200
+                            ClickCount = 0,
+                            Description = "Tüm teknolojik ürünlerde %15 indirim!",
+                            DiscountPercentage = 15.00m,
+                            EndDate = new DateTime(2025, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LikeCount = 0,
+                            StartDate = new DateTime(2025, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Bahar İndirimi",
+                            ViewCount = 0
                         },
                         new
                         {
                             CampaignId = 2,
                             BusinessProfileId = 2,
-                            ClickCount = 100,
-                            Description = "Kış sezonu için %15 indirim fırsatları!",
-                            DiscountPercentage = 15m,
-                            EndDate = new DateTime(2025, 3, 13, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8699),
-                            LikeCount = 30,
-                            StartDate = new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8697),
-                            Title = "Kış İndirimi",
-                            ViewCount = 180
+                            ClickCount = 0,
+                            Description = "Seçili cilt bakım ürünlerinde %20 indirim fırsatı!",
+                            DiscountPercentage = 20.00m,
+                            EndDate = new DateTime(2025, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LikeCount = 0,
+                            StartDate = new DateTime(2025, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Cilt Bakım Günleri",
+                            ViewCount = 0
                         });
                 });
 
@@ -297,21 +275,41 @@ namespace Commercium.Data.Migrations
                         {
                             ServiceId = 1,
                             BusinessProfileId = 1,
-                            ClickCount = 150,
-                            Description = "Profesyonel web tasarım hizmetleri sunuyoruz.",
-                            LikeCount = 80,
-                            Price = 500m,
-                            ServiceName = "Web Tasarım Hizmeti"
+                            ClickCount = 0,
+                            Description = "Her marka laptop için profesyonel teknik servis hizmeti.",
+                            LikeCount = 0,
+                            Price = 250.00m,
+                            ServiceName = "Laptop Teknik Servisi"
                         },
                         new
                         {
                             ServiceId = 2,
+                            BusinessProfileId = 1,
+                            ClickCount = 0,
+                            Description = "Ekran değişimi, batarya değişimi ve diğer tamir hizmetleri.",
+                            LikeCount = 0,
+                            Price = 150.00m,
+                            ServiceName = "Telefon Tamiri"
+                        },
+                        new
+                        {
+                            ServiceId = 3,
                             BusinessProfileId = 2,
-                            ClickCount = 200,
-                            Description = "Web sitenizin SEO analizini yapıyoruz ve iyileştiriyoruz.",
-                            LikeCount = 120,
-                            Price = 300m,
-                            ServiceName = "SEO Hizmeti"
+                            ClickCount = 0,
+                            Description = "Cilt tipinize uygun bakım önerileri ile analiz hizmeti.",
+                            LikeCount = 0,
+                            Price = 100.00m,
+                            ServiceName = "Cilt Analizi"
+                        },
+                        new
+                        {
+                            ServiceId = 4,
+                            BusinessProfileId = 2,
+                            ClickCount = 0,
+                            Description = "Özel günler için profesyonel makyaj hizmeti.",
+                            LikeCount = 0,
+                            Price = 300.00m,
+                            ServiceName = "Profesyonel Makyaj"
                         });
                 });
 
@@ -335,17 +333,27 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             CategoryId = 1,
-                            Name = "Elektronik"
+                            Name = "Teknoloji"
                         },
                         new
                         {
                             CategoryId = 2,
-                            Name = "Moda"
+                            Name = "Bilgisayar & Tablet"
                         },
                         new
                         {
                             CategoryId = 3,
-                            Name = "Ev & Yaşam"
+                            Name = "Telefon & Aksesuar"
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            Name = "Cilt Bakımı"
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            Name = "Makyaj"
                         });
                 });
 
@@ -391,6 +399,10 @@ namespace Commercium.Data.Migrations
                     b.Property<int>("ViewCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("imgUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ProductId");
 
                     b.HasIndex("BusinessProfileId");
@@ -404,39 +416,133 @@ namespace Commercium.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ProductId = 101,
+                            ProductId = 1,
                             BusinessProfileId = 1,
-                            ClickCount = 150,
-                            CreatedDate = new DateTime(2025, 2, 16, 14, 10, 28, 786, DateTimeKind.Local).AddTicks(5697),
-                            Description = "Yüksek kaliteli elektronik ürün.",
-                            LikeCount = 80,
-                            Name = "Ürün A",
-                            Price = 500m,
-                            ViewCount = 200
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8776),
+                            Description = "Yüksek performanslı oyuncu laptopu.",
+                            LikeCount = 0,
+                            Name = "Gaming Laptop",
+                            Price = 25000.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
                         },
                         new
                         {
-                            ProductId = 102,
+                            ProductId = 2,
                             BusinessProfileId = 1,
-                            ClickCount = 200,
-                            CreatedDate = new DateTime(2025, 2, 21, 14, 10, 28, 786, DateTimeKind.Local).AddTicks(5790),
-                            Description = "Modern teknoloji ile üretilmiş ürün.",
-                            LikeCount = 120,
-                            Name = "Ürün B",
-                            Price = 750m,
-                            ViewCount = 250
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8781),
+                            Description = "Bluetooth bağlantılı yüksek ses kalitesi sunan kulaklık.",
+                            LikeCount = 0,
+                            Name = "Kablosuz Kulaklık",
+                            Price = 1500.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
                         },
                         new
                         {
-                            ProductId = 103,
+                            ProductId = 3,
+                            BusinessProfileId = 1,
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8783),
+                            Description = "Yüksek çözünürlüklü ekran ve uzun pil ömrü ile profesyonel tablet.",
+                            LikeCount = 0,
+                            Name = "Tablet Pro 2025",
+                            Price = 12000.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            BusinessProfileId = 1,
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8786),
+                            Description = "RGB ışıklı, mekanik anahtarlı gaming klavye.",
+                            LikeCount = 0,
+                            Name = "Mekanik Klavye",
+                            Price = 2500.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            BusinessProfileId = 1,
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8787),
+                            Description = "Üst düzey performans sunan en yeni akıllı telefon modeli.",
+                            LikeCount = 0,
+                            Name = "Akıllı Telefon X",
+                            Price = 18000.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
+                        },
+                        new
+                        {
+                            ProductId = 6,
+                            BusinessProfileId = 1,
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8789),
+                            Description = "Dayanıklı silikon kılıf, farklı renk seçenekleriyle.",
+                            LikeCount = 0,
+                            Name = "Telefon Kılıfı",
+                            Price = 250.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
+                        },
+                        new
+                        {
+                            ProductId = 7,
                             BusinessProfileId = 2,
-                            ClickCount = 110,
-                            CreatedDate = new DateTime(2025, 2, 19, 14, 10, 28, 786, DateTimeKind.Local).AddTicks(5812),
-                            Description = "Yeni nesil moda ürünü.",
-                            LikeCount = 50,
-                            Name = "Ürün C",
-                            Price = 600m,
-                            ViewCount = 100
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8790),
+                            Description = "Yoğun nemlendirme sağlayan hyaluronik asit içeren serum.",
+                            LikeCount = 0,
+                            Name = "Hyaluronik Asit Serum",
+                            Price = 500.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
+                        },
+                        new
+                        {
+                            ProductId = 8,
+                            BusinessProfileId = 2,
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8792),
+                            Description = "Yüksek koruma sağlayan güneş kremi.",
+                            LikeCount = 0,
+                            Name = "Güneş Koruyucu Krem SPF 50",
+                            Price = 450.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
+                        },
+                        new
+                        {
+                            ProductId = 9,
+                            BusinessProfileId = 2,
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8793),
+                            Description = "Uzun süre kalıcı, mat bitişli likit ruj.",
+                            LikeCount = 0,
+                            Name = "Mat Likit Ruj",
+                            Price = 300.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
+                        },
+                        new
+                        {
+                            ProductId = 10,
+                            BusinessProfileId = 2,
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8795),
+                            Description = "Doğal bitişli, cilt tonunu eşitleyen fondöten.",
+                            LikeCount = 0,
+                            Name = "Fondöten",
+                            Price = 600.00m,
+                            ViewCount = 0,
+                            imgUrl = "/images/product.jpg"
                         });
                 });
 
@@ -457,18 +563,53 @@ namespace Commercium.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ProductId = 101,
+                            ProductId = 1,
                             CategoryId = 1
                         },
                         new
                         {
-                            ProductId = 102,
+                            ProductId = 2,
                             CategoryId = 1
                         },
                         new
                         {
-                            ProductId = 103,
+                            ProductId = 3,
                             CategoryId = 2
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            CategoryId = 2
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            CategoryId = 3
+                        },
+                        new
+                        {
+                            ProductId = 6,
+                            CategoryId = 3
+                        },
+                        new
+                        {
+                            ProductId = 7,
+                            CategoryId = 4
+                        },
+                        new
+                        {
+                            ProductId = 8,
+                            CategoryId = 4
+                        },
+                        new
+                        {
+                            ProductId = 9,
+                            CategoryId = 5
+                        },
+                        new
+                        {
+                            ProductId = 10,
+                            CategoryId = 5
                         });
                 });
 
@@ -501,29 +642,29 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             SearchHistoryId = 1,
-                            SearchDate = new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8937),
-                            SearchQuery = "Elektronik ürünler",
+                            SearchDate = new DateTime(2025, 2, 26, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5777),
+                            SearchQuery = "Gaming Laptop",
                             UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
                         },
                         new
                         {
                             SearchHistoryId = 2,
-                            SearchDate = new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8940),
-                            SearchQuery = "Moda ürünleri",
+                            SearchDate = new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5780),
+                            SearchQuery = "Kablosuz Kulaklık",
                             UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
                         },
                         new
                         {
                             SearchHistoryId = 3,
-                            SearchDate = new DateTime(2025, 2, 23, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8942),
-                            SearchQuery = "SEO hizmeti",
+                            SearchDate = new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5781),
+                            SearchQuery = "Hyaluronik Asit Serum",
                             UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
                         },
                         new
                         {
                             SearchHistoryId = 4,
-                            SearchDate = new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8944),
-                            SearchQuery = "Ev & Yaşam ürünleri",
+                            SearchDate = new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5782),
+                            SearchQuery = "Akıllı Telefon X",
                             UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"
                         });
                 });
@@ -567,25 +708,33 @@ namespace Commercium.Data.Migrations
                         {
                             SearchResultId = 1,
                             BusinessProfileId = 1,
-                            ProductId = 101,
-                            SearchDate = new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(9002),
-                            SearchQuery = "Elektronik ürünler"
+                            ProductId = 1,
+                            SearchDate = new DateTime(2025, 2, 26, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5823),
+                            SearchQuery = "Gaming Laptop"
                         },
                         new
                         {
                             SearchResultId = 2,
-                            BusinessProfileId = 2,
-                            ProductId = 102,
-                            SearchDate = new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(9006),
-                            SearchQuery = "Moda ürünleri"
+                            BusinessProfileId = 1,
+                            ProductId = 2,
+                            SearchDate = new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5825),
+                            SearchQuery = "Kablosuz Kulaklık"
                         },
                         new
                         {
                             SearchResultId = 3,
+                            BusinessProfileId = 2,
+                            ProductId = 7,
+                            SearchDate = new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5826),
+                            SearchQuery = "Hyaluronik Asit Serum"
+                        },
+                        new
+                        {
+                            SearchResultId = 4,
                             BusinessProfileId = 1,
-                            SearchDate = new DateTime(2025, 2, 23, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(9009),
-                            SearchQuery = "SEO hizmeti",
-                            ServiceId = 2
+                            ProductId = 5,
+                            SearchDate = new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5828),
+                            SearchQuery = "Akıllı Telefon X"
                         });
                 });
 
@@ -606,18 +755,63 @@ namespace Commercium.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ProductId = 101,
+                            ProductId = 1,
                             TagId = 1
                         },
                         new
                         {
-                            ProductId = 102,
-                            TagId = 1
-                        },
-                        new
-                        {
-                            ProductId = 103,
+                            ProductId = 1,
                             TagId = 2
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            TagId = 3
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            TagId = 4
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            TagId = 2
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            TagId = 5
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            TagId = 6
+                        },
+                        new
+                        {
+                            ProductId = 6,
+                            TagId = 7
+                        },
+                        new
+                        {
+                            ProductId = 7,
+                            TagId = 8
+                        },
+                        new
+                        {
+                            ProductId = 8,
+                            TagId = 9
+                        },
+                        new
+                        {
+                            ProductId = 9,
+                            TagId = 10
+                        },
+                        new
+                        {
+                            ProductId = 10,
+                            TagId = 11
                         });
                 });
 
@@ -643,8 +837,38 @@ namespace Commercium.Data.Migrations
                         },
                         new
                         {
-                            ServiceId = 2,
+                            ServiceId = 1,
                             TagId = 2
+                        },
+                        new
+                        {
+                            ServiceId = 2,
+                            TagId = 3
+                        },
+                        new
+                        {
+                            ServiceId = 2,
+                            TagId = 4
+                        },
+                        new
+                        {
+                            ServiceId = 3,
+                            TagId = 8
+                        },
+                        new
+                        {
+                            ServiceId = 3,
+                            TagId = 9
+                        },
+                        new
+                        {
+                            ServiceId = 4,
+                            TagId = 10
+                        },
+                        new
+                        {
+                            ServiceId = 4,
+                            TagId = 11
                         });
                 });
 
@@ -668,32 +892,57 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             TagId = 1,
-                            Name = "Elektronik"
+                            Name = "Gaming"
                         },
                         new
                         {
                             TagId = 2,
-                            Name = "Moda"
+                            Name = "Laptop"
                         },
                         new
                         {
                             TagId = 3,
-                            Name = "Web Tasarım"
+                            Name = "Bluetooth"
                         },
                         new
                         {
                             TagId = 4,
-                            Name = "SEO"
+                            Name = "Kulaklık"
                         },
                         new
                         {
                             TagId = 5,
-                            Name = "Yeni Ürün"
+                            Name = "Klavye"
                         },
                         new
                         {
                             TagId = 6,
-                            Name = "Teknoloji"
+                            Name = "Akıllı Telefon"
+                        },
+                        new
+                        {
+                            TagId = 7,
+                            Name = "Aksesuar"
+                        },
+                        new
+                        {
+                            TagId = 8,
+                            Name = "Cilt Bakımı"
+                        },
+                        new
+                        {
+                            TagId = 9,
+                            Name = "Serum"
+                        },
+                        new
+                        {
+                            TagId = 10,
+                            Name = "Makyaj"
+                        },
+                        new
+                        {
+                            TagId = 11,
+                            Name = "Fondöten"
                         });
                 });
 
@@ -850,7 +1099,7 @@ namespace Commercium.Data.Migrations
                         {
                             Id = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "97a8fc12-481f-49b6-943e-0bef6f72985d",
+                            ConcurrencyStamp = "0c841f7e-6380-40da-99c2-290ab4d51ada",
                             DateOfBirth = new DateTime(1988, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "ahmetyilmaz41@outlook.com",
                             EmailConfirmed = true,
@@ -860,11 +1109,11 @@ namespace Commercium.Data.Migrations
                             LockoutEnabled = false,
                             MiddleName = "",
                             NormalizedEmail = "AHMETYILMAZ41@OUTLOOK.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPKcpnu+7waPUjkR7kBaXUTm5QKJ3QHMVF01HGeGf144fF6F3dw5XqN0rtHiEKm6CA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFwBGfLoDAKmlbCijLYhoOC3g9siyq3edOrHw2iV+mvHciNXp/WZoljys6jOJbg6vQ==",
                             PhoneNumber = "5346530901",
                             PhoneNumberConfirmed = false,
                             Role = 0,
-                            SecurityStamp = "22f4d212-ab21-4bbb-9ce9-63de6e1d7e86",
+                            SecurityStamp = "1c06adda-d363-4ffe-be83-252715041f0f",
                             Status = 0,
                             TwoFactorEnabled = false
                         },
@@ -872,7 +1121,7 @@ namespace Commercium.Data.Migrations
                         {
                             Id = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b975cd03-dc05-4559-87cf-f7c9a9b2a2e0",
+                            ConcurrencyStamp = "b5439ad4-2061-4c71-9522-0f8c77e77fba",
                             DateOfBirth = new DateTime(1992, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "mehmetguler@hotmail.com",
                             EmailConfirmed = true,
@@ -882,11 +1131,11 @@ namespace Commercium.Data.Migrations
                             LockoutEnabled = false,
                             MiddleName = "",
                             NormalizedEmail = "MEHMETGULER@HOTMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEITo5dzT8SY8Y648tAxM+OL2XQdjoF7WkgNqP4YmehK6kib/EiWiBhk8X/tzDwllOg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEB/SuG+XD4eVLWU3BJOCoSFmaGLVMGivaSeMWib5B+wpiEvNuS6M7ydFQhBKhJ8sTw==",
                             PhoneNumber = "5551234567",
                             PhoneNumberConfirmed = false,
                             Role = 0,
-                            SecurityStamp = "9d3a66eb-80e1-4aca-a13c-9a72afd2631a",
+                            SecurityStamp = "37a533c4-fb74-40db-ae96-8201492a886e",
                             Status = 0,
                             TwoFactorEnabled = false
                         },
@@ -894,7 +1143,7 @@ namespace Commercium.Data.Migrations
                         {
                             Id = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9611949c-27f6-4c13-ab21-10da999d594d",
+                            ConcurrencyStamp = "5e0859ef-f42d-4f8d-ad6c-3a437d75c813",
                             DateOfBirth = new DateTime(1985, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "ayseyilmaz@admin.com",
                             EmailConfirmed = true,
@@ -904,11 +1153,11 @@ namespace Commercium.Data.Migrations
                             LockoutEnabled = false,
                             MiddleName = "Fidan",
                             NormalizedEmail = "AYSEYILMAZ@ADMIN.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEB+QCp+CjbQ84A8ic/xaYdB242Swv7rS8aKJ10z7ojmK8xe5F7MZzwcGV9NJ/isBwg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEK7jvqyZc7uJt+CVkWUgTHQGLttMlCqsY9x3hhsdstRotVcgob+vWDsy+AKD2w//SA==",
                             PhoneNumber = "5327654321",
                             PhoneNumberConfirmed = false,
                             Role = 0,
-                            SecurityStamp = "5204ae65-4cd1-4425-bbaf-1575db4fd36c",
+                            SecurityStamp = "3fe5c7dd-e418-41f3-b0de-3f55705f3d83",
                             Status = 0,
                             TwoFactorEnabled = false
                         },
@@ -916,7 +1165,7 @@ namespace Commercium.Data.Migrations
                         {
                             Id = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a275a1ab-3426-405c-acfc-0e3955173d7b",
+                            ConcurrencyStamp = "9ba4e367-15cf-488f-8e35-fabc832a586d",
                             DateOfBirth = new DateTime(1990, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "alicelik@business.com",
                             EmailConfirmed = true,
@@ -926,11 +1175,11 @@ namespace Commercium.Data.Migrations
                             LockoutEnabled = false,
                             MiddleName = "",
                             NormalizedEmail = "ALICELIK@BUSINESS.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGDJIilS+GtfP37h97SBObqSL6zcSTqEK/26Y/uB4lzZOURdw1S+Z0nn4D1yJH1kxw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFl16tGXciOP49pQuQqh8tI7ds7W+Jh/4m4X9bDXKC82i2wEt9Yfqtr5Fz24a4oHCw==",
                             PhoneNumber = "5364567890",
                             PhoneNumberConfirmed = false,
                             Role = 0,
-                            SecurityStamp = "7cbe3754-da72-48de-a465-1178a775296c",
+                            SecurityStamp = "2d6b6e0e-201e-4bb0-a0e2-37ab363cff4c",
                             Status = 0,
                             TwoFactorEnabled = false
                         });
@@ -988,13 +1237,59 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             ActivityLogId = 1,
-                            ActivityDate = new DateTime(2025, 2, 26, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7382),
-                            ActivityType = 3,
-                            Details = "Service viewed",
+                            ActivityDate = new DateTime(2025, 2, 26, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4966),
+                            ActivityType = 1,
+                            Details = "Gaming Laptop ürününe tıklandı.",
                             EntityId = 1,
-                            EntityName = "Web Design Service",
-                            EntityType = 2,
-                            ServiceId = 1,
+                            EntityName = "Gaming Laptop",
+                            EntityType = 1,
+                            ProductId = 1,
+                            UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
+                        },
+                        new
+                        {
+                            ActivityLogId = 2,
+                            ActivityDate = new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4984),
+                            ActivityType = 2,
+                            Details = "Telefon Kılıfı ürünü beğenildi.",
+                            EntityId = 6,
+                            EntityName = "Telefon Kılıfı",
+                            EntityType = 1,
+                            ProductId = 6,
+                            UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
+                        },
+                        new
+                        {
+                            ActivityLogId = 3,
+                            ActivityDate = new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4987),
+                            ActivityType = 3,
+                            Details = "Hyaluronik Asit Serum görüntülendi.",
+                            EntityId = 7,
+                            EntityName = "Hyaluronik Asit Serum",
+                            EntityType = 1,
+                            ProductId = 7,
+                            UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
+                        },
+                        new
+                        {
+                            ActivityLogId = 4,
+                            ActivityDate = new DateTime(2025, 2, 21, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4990),
+                            ActivityType = 5,
+                            Details = "Yeni kullanıcı kaydoldu.",
+                            EntityId = 1,
+                            EntityName = "Ali Çelik",
+                            EntityType = 6,
+                            UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"
+                        },
+                        new
+                        {
+                            ActivityLogId = 5,
+                            ActivityDate = new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4992),
+                            ActivityType = 4,
+                            Details = "Ahmet Yıldız giriş yaptı.",
+                            EntityId = 1,
+                            EntityName = "Ahmet Yıldız",
+                            EntityType = 6,
                             UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
                         });
                 });
@@ -1030,16 +1325,23 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             ConversationId = 1,
-                            LastMessageDate = new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7516),
+                            LastMessageDate = new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5055),
                             ReceiverId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
                             SenderId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
                         },
                         new
                         {
                             ConversationId = 2,
-                            LastMessageDate = new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7543),
-                            ReceiverId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",
+                            LastMessageDate = new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5058),
+                            ReceiverId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
                             SenderId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
+                        },
+                        new
+                        {
+                            ConversationId = 3,
+                            LastMessageDate = new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5059),
+                            ReceiverId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+                            SenderId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
                         });
                 });
 
@@ -1075,33 +1377,26 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             FavoriteId = 1,
-                            ProductId = 101,
+                            ProductId = 1,
                             UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
                         },
                         new
                         {
                             FavoriteId = 2,
-                            ServiceId = 1,
+                            ProductId = 2,
                             UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
                         },
                         new
                         {
                             FavoriteId = 3,
-                            ProductId = 102,
-                            ServiceId = 2,
+                            ProductId = 7,
                             UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
                         },
                         new
                         {
                             FavoriteId = 4,
-                            ServiceId = 2,
+                            ProductId = 5,
                             UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"
-                        },
-                        new
-                        {
-                            FavoriteId = 5,
-                            ProductId = 103,
-                            UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
                         });
                 });
 
@@ -1149,22 +1444,55 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             MessageId = 1,
-                            Content = "Merhaba, nasıl yardımcı olabilirim?",
+                            Content = "Merhaba, Gaming Laptop hakkında daha fazla bilgi alabilir miyim?",
                             ConversationId = 1,
+                            FileUrl = "/images/product.jpg",
                             IsRead = false,
                             ReceiverId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
                             SenderId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
-                            SentDate = new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7746)
+                            SentDate = new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5146)
                         },
                         new
                         {
                             MessageId = 2,
-                            Content = "Merhaba! Ürün hakkında bilgi almak istiyorum.",
+                            Content = "Tabii, Gaming Laptop hakkında her türlü bilgiyi verebilirim. Hangi özelliklere bakıyorsunuz?",
                             ConversationId = 1,
-                            IsRead = true,
+                            FileUrl = "/images/product.jpg",
+                            IsRead = false,
                             ReceiverId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
                             SenderId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
-                            SentDate = new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7755)
+                            SentDate = new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5150)
+                        },
+                        new
+                        {
+                            MessageId = 3,
+                            Content = "Merhaba Ahmet, cilt bakım ürünlerimiz hakkında bilgi almak ister misiniz?",
+                            ConversationId = 2,
+                            IsRead = true,
+                            ReceiverId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+                            SenderId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+                            SentDate = new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5152)
+                        },
+                        new
+                        {
+                            MessageId = 4,
+                            Content = "Evet, ilgileniyorum. Hangi ürünleri önerirsiniz?",
+                            ConversationId = 2,
+                            IsRead = false,
+                            ReceiverId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+                            SenderId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+                            SentDate = new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5154)
+                        },
+                        new
+                        {
+                            MessageId = 5,
+                            Content = "Merhaba Ayşe, telefon kılıfını almak istiyorum, hangi renkleri önerirsin?",
+                            ConversationId = 3,
+                            FileUrl = "/images/product.jpg",
+                            IsRead = false,
+                            ReceiverId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+                            SenderId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
+                            SentDate = new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5156)
                         });
                 });
 
@@ -1218,28 +1546,28 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             NotificationId = 1,
-                            DateCreated = new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7862),
+                            DateCreated = new DateTime(2025, 3, 1, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5194),
                             IsRead = false,
                             Message = "Ürünün beğenildi.",
                             NotificationType = 1,
-                            ProductId = 101,
+                            ProductId = 1,
                             UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
                         },
                         new
                         {
                             NotificationId = 2,
-                            DateCreated = new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7871),
+                            DateCreated = new DateTime(2025, 3, 2, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5212),
                             IsRead = true,
                             Message = "Ürüne yorum yapıldı.",
                             NotificationType = 2,
-                            ProductId = 102,
+                            ProductId = 2,
                             UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
                         },
                         new
                         {
                             NotificationId = 3,
                             BusinessProfileId = 1,
-                            DateCreated = new DateTime(2025, 2, 23, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7875),
+                            DateCreated = new DateTime(2025, 2, 28, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5214),
                             IsRead = false,
                             Message = "Kampanya güncellendi.",
                             NotificationType = 3,
@@ -1248,7 +1576,7 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             NotificationId = 4,
-                            DateCreated = new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7878),
+                            DateCreated = new DateTime(2025, 3, 2, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5217),
                             IsRead = true,
                             Message = "Yeni mesajınız var.",
                             NotificationType = 4,
@@ -1257,7 +1585,7 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             NotificationId = 5,
-                            DateCreated = new DateTime(2025, 2, 21, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7881),
+                            DateCreated = new DateTime(2025, 2, 26, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5219),
                             IsRead = false,
                             Message = "Profiliniz güncellendi.",
                             NotificationType = 5,
@@ -1307,29 +1635,65 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             ReviewId = 1,
-                            Comment = "Harika ürün, çok memnun kaldım!",
-                            DateCreated = new DateTime(2025, 2, 18, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7965),
-                            ProductId = 101,
+                            Comment = "Gaming Laptop gerçekten harika, yüksek performans ve uzun pil ömrü ile çok beğendim!",
+                            DateCreated = new DateTime(2025, 2, 26, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5312),
+                            ProductId = 1,
                             Rating = 5,
                             UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
                         },
                         new
                         {
                             ReviewId = 2,
-                            Comment = "Fiyat/performans açısından iyi bir ürün.",
-                            DateCreated = new DateTime(2025, 2, 21, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7968),
-                            ProductId = 101,
+                            Comment = "Kablosuz Kulaklık güzel ama biraz daha ses yalıtımı olabilirdi.",
+                            DateCreated = new DateTime(2025, 2, 27, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5317),
+                            ProductId = 2,
                             Rating = 4,
                             UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
                         },
                         new
                         {
                             ReviewId = 3,
-                            Comment = "Ürün kaliteli ama biraz pahalı.",
-                            DateCreated = new DateTime(2025, 2, 23, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7971),
-                            ProductId = 102,
-                            Rating = 4,
+                            Comment = "Tablet Pro 2025 fena değil ancak ekranı biraz daha parlak olabilirdi.",
+                            DateCreated = new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5318),
+                            ProductId = 3,
+                            Rating = 3,
                             UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
+                        },
+                        new
+                        {
+                            ReviewId = 4,
+                            Comment = "Telefon Kılıfı çok sağlam ve şık. Telefonu koruma konusunda çok başarılı.",
+                            DateCreated = new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5320),
+                            ProductId = 6,
+                            Rating = 5,
+                            UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
+                        },
+                        new
+                        {
+                            ReviewId = 5,
+                            Comment = "Cilt bakımında gerçekten iyi sonuçlar aldım, fakat biraz daha nemlendirici olabilir.",
+                            DateCreated = new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5322),
+                            ProductId = 7,
+                            Rating = 4,
+                            UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
+                        },
+                        new
+                        {
+                            ReviewId = 6,
+                            Comment = "Makyaj seti beklediğimi vermedi. Kalıcılığı çok düşük.",
+                            DateCreated = new DateTime(2025, 2, 24, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5323),
+                            ProductId = 9,
+                            Rating = 2,
+                            UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
+                        },
+                        new
+                        {
+                            ReviewId = 7,
+                            Comment = "Hyaluronik Asit Serum mükemmel. Cildim çok daha parlak ve nemli oldu.",
+                            DateCreated = new DateTime(2025, 2, 25, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5374),
+                            ProductId = 7,
+                            Rating = 5,
+                            UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"
                         });
                 });
 
@@ -1355,18 +1719,18 @@ namespace Commercium.Data.Migrations
                         },
                         new
                         {
-                            FollowerId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
+                            FollowerId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
                             FollowedId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
                         },
                         new
                         {
-                            FollowerId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+                            FollowerId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
                             FollowedId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"
                         },
                         new
                         {
-                            FollowerId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",
-                            FollowedId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
+                            FollowerId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+                            FollowedId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
                         });
                 });
 
@@ -1404,33 +1768,33 @@ namespace Commercium.Data.Migrations
                         new
                         {
                             UserProfileCustomizationId = 1,
-                            CustomBackgroundImage = "https://example.com/background1.jpg",
-                            CustomDescription = "Ahmet'in özel profil açıklaması.",
-                            CustomProfileImage = "https://example.com/profile1.jpg",
+                            CustomBackgroundImage = "/images/businnesBackground.png",
+                            CustomDescription = "Kişisel teknoloji meraklısı, oyun bilgisayarları ve aksesuarları hakkında bilgi sahibi.",
+                            CustomProfileImage = "/images/user1.jpg",
                             UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
                         },
                         new
                         {
                             UserProfileCustomizationId = 2,
-                            CustomBackgroundImage = "https://example.com/background2.jpg",
-                            CustomDescription = "Mehmet'in özelleştirilmiş profili.",
-                            CustomProfileImage = "https://example.com/profile2.jpg",
+                            CustomBackgroundImage = "/images/businnesBackground.png",
+                            CustomDescription = "Satış uzmanı, kulaklıklar ve telefon aksesuarları konusunda uzman.",
+                            CustomProfileImage = "/images/user2.jpg",
                             UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
                         },
                         new
                         {
                             UserProfileCustomizationId = 3,
-                            CustomBackgroundImage = "https://example.com/background3.jpg",
-                            CustomDescription = "Ayşe'nin özel açıklaması.",
-                            CustomProfileImage = "https://example.com/profile3.jpg",
+                            CustomBackgroundImage = "/images/businnesBackground.png",
+                            CustomDescription = "Cilt bakımına meraklı, makyaj ürünleri ve kişisel bakım konusunda bilgi sahibiyim.",
+                            CustomProfileImage = "/images/user4.jpg",
                             UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
                         },
                         new
                         {
                             UserProfileCustomizationId = 4,
-                            CustomBackgroundImage = "https://example.com/background4.jpg",
-                            CustomDescription = "Ali'nin özel açıklaması.",
-                            CustomProfileImage = "https://example.com/profile4.jpg",
+                            CustomBackgroundImage = "/images/businnesBackground.png",
+                            CustomDescription = "İşletme sahibi, teknoloji ürünleri ve kişisel bakım ürünleri satışı yapıyorum.",
+                            CustomProfileImage = "/images/user3.jpg",
                             UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"
                         });
                 });

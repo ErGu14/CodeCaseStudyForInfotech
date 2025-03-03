@@ -16,10 +16,10 @@ namespace Commercium.Entity.Businness
         public string ContactInfo { get; set; }
         public string Location { get; set; }
 
-        public int ClickCount { get; set; }  // Tıklanma sayısı
-        public int LikeCount { get; set; }   // Beğenilme sayısı
+        public int ClickCount { get; set; }  
+        public int LikeCount { get; set; }   
 
-        public int? NotificationId { get; set; }  // Opsiyonel yapıyoruz
+        public int? NotificationId { get; set; }  
         public ICollection<Notification>? Notifications { get; set; }
 
         public string OwnerId { get; set; }

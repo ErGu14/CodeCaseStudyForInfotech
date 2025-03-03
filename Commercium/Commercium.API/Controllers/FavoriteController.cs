@@ -20,7 +20,7 @@ namespace Commercium.API.Controllers
             _favoriteService = favoriteService;
         }
 
-        // Favori Ürün Ekleme - User ve SalesRepresentative erişebilir
+       
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("add-product")]
         public async Task<IActionResult> AddFavoriteProduct([FromBody] CreateFavoriteRM createFavoriteRM)
@@ -29,7 +29,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Favori Ürün Kaldırma - User ve SalesRepresentative erişebilir
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("remove-product")]
         public async Task<IActionResult> RemoveFavoriteProduct([FromBody] UpdateFavoriteRM updateFavoriteRM)
@@ -38,7 +37,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Favori Hizmet Ekleme - User ve SalesRepresentative erişebilir
+     
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("add-service")]
         public async Task<IActionResult> AddFavoriteService([FromBody] CreateFavoriteRM createFavoriteRM)
@@ -47,7 +46,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Favori Hizmet Kaldırma - User ve SalesRepresentative erişebilir
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("remove-service")]
         public async Task<IActionResult> RemoveFavoriteService([FromBody] UpdateFavoriteRM updateFavoriteRM)
@@ -56,7 +54,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Favori Ürünlerini Getirme - User ve Admin erişebilir
+       
         [Authorize(Roles = "User, Admin")]
         [HttpGet("user/{userId}/products")]
         public async Task<IActionResult> GetUserFavoriteProducts(string userId)
@@ -65,7 +63,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Favori Hizmetlerini Getirme - User ve Admin erişebilir
+
         [Authorize(Roles = "User, Admin")]
         [HttpGet("user/{userId}/services")]
         public async Task<IActionResult> GetUserFavoriteServices(string userId)
@@ -74,7 +72,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Tüm Favorilerini Getirme - User ve Admin erişebilir
+
         [Authorize(Roles = "User, Admin")]
         [HttpGet("user/{userId}")]
         public async Task<IActionResult> GetUserFavorites(string userId)
@@ -83,7 +81,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Ürünün Favori Sayısını Getirme - Admin ve User erişebilir
+     
         [Authorize(Roles = "User, Admin")]
         [HttpGet("product/{productId}/count")]
         public async Task<IActionResult> GetFavoriteCountForProduct(int productId)
@@ -92,7 +90,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Hizmetin Favori Sayısını Getirme - Admin ve User erişebilir
+      
         [Authorize(Roles = "User, Admin")]
         [HttpGet("service/{serviceId}/count")]
         public async Task<IActionResult> GetFavoriteCountForService(int serviceId)

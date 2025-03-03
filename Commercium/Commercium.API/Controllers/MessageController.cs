@@ -18,7 +18,7 @@ namespace Commercium.API.Controllers
             _messageService = messageService;
         }
 
-        // Mesaj Gönderme - User, SalesRepresentative erişebilir
+        
         [Authorize(Roles = "User, SalesRepresentative")]
         [HttpPost("send")]
         public async Task<IActionResult> SendMessage([FromForm] CreateMessageRM createMessageRM, [FromForm] IFormFile? file)
@@ -28,7 +28,7 @@ namespace Commercium.API.Controllers
         }
 
 
-        // Mesaj Güncelleme - User, Admin ve SalesRepresentative erişebilir
+      
         [Authorize(Roles = "User, Admin, SalesRepresentative")]
         [HttpPut("update")]
         public async Task<IActionResult> UpdateMessage([FromBody] UpdateMessageRM updateMessageRM)
@@ -37,7 +37,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Mesaj Silme - User, Admin ve SalesRepresentative erişebilir
+       
         [Authorize(Roles = "User, Admin, SalesRepresentative")]
         [HttpDelete("delete/{messageId}")]
         public async Task<IActionResult> DeleteMessage(int messageId)
@@ -46,7 +46,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Tüm Mesajları Konuşma İçin Silme - Admin ve SalesRepresentative erişebilir
+        
         [Authorize(Roles = "Admin, SalesRepresentative")]
         [HttpDelete("delete-all/{conversationId}")]
         public async Task<IActionResult> DeleteAllMessagesInConversation(int conversationId)
@@ -55,7 +55,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Tüm Konuşmalarını Getirme - Admin ve SalesRepresentative erişebilir
+    
         [Authorize(Roles = "User, Admin, SalesRepresentative")]
         [HttpGet("user/{userId}/conversations")]
         public async Task<IActionResult> GetUserConversations(string userId)
@@ -64,7 +64,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Konuşma İçerisindeki Tüm Mesajları Getirme - Admin ve SalesRepresentative erişebilir
+    
         [Authorize(Roles = "User, Admin, SalesRepresentative")]
         [HttpGet("conversation/{conversationId}")]
         public async Task<IActionResult> GetMessagesByConversation(int conversationId)
@@ -73,7 +73,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Konuşma İçerisindeki Son Mesajı Getirme - Admin ve SalesRepresentative erişebilir
+        
         [Authorize(Roles = "User, Admin, SalesRepresentative")]
         [HttpGet("conversation/{conversationId}/last")]
         public async Task<IActionResult> GetLastMessageByConversation(int conversationId)
@@ -82,7 +82,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kullanıcının Okunmamış Mesajlarını Getirme - Admin ve SalesRepresentative erişebilir
+        
         [Authorize(Roles = "User, Admin, SalesRepresentative")]
         [HttpGet("user/{userId}/unread")]
         public async Task<IActionResult> GetUnreadMessages(string userId)
@@ -91,7 +91,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Mesajı Okundu Olarak İşaretleme - User, Admin ve SalesRepresentative erişebilir
+       
         [Authorize(Roles = "User, Admin, SalesRepresentative")]
         [HttpPost("mark-as-read/{messageId}")]
         public async Task<IActionResult> MarkMessageAsRead(int messageId)

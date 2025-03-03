@@ -10,11 +10,11 @@ namespace Commercium.Entity.User
     public class UserProfileCustomization
     {
         public int UserProfileCustomizationId { get; set; }
-        public string CustomProfileImage { get; set; }  // Kullanıcı profil resmi
-        public string CustomBackgroundImage { get; set; }  // Kullanıcı arka plan resmi
-        public string CustomDescription { get; set; }  // Kullanıcıya ait açıklama
+        public string CustomProfileImage { get; set; }  
+        public string CustomBackgroundImage { get; set; }  
+        public string CustomDescription { get; set; }  
 
-        // Kullanıcı bilgisi
+  
         public string UserId { get; set; }
         public AppUser User { get; set; }
     }

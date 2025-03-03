@@ -55,43 +55,147 @@ namespace Commercium.Data.DbContexts
         {
             #region Ürün Örnek Verisi
             builder.Entity<Product>().HasData(
-     new Product
-     {
-         ProductId = 101,
-         Name = "Ürün A",
-         Description = "Yüksek kaliteli elektronik ürün.",
-         Price = 500m,
-         ClickCount = 150,
-         LikeCount = 80,
-         BusinessProfileId = 1,
-         ViewCount = 200,
-         CreatedDate = DateTime.Now.AddDays(-10)
-     },
-     new Product
-     {
-         ProductId = 102,
-         Name = "Ürün B",
-         Description = "Modern teknoloji ile üretilmiş ürün.",
-         Price = 750m,
-         ClickCount = 200,
-         LikeCount = 120,
-         BusinessProfileId = 1,
-         ViewCount = 250,
-         CreatedDate = DateTime.Now.AddDays(-5)
-     },
-     new Product
-     {
-         ProductId = 103,
-         Name = "Ürün C",
-         Description = "Yeni nesil moda ürünü.",
-         Price = 600m,
-         ClickCount = 110,
-         LikeCount = 50,
-         BusinessProfileId = 2,
-         ViewCount = 100,
-         CreatedDate = DateTime.Now.AddDays(-7)
-     }
- );
+      
+       new Product
+       {
+           ProductId = 1,
+           Name = "Gaming Laptop",
+           imgUrl = "/images/product.jpg",
+           Description = "Yüksek performanslı oyuncu laptopu.",
+           Price = 25000.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 1 
+       },
+       new Product
+       {
+           ProductId = 2,
+           Name = "Kablosuz Kulaklık",
+           imgUrl = "/images/product.jpg",
+           Description = "Bluetooth bağlantılı yüksek ses kalitesi sunan kulaklık.",
+           Price = 1500.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 1
+       },
+
+      
+       new Product
+       {
+           ProductId = 3,
+           Name = "Tablet Pro 2025",
+           imgUrl = "/images/product.jpg",
+           Description = "Yüksek çözünürlüklü ekran ve uzun pil ömrü ile profesyonel tablet.",
+           Price = 12000.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 1
+       },
+       new Product
+       {
+           ProductId = 4,
+           Name = "Mekanik Klavye",
+           imgUrl = "/images/product.jpg",
+           Description = "RGB ışıklı, mekanik anahtarlı gaming klavye.",
+           Price = 2500.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 1
+       },
+
+       
+       new Product
+       {
+           ProductId = 5,
+           Name = "Akıllı Telefon X",
+           imgUrl = "/images/product.jpg",
+           Description = "Üst düzey performans sunan en yeni akıllı telefon modeli.",
+           Price = 18000.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 1
+       },
+       new Product
+       {
+           ProductId = 6,
+           Name = "Telefon Kılıfı",
+           imgUrl = "/images/product.jpg",
+           Description = "Dayanıklı silikon kılıf, farklı renk seçenekleriyle.",
+           Price = 250.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 1
+       },
+
+       
+       new Product
+       {
+           ProductId = 7,
+           Name = "Hyaluronik Asit Serum",
+           imgUrl = "/images/product.jpg",
+           Description = "Yoğun nemlendirme sağlayan hyaluronik asit içeren serum.",
+           Price = 500.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 2 // BeautyGlow mağazası
+       },
+       new Product
+       {
+           ProductId = 8,
+           Name = "Güneş Koruyucu Krem SPF 50",
+           imgUrl = "/images/product.jpg",
+           Description = "Yüksek koruma sağlayan güneş kremi.",
+           Price = 450.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 2
+       },
+
+      
+       new Product
+       {
+           ProductId = 9,
+           Name = "Mat Likit Ruj",
+           imgUrl = "/images/product.jpg",
+           Description = "Uzun süre kalıcı, mat bitişli likit ruj.",
+           Price = 300.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 2
+       },
+       new Product
+       {
+           ProductId = 10,
+           Name = "Fondöten",
+           imgUrl = "/images/product.jpg",
+           Description = "Doğal bitişli, cilt tonunu eşitleyen fondöten.",
+           Price = 600.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           ViewCount = 0,
+           CreatedDate = DateTime.UtcNow,
+           BusinessProfileId = 2
+       }
+   );
+
 
 
 
@@ -100,33 +204,55 @@ namespace Commercium.Data.DbContexts
 
             #region Kategori Örnek Verisi
             builder.Entity<Category>().HasData(
-    new Category
-    {
-        CategoryId = 1,
-        Name = "Elektronik"
-    },
-    new Category
-    {
-        CategoryId = 2,
-        Name = "Moda"
-    },
-    new Category
-    {
-        CategoryId = 3,
-        Name = "Ev & Yaşam"
-    }
-);
+     new Category
+     {
+         CategoryId = 1,
+         Name = "Teknoloji"
+     },
+     new Category
+     {
+         CategoryId = 2,
+         Name = "Bilgisayar & Tablet"
+     },
+     new Category
+     {
+         CategoryId = 3,
+         Name = "Telefon & Aksesuar"
+     },
+     new Category
+     {
+         CategoryId = 4,
+         Name = "Cilt Bakımı"
+     },
+     new Category
+     {
+         CategoryId = 5,
+         Name = "Makyaj"
+     }
+ );
+
 
 
             #endregion
 
             #region Ürün Kategori Örnek Verisi
             builder.Entity<ProductCategory>().HasData(
-      new ProductCategory { ProductId = 101, CategoryId = 1 },
-      new ProductCategory { ProductId = 102, CategoryId = 1 },
-      new ProductCategory { ProductId = 103, CategoryId = 2 }
-     
-  );
+    new ProductCategory { ProductId = 1, CategoryId = 1 },
+    new ProductCategory { ProductId = 2, CategoryId = 1 },
+
+    new ProductCategory { ProductId = 3, CategoryId = 2 },
+    new ProductCategory { ProductId = 4, CategoryId = 2 },
+
+    new ProductCategory { ProductId = 5, CategoryId = 3 },
+    new ProductCategory { ProductId = 6, CategoryId = 3 },
+
+    new ProductCategory { ProductId = 7, CategoryId = 4 },
+    new ProductCategory { ProductId = 8, CategoryId = 4 },
+
+    new ProductCategory { ProductId = 9, CategoryId = 5 },
+    new ProductCategory { ProductId = 10, CategoryId = 5 }
+);
+
 
 
 
@@ -442,189 +568,263 @@ namespace Commercium.Data.DbContexts
 
             #region ActivityLog Örnek Verisi
             builder.Entity<ActivityLog>().HasData(
-     new ActivityLog
-     {
-         ActivityLogId = 1,
-         ActivityType = ActivityType.View,
-         ActivityDate = DateTime.Now,
-         Details = "Service viewed",
-         EntityId = 1,
-         EntityType = EntityType.Service,
-         UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
-         EntityName = "Web Design Service",
-         ServiceId = 1, // Burada geçerli bir ServiceId kullandığınızdan emin olun
-     }
- );
+      new ActivityLog
+      {
+          ActivityLogId = 1,
+          ActivityType = ActivityType.Click,
+          ActivityDate = DateTime.UtcNow.AddDays(-5),
+          Details = "Gaming Laptop ürününe tıklandı.",
+          EntityId = 1,
+          EntityType = EntityType.Product,
+          UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+          EntityName = "Gaming Laptop",
+          ProductId = 1
+      },
+      new ActivityLog
+      {
+          ActivityLogId = 2,
+          ActivityType = ActivityType.Like,
+          ActivityDate = DateTime.UtcNow.AddDays(-3),
+          Details = "Telefon Kılıfı ürünü beğenildi.",
+          EntityId = 6,
+          EntityType = EntityType.Product,
+          UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
+          EntityName = "Telefon Kılıfı",
+          ProductId = 6
+      },
+      new ActivityLog
+      {
+          ActivityLogId = 3,
+          ActivityType = ActivityType.View,
+          ActivityDate = DateTime.UtcNow.AddDays(-2),
+          Details = "Hyaluronik Asit Serum görüntülendi.",
+          EntityId = 7,
+          EntityType = EntityType.Product,
+          UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+          EntityName = "Hyaluronik Asit Serum",
+          ProductId = 7
+      },
+      new ActivityLog
+      {
+          ActivityLogId = 4,
+          ActivityType = ActivityType.Register,
+          ActivityDate = DateTime.UtcNow.AddDays(-10),
+          Details = "Yeni kullanıcı kaydoldu.",
+          EntityId = 1,
+          EntityType = EntityType.User,
+          UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",
+          EntityName = "Ali Çelik"
+      },
+      new ActivityLog
+      {
+          ActivityLogId = 5,
+          ActivityType = ActivityType.Login,
+          ActivityDate = DateTime.UtcNow.AddDays(-1),
+          Details = "Ahmet Yıldız giriş yaptı.",
+          EntityId = 1,
+          EntityType = EntityType.User,
+          UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+          EntityName = "Ahmet Yıldız"
+      }
+  );
 
             #endregion
 
             #region Konuşma Örnek Verisi
             builder.Entity<Conversation>().HasData(
-      new Conversation
-      {
-          ConversationId = 1,
-          SenderId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
-          ReceiverId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
-          LastMessageDate = DateTime.Now.AddDays(-2)
-      },
-      new Conversation
-      {
-          ConversationId = 2,
-          SenderId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
-          ReceiverId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",
-          LastMessageDate = DateTime.Now.AddDays(-1)
-      }
-  );
+     new Conversation
+     {
+         ConversationId = 1,
+         SenderId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", // Ahmet Yıldız
+         ReceiverId = "f8c9debe-935b-432a-b8a2-7c417f7767b1", // Mehmet Güler
+         LastMessageDate = DateTime.UtcNow.AddDays(-1)
+     },
+     new Conversation
+     {
+         ConversationId = 2,
+         SenderId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", // Ayşe Fidan Yılmaz
+         ReceiverId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", // Ahmet Yıldız
+         LastMessageDate = DateTime.UtcNow.AddDays(-2)
+     },
+     new Conversation
+     {
+         ConversationId = 3,
+         SenderId = "f8c9debe-935b-432a-b8a2-7c417f7767b1", // Mehmet Güler
+         ReceiverId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", // Ayşe Fidan Yılmaz
+         LastMessageDate = DateTime.UtcNow.AddDays(-3)
+     }
+ );
+
             #endregion
 
             #region Favoriler Örnek Verisi
             builder.Entity<Favorite>().HasData(
-     // 1. Favori: Kullanıcı ve Ürün arasında
-     new Favorite
-     {
-         FavoriteId = 1,
-         UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
-         ProductId = 101,  // Ürün ile ilişkilendir
-         ServiceId = null, // Servis olmadığı için null
-     },
+      new Favorite
+      {
+          FavoriteId = 1,
+          UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", // Ahmet Yıldız
+          ProductId = 1, // Gaming Laptop
+          ServiceId = null
+      },
+      new Favorite
+      {
+          FavoriteId = 2,
+          UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1", // Mehmet Güler
+          ProductId = 2, // Kablosuz Kulaklık
+          ServiceId = null
+      },
+      new Favorite
+      {
+          FavoriteId = 3,
+          UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", // Ayşe Fidan Yılmaz
+          ProductId = 7, // Hyaluronik Asit Serum
+          ServiceId = null
+      },
+      new Favorite
+      {
+          FavoriteId = 4,
+          UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", // Ali Çelik
+          ProductId = 5, // Akıllı Telefon X
+          ServiceId = null
+      }
+  );
 
-     // 2. Favori: Kullanıcı ve Hizmet arasında
-     new Favorite
-     {
-         FavoriteId = 2,
-         UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
-         ProductId = null,  // Ürün olmadığı için null
-         ServiceId = 1,   // Hizmet ile ilişkilendir
-     },
-
-     // 3. Favori: Kullanıcı, Ürün ve Hizmet arasında
-     new Favorite
-     {
-         FavoriteId = 3,
-         UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
-         ProductId = 102,  // Ürün ile ilişkilendir
-         ServiceId = 2,  // Hizmet ile ilişkilendir
-     },
-
-     // 4. Favori: İşletme Sahibi ve Hizmet arasında
-     new Favorite
-     {
-         FavoriteId = 4,
-         UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",
-         ProductId = null,  // Ürün olmadığı için null
-         ServiceId = 2,   // Hizmet ile ilişkilendir
-     },
-
-     // 5. Favori: Kullanıcı ve Ürün arasında
-     new Favorite
-     {
-         FavoriteId = 5,
-         UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
-         ProductId = 103,  // Ürün ile ilişkilendir
-         ServiceId = null, // Servis olmadığı için null
-     }
- );
 
 
             #endregion
 
             #region Mesaj Örnek Verisi
             builder.Entity<Message>().HasData(
-     new Message
-     {
-         MessageId = 1,
-         SenderId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
-         ReceiverId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
-         Content = "Merhaba, nasıl yardımcı olabilirim?",
-         SentDate = DateTime.Now.AddDays(-2),
-         IsRead = false,
-         ConversationId = 1  // Message'a uygun ConversationId'yi ekliyoruz
-     },
-     new Message
-     {
-         MessageId = 2,
-         SenderId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
-         ReceiverId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
-         Content = "Merhaba! Ürün hakkında bilgi almak istiyorum.",
-         SentDate = DateTime.Now.AddDays(-2),
-         IsRead = true,
-         ConversationId = 1  // Message'a uygun ConversationId'yi ekliyoruz
-     }
- );
+    new Message
+    {
+        MessageId = 1,
+        SenderId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+        ReceiverId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
+        Content = "Merhaba, Gaming Laptop hakkında daha fazla bilgi alabilir miyim?",
+        SentDate = DateTime.UtcNow.AddDays(-2),
+        IsRead = false,
+        FileUrl = "/images/product.jpg",
+        ConversationId = 1
+    },
+    new Message
+    {
+        MessageId = 2,
+        SenderId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
+        ReceiverId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+        Content = "Tabii, Gaming Laptop hakkında her türlü bilgiyi verebilirim. Hangi özelliklere bakıyorsunuz?",
+        SentDate = DateTime.UtcNow.AddDays(-1),
+        IsRead = false,
+        FileUrl = "/images/product.jpg",
+        ConversationId = 1
+    },
+    new Message
+    {
+        MessageId = 3,
+        SenderId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+        ReceiverId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+        Content = "Merhaba Ahmet, cilt bakım ürünlerimiz hakkında bilgi almak ister misiniz?",
+        SentDate = DateTime.UtcNow.AddDays(-3),
+        IsRead = true,
+        ConversationId = 2
+    },
+    new Message
+    {
+        MessageId = 4,
+        SenderId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+        ReceiverId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+        Content = "Evet, ilgileniyorum. Hangi ürünleri önerirsiniz?",
+        SentDate = DateTime.UtcNow.AddDays(-2),
+        IsRead = false,
+        ConversationId = 2
+    },
+    new Message
+    {
+        MessageId = 5,
+        SenderId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
+        ReceiverId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+        Content = "Merhaba Ayşe, telefon kılıfını almak istiyorum, hangi renkleri önerirsin?",
+        SentDate = DateTime.UtcNow.AddDays(-1),
+        IsRead = false,
+        FileUrl = "/images/product.jpg",
+        ConversationId = 3
+    }
+);
+
             #endregion
 
             #region Bildirim Örnek Verisi
             builder.Entity<Notification>().HasData(
-    // 1. Bildirim: Ürün beğenildi
-    new Notification
-    {
-        NotificationId = 1,
-        UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
-        NotificationType = NotificationType.ProductLike,
-        Message = "Ürünün beğenildi.",
-        DateCreated = DateTime.Now.AddDays(-2),
-        IsRead = false,
-        ProductId = 101,  // Ürün ile ilişkilendir
-        ServiceId = null, // Servis olmadığı için null
-        BusinessProfileId = null, // İşletme Profili olmadığı için null
-    },
+       // 1. Bildirim: Ürün beğenildi
+       new Notification
+       {
+           NotificationId = 1,
+           UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+           NotificationType = NotificationType.ProductLike,
+           Message = "Ürünün beğenildi.",
+           DateCreated = DateTime.Now.AddDays(-2),
+           IsRead = false,
+           ProductId = 1,  // Gaming Laptop ile ilişkilendir
+           ServiceId = null,
+           BusinessProfileId = null,
+       },
 
-    // 2. Bildirim: Ürüne yorum yapıldı
-    new Notification
-    {
-        NotificationId = 2,
-        UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
-        NotificationType = NotificationType.ProductComment,
-        Message = "Ürüne yorum yapıldı.",
-        DateCreated = DateTime.Now.AddDays(-1),
-        IsRead = true,
-        ProductId = 102,  // Ürün ile ilişkilendir
-        ServiceId = null, // Servis olmadığı için null
-        BusinessProfileId = null, // İşletme Profili olmadığı için null
-    },
+       // 2. Bildirim: Ürüne yorum yapıldı
+       new Notification
+       {
+           NotificationId = 2,
+           UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",
+           NotificationType = NotificationType.ProductComment,
+           Message = "Ürüne yorum yapıldı.",
+           DateCreated = DateTime.Now.AddDays(-1),
+           IsRead = true,
+           ProductId = 2,  // Kablosuz Kulaklık ile ilişkilendir
+           ServiceId = null,
+           BusinessProfileId = null,
+       },
 
-    // 3. Bildirim: Kampanya güncellendi
-    new Notification
-    {
-        NotificationId = 3,
-        UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
-        NotificationType = NotificationType.CampaignUpdate,
-        Message = "Kampanya güncellendi.",
-        DateCreated = DateTime.Now.AddDays(-3),
-        IsRead = false,
-        ProductId = null, // Ürün olmadığı için null
-        ServiceId = null, // Servis olmadığı için null
-        BusinessProfileId = 1,  // İşletme Profili ile ilişkilendir
-    },
+       // 3. Bildirim: Kampanya güncellendi
+       new Notification
+       {
+           NotificationId = 3,
+           UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",
+           NotificationType = NotificationType.CampaignUpdate,
+           Message = "Kampanya güncellendi.",
+           DateCreated = DateTime.Now.AddDays(-3),
+           IsRead = false,
+           ProductId = null,
+           ServiceId = null,
+           BusinessProfileId = 1,  // TechWorld işletme profili ile ilişkilendir
+       },
 
-    // 4. Bildirim: Yeni mesajınız var
-    new Notification
-    {
-        NotificationId = 4,
-        UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",
-        NotificationType = NotificationType.MessageReceived,
-        Message = "Yeni mesajınız var.",
-        DateCreated = DateTime.Now.AddDays(-1),
-        IsRead = true,
-        ProductId = null, // Ürün olmadığı için null
-        ServiceId = null, // Servis olmadığı için null
-        BusinessProfileId = null, // İşletme Profili olmadığı için null
-    },
+       // 4. Bildirim: Yeni mesajınız var
+       new Notification
+       {
+           NotificationId = 4,
+           UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",
+           NotificationType = NotificationType.MessageReceived,
+           Message = "Yeni mesajınız var.",
+           DateCreated = DateTime.Now.AddDays(-1),
+           IsRead = true,
+           ProductId = null,
+           ServiceId = null,
+           BusinessProfileId = null,
+       },
 
-    // 5. Bildirim: Profil güncellendi
-    new Notification
-    {
-        NotificationId = 5,
-        UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
-        NotificationType = NotificationType.ProfileUpdate,
-        Message = "Profiliniz güncellendi.",
-        DateCreated = DateTime.Now.AddDays(-5),
-        IsRead = false,
-        ProductId = null, // Ürün olmadığı için null
-        ServiceId = null, // Servis olmadığı için null
-        BusinessProfileId = null, // İşletme Profili olmadığı için null
-    }
-);
+       // 5. Bildirim: Profil güncellendi
+       new Notification
+       {
+           NotificationId = 5,
+           UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",
+           NotificationType = NotificationType.ProfileUpdate,
+           Message = "Profiliniz güncellendi.",
+           DateCreated = DateTime.Now.AddDays(-5),
+           IsRead = false,
+           ProductId = null,
+           ServiceId = null,
+           BusinessProfileId = null,
+       }
+   );
+
 
             #endregion
 
@@ -633,401 +833,395 @@ namespace Commercium.Data.DbContexts
     new Review
     {
         ReviewId = 1,
-        ProductId = 101,
         Rating = 5,
-        Comment = "Harika ürün, çok memnun kaldım!",
-        DateCreated = DateTime.Now.AddDays(-8),
-        UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"  // Ahmet'in UserId'si
+        Comment = "Gaming Laptop gerçekten harika, yüksek performans ve uzun pil ömrü ile çok beğendim!",
+        DateCreated = DateTime.UtcNow.AddDays(-5),
+        ProductId = 1,
+        ServiceId = null,
+        UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
     },
     new Review
     {
         ReviewId = 2,
-        ProductId = 101,
         Rating = 4,
-        Comment = "Fiyat/performans açısından iyi bir ürün.",
-        DateCreated = DateTime.Now.AddDays(-5),
-        UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"  // Mehmet'in UserId'si
+        Comment = "Kablosuz Kulaklık güzel ama biraz daha ses yalıtımı olabilirdi.",
+        DateCreated = DateTime.UtcNow.AddDays(-4),
+        ProductId = 2,
+        ServiceId = null,
+        UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
     },
     new Review
     {
         ReviewId = 3,
-        ProductId = 102,
+        Rating = 3,
+        Comment = "Tablet Pro 2025 fena değil ancak ekranı biraz daha parlak olabilirdi.",
+        DateCreated = DateTime.UtcNow.AddDays(-3),
+        ProductId = 3,
+        ServiceId = null,
+        UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
+    },
+    new Review
+    {
+        ReviewId = 4,
+        Rating = 5,
+        Comment = "Telefon Kılıfı çok sağlam ve şık. Telefonu koruma konusunda çok başarılı.",
+        DateCreated = DateTime.UtcNow.AddDays(-2),
+        ProductId = 6,
+        ServiceId = null,
+        UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
+    },
+    new Review
+    {
+        ReviewId = 5,
         Rating = 4,
-        Comment = "Ürün kaliteli ama biraz pahalı.",
-        DateCreated = DateTime.Now.AddDays(-3),
-        UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"  // Ayşe'nin UserId'si
+        Comment = "Cilt bakımında gerçekten iyi sonuçlar aldım, fakat biraz daha nemlendirici olabilir.",
+        DateCreated = DateTime.UtcNow.AddDays(-1),
+        ProductId = 7,
+        ServiceId = null,
+        UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
+    },
+    new Review
+    {
+        ReviewId = 6,
+        Rating = 2,
+        Comment = "Makyaj seti beklediğimi vermedi. Kalıcılığı çok düşük.",
+        DateCreated = DateTime.UtcNow.AddDays(-7),
+        ProductId = 9,
+        ServiceId = null,
+        UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"
+    },
+    new Review
+    {
+        ReviewId = 7,
+        Rating = 5,
+        Comment = "Hyaluronik Asit Serum mükemmel. Cildim çok daha parlak ve nemli oldu.",
+        DateCreated = DateTime.UtcNow.AddDays(-6),
+        ProductId = 7,
+        ServiceId = null,
+        UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"
     }
 );
+
 
             #endregion
 
             #region Kullanıcı Takip Örnek Verisi
             builder.Entity<UserFollow>().HasData(
-                // 1. Takip: Ahmet Yıldız, Mehmet Güler'i takip ediyor
-                new UserFollow
-                {
-                    FollowerId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",  // Takip Eden (Ahmet)
-                    FollowedId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"   // Takip Edilen (Mehmet)
-                },
-                // 2. Takip: Mehmet Güler, Ayşe Yılmaz'ı takip ediyor
-                new UserFollow
-                {
-                    FollowerId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",  // Takip Eden (Mehmet)
-                    FollowedId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"   // Takip Edilen (Ayşe)
-                },
-                // 3. Takip: Ayşe Yılmaz, Ali Çelik'i takip ediyor
-                new UserFollow
-                {
-                    FollowerId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",  // Takip Eden (Ayşe)
-                    FollowedId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"   // Takip Edilen (Ali)
-                },
-                // 4. Takip: Ali Çelik, Ahmet Yıldız'ı takip ediyor
-                new UserFollow
-                {
-                    FollowerId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",  // Takip Eden (Ali)
-                    FollowedId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"   // Takip Edilen (Ahmet)
-                }
-            );
+     new UserFollow
+     {
+         FollowerId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", // Ahmet Yıldız
+         FollowedId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"  // Mehmet Güler
+     },
+     new UserFollow
+     {
+         FollowerId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", // Ahmet Yıldız
+         FollowedId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"  // Ayşe Fidan Yılmaz
+     },
+     new UserFollow
+     {
+         FollowerId = "f8c9debe-935b-432a-b8a2-7c417f7767b1", // Mehmet Güler
+         FollowedId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"  // Ali Çelik
+     },
+     new UserFollow
+     {
+         FollowerId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", // Ayşe Fidan Yılmaz
+         FollowedId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"  // Mehmet Güler
+     }
+ );
+
             #endregion
 
             #region Kullanıcı Profil Özelleştirme Örnek Verisi
             builder.Entity<UserProfileCustomization>().HasData(
-                // 1. Kullanıcı Profil Özelleştirmesi: Ahmet
-                new UserProfileCustomization
-                {
-                    UserProfileCustomizationId = 1,
-                    CustomProfileImage = "https://example.com/profile1.jpg",
-                    CustomBackgroundImage = "https://example.com/background1.jpg",
-                    CustomDescription = "Ahmet'in özel profil açıklaması.",
-                    UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"  // Ahmet'in UserId'si
-                },
+       new UserProfileCustomization
+       {
+           UserProfileCustomizationId = 1,
+           UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", // Ahmet Yıldız
+           CustomProfileImage = "/images/user1.jpg",
+           CustomBackgroundImage = "/images/businnesBackground.png",
+           CustomDescription = "Kişisel teknoloji meraklısı, oyun bilgisayarları ve aksesuarları hakkında bilgi sahibi."
+       },
+       new UserProfileCustomization
+       {
+           UserProfileCustomizationId = 2,
+           UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1", // Mehmet Güler
+           CustomProfileImage = "/images/user2.jpg",
+           CustomBackgroundImage = "/images/businnesBackground.png",
+           CustomDescription = "Satış uzmanı, kulaklıklar ve telefon aksesuarları konusunda uzman."
+       },
+       new UserProfileCustomization
+       {
+           UserProfileCustomizationId = 3,
+           UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", // Ayşe Fidan Yılmaz
+           CustomProfileImage = "/images/user4.jpg",
+           CustomBackgroundImage = "/images/businnesBackground.png",
+           CustomDescription = "Cilt bakımına meraklı, makyaj ürünleri ve kişisel bakım konusunda bilgi sahibiyim."
+       },
+       new UserProfileCustomization
+       {
+           UserProfileCustomizationId = 4,
+           UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", // Ali Çelik
+           CustomProfileImage = "/images/user3.jpg",
+           CustomBackgroundImage = "/images/businnesBackground.png",
+           CustomDescription = "İşletme sahibi, teknoloji ürünleri ve kişisel bakım ürünleri satışı yapıyorum."
+       }
+   );
 
-                // 2. Kullanıcı Profil Özelleştirmesi: Mehmet
-                new UserProfileCustomization
-                {
-                    UserProfileCustomizationId = 2,
-                    CustomProfileImage = "https://example.com/profile2.jpg",
-                    CustomBackgroundImage = "https://example.com/background2.jpg",
-                    CustomDescription = "Mehmet'in özelleştirilmiş profili.",
-                    UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"  // Mehmet'in UserId'si
-                },
-
-                // 3. Kullanıcı Profil Özelleştirmesi: Ayşe
-                new UserProfileCustomization
-                {
-                    UserProfileCustomizationId = 3,
-                    CustomProfileImage = "https://example.com/profile3.jpg",
-                    CustomBackgroundImage = "https://example.com/background3.jpg",
-                    CustomDescription = "Ayşe'nin özel açıklaması.",
-                    UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3"  // Ayşe'nin UserId'si
-                },
-
-                // 4. Kullanıcı Profil Özelleştirmesi: Ali
-                new UserProfileCustomization
-                {
-                    UserProfileCustomizationId = 4,
-                    CustomProfileImage = "https://example.com/profile4.jpg",
-                    CustomBackgroundImage = "https://example.com/background4.jpg",
-                    CustomDescription = "Ali'nin özel açıklaması.",
-                    UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42"  // Ali'nin UserId'si
-                }
-            );
             #endregion
 
-            #region İşletme Profili Örnek Verisi
+            #region İşletme örnek verileri
             builder.Entity<BusinessProfile>().HasData(
-    new BusinessProfile
-    {
-        BusinessProfileId = 1,
-        BusinessName = "Ahmet'in Teknoloji Mağazası",
-        BusinessDescription = "Yüksek kaliteli elektronik ürünler.",
-        ContactInfo = "info@ahmetteknoloji.com",
-        Location = "İstanbul, Kadıköy",
-        ClickCount = 150,
-        LikeCount = 50,
-        OwnerId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b"
-    },
-    new BusinessProfile
-    {
-        BusinessProfileId = 2,
-        BusinessName = "Mehmet'in Moda Mağazası",
-        BusinessDescription = "Son trendlere uygun giyim ve aksesuarlar.",
-        ContactInfo = "info@mehmetmoda.com",
-        Location = "Ankara, Çankaya",
-        ClickCount = 100,
-        LikeCount = 30,
-        OwnerId = "f8c9debe-935b-432a-b8a2-7c417f7767b1"
-    }
-);
-
-
-            #endregion
-
-            #region İşletme Profili Etiketi Örnek Verisi
-            builder.Entity<BusinessProfileTag>().HasData(
-                // 1. Etiket: Ahmet'in Teknoloji Mağazası, Elektronik Etiketi
-                new BusinessProfileTag
+                new BusinessProfile
                 {
-                    BusinessProfileId = 1,  // Ahmet'in Teknoloji Mağazası
-                    TagId = 1  // Elektronik etiketi
+                    BusinessProfileId = 1,
+                    BusinessName = "TechWorld",
+                    BusinessDescription = "En yeni teknolojik ürünleri bulabileceğiniz mağaza.",
+                    ContactInfo = "techworld@business.com - 0212 123 45 67",
+                    Location = "İstanbul, Türkiye",
+                    ClickCount = 0,
+                    LikeCount = 0,
+                    OwnerId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", // Ali Çelik (BusinessOwner)
                 },
-
-                // 2. Etiket: Ahmet'in Teknoloji Mağazası, Teknoloji Etiketi
-                new BusinessProfileTag
+                new BusinessProfile
                 {
-                    BusinessProfileId = 1,  // Ahmet'in Teknoloji Mağazası
-                    TagId = 2  // Teknoloji etiketi
-                },
-
-                // 3. Etiket: Mehmet'in Moda Mağazası, Moda Etiketi
-                new BusinessProfileTag
-                {
-                    BusinessProfileId = 2,  // Mehmet'in Moda Mağazası
-                    TagId = 3  // Moda etiketi
-                },
-
-                // 4. Etiket: Mehmet'in Moda Mağazası, Aksesuar Etiketi
-                new BusinessProfileTag
-                {
-                    BusinessProfileId = 2,  // Mehmet'in Moda Mağazası
-                    TagId = 4  // Aksesuar etiketi
+                    BusinessProfileId = 2,
+                    BusinessName = "BeautyGlow",
+                    BusinessDescription = "Kozmetik ve cilt bakım ürünleri üzerine uzmanlaşmış bir mağaza.",
+                    ContactInfo = "beautyglow@business.com - 0216 765 43 21",
+                    Location = "Ankara, Türkiye",
+                    ClickCount = 0,
+                    LikeCount = 0,
+                    OwnerId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", // Ali Çelik (BusinessOwner)
                 }
             );
+
             #endregion
 
             #region İşletme Profili Özelleştirme Örnek Verisi
             builder.Entity<BusinessProfileCustomization>().HasData(
-                // 1. İşletme Profili Özelleştirmesi: Ahmet'in Teknoloji Mağazası
-                new BusinessProfileCustomization
-                {
-                    BusinessProfileCustomizationId = 1,
-                    CustomProfileImage = "https://example.com/businessprofile1.jpg",
-                    CustomBackgroundImage = "https://example.com/businessbackground1.jpg",
-                    CustomDescription = "Ahmet'in teknoloji mağazası için özel açıklama.",
-                    BusinessProfileId = 1  // Ahmet'in Teknoloji Mağazası ile ilişkilendir
-                },
+                    new BusinessProfileCustomization
+                    {
+                        BusinessProfileCustomizationId = 1,
+                        BusinessProfileId = 1,
+                        CustomProfileImage = "/images/businnesProfile.png",
+                        CustomBackgroundImage = "/images/businnesBackground.png",
+                        CustomDescription = "Teknoloji severler için en yeni ürünleri sunuyoruz."
+                    },
+                    new BusinessProfileCustomization
+                    {
+                        BusinessProfileCustomizationId = 2,
+                        BusinessProfileId = 2,
+                        CustomProfileImage = "/images/businnesProfile.png",
+                        CustomBackgroundImage = "/images/businnesBackground.png",
+                        CustomDescription = "Cilt bakımında en kaliteli ürünleri sizin için seçiyoruz."
+                    }
+                );
 
-                // 2. İşletme Profili Özelleştirmesi: Mehmet'in Moda Mağazası
-                new BusinessProfileCustomization
-                {
-                    BusinessProfileCustomizationId = 2,
-                    CustomProfileImage = "https://example.com/businessprofile2.jpg",
-                    CustomBackgroundImage = "https://example.com/businessbackground2.jpg",
-                    CustomDescription = "Mehmet'in moda mağazası için özelleştirilmiş profil.",
-                    BusinessProfileId = 2  // Mehmet'in Moda Mağazası ile ilişkilendir
-                }
-            );
             #endregion
 
             #region Kampanya Örnek Verisi
             builder.Entity<Campaign>().HasData(
-                // 1. Kampanya: Yaz İndirimi
-                new Campaign
-                {
-                    CampaignId = 1,
-                    Title = "Yaz İndirimi",
-                    Description = "Yaz aylarına özel %20 indirim fırsatı!",
-                    StartDate = DateTime.Now.AddDays(-5),
-                    EndDate = DateTime.Now.AddDays(10),
-                    DiscountPercentage = 20m,
-                    ClickCount = 150,
-                    LikeCount = 50,
-                    ViewCount = 200,
-                    BusinessProfileId = 1  // Ahmet'in Teknoloji Mağazası ile ilişkilendir
-                },
+      new Campaign
+      {
+          CampaignId = 1,
+          Title = "Bahar İndirimi",
+          Description = "Tüm teknolojik ürünlerde %15 indirim!",
+          StartDate = new DateTime(2025, 3, 10),
+          EndDate = new DateTime(2025, 3, 20),
+          DiscountPercentage = 15.00m,
+          ClickCount = 0,
+          LikeCount = 0,
+          ViewCount = 0,
+          BusinessProfileId = 1 // TechWorld mağazası
+      },
+      new Campaign
+      {
+          CampaignId = 2,
+          Title = "Cilt Bakım Günleri",
+          Description = "Seçili cilt bakım ürünlerinde %20 indirim fırsatı!",
+          StartDate = new DateTime(2025, 4, 1),
+          EndDate = new DateTime(2025, 4, 15),
+          DiscountPercentage = 20.00m,
+          ClickCount = 0,
+          LikeCount = 0,
+          ViewCount = 0,
+          BusinessProfileId = 2 // BeautyGlow mağazası
+      }
+  );
 
-                // 2. Kampanya: Kış İndirimi
-                new Campaign
-                {
-                    CampaignId = 2,
-                    Title = "Kış İndirimi",
-                    Description = "Kış sezonu için %15 indirim fırsatları!",
-                    StartDate = DateTime.Now.AddDays(-2),
-                    EndDate = DateTime.Now.AddDays(15),
-                    DiscountPercentage = 15m,
-                    ClickCount = 100,
-                    LikeCount = 30,
-                    ViewCount = 180,
-                    BusinessProfileId = 2  // Mehmet'in Moda Mağazası ile ilişkilendir
-                }
-            );
 
 
             #endregion
 
             #region Hizmet Örnek Verisi
             builder.Entity<Service>().HasData(
-      new Service
-      {
-          ServiceId = 1,
-          ServiceName = "Web Tasarım Hizmeti",
-          Description = "Profesyonel web tasarım hizmetleri sunuyoruz.",
-          Price = 500m,
-          ClickCount = 150,
-          LikeCount = 80,
-          BusinessProfileId = 1  // Ahmet'in Teknoloji Mağazası ile ilişkilendir
-      },
-      new Service
-      {
-          ServiceId = 2,
-          ServiceName = "SEO Hizmeti",
-          Description = "Web sitenizin SEO analizini yapıyoruz ve iyileştiriyoruz.",
-          Price = 300m,
-          ClickCount = 200,
-          LikeCount = 120,
-          BusinessProfileId = 2  // Mehmet'in Moda Mağazası ile ilişkilendir
-      }
-  );
+       new Service
+       {
+           ServiceId = 1,
+           ServiceName = "Laptop Teknik Servisi",
+           Description = "Her marka laptop için profesyonel teknik servis hizmeti.",
+           Price = 250.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           BusinessProfileId = 1 // TechWorld mağazası
+       },
+       new Service
+       {
+           ServiceId = 2,
+           ServiceName = "Telefon Tamiri",
+           Description = "Ekran değişimi, batarya değişimi ve diğer tamir hizmetleri.",
+           Price = 150.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           BusinessProfileId = 1 // TechWorld mağazası
+       },
+       new Service
+       {
+           ServiceId = 3,
+           ServiceName = "Cilt Analizi",
+           Description = "Cilt tipinize uygun bakım önerileri ile analiz hizmeti.",
+           Price = 100.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           BusinessProfileId = 2 // BeautyGlow mağazası
+       },
+       new Service
+       {
+           ServiceId = 4,
+           ServiceName = "Profesyonel Makyaj",
+           Description = "Özel günler için profesyonel makyaj hizmeti.",
+           Price = 300.00m,
+           ClickCount = 0,
+           LikeCount = 0,
+           BusinessProfileId = 2 // BeautyGlow mağazası
+       }
+   );
+
 
 
             #endregion
-           
+
 
             #region Arama Geçmişi Örnek Verisi
             builder.Entity<SearchHistory>().HasData(
-                // 1. Arama Geçmişi: Elektronik ürünler
-                new SearchHistory
-                {
-                    SearchHistoryId = 1,
-                    UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b",  // Ahmet'in UserId'si
-                    SearchQuery = "Elektronik ürünler",
-                    SearchDate = DateTime.Now.AddDays(-2)
-                },
+     new SearchHistory
+     {
+         SearchHistoryId = 1,
+         UserId = "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", // Ahmet Yıldız (User)
+         SearchQuery = "Gaming Laptop",
+         SearchDate = DateTime.UtcNow.AddDays(-5)
+     },
+     new SearchHistory
+     {
+         SearchHistoryId = 2,
+         UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1", // Mehmet Güler (Seller)
+         SearchQuery = "Kablosuz Kulaklık",
+         SearchDate = DateTime.UtcNow.AddDays(-3)
+     },
+     new SearchHistory
+     {
+         SearchHistoryId = 3,
+         UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", // Ayşe Fidan Yılmaz (Admin)
+         SearchQuery = "Hyaluronik Asit Serum",
+         SearchDate = DateTime.UtcNow.AddDays(-2)
+     },
+     new SearchHistory
+     {
+         SearchHistoryId = 4,
+         UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", // Ali Çelik (BusinessOwner)
+         SearchQuery = "Akıllı Telefon X",
+         SearchDate = DateTime.UtcNow.AddDays(-1)
+     }
+ );
 
-                // 2. Arama Geçmişi: Moda ürünleri
-                new SearchHistory
-                {
-                    SearchHistoryId = 2,
-                    UserId = "f8c9debe-935b-432a-b8a2-7c417f7767b1",  // Mehmet'in UserId'si
-                    SearchQuery = "Moda ürünleri",
-                    SearchDate = DateTime.Now.AddDays(-1)
-                },
-
-                // 3. Arama Geçmişi: SEO hizmeti
-                new SearchHistory
-                {
-                    SearchHistoryId = 3,
-                    UserId = "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3",  // Ayşe'nin UserId'si
-                    SearchQuery = "SEO hizmeti",
-                    SearchDate = DateTime.Now.AddDays(-3)
-                },
-
-                // 4. Arama Geçmişi: Ev & Yaşam ürünleri
-                new SearchHistory
-                {
-                    SearchHistoryId = 4,
-                    UserId = "d04b2879-cff4-4d92-8e3f-97acdc6c0e42",  // Ali'nin UserId'si
-                    SearchQuery = "Ev & Yaşam ürünleri",
-                    SearchDate = DateTime.Now.AddDays(-1)
-                }
-            );
             #endregion
 
             #region Arama Sonucu Örnek Verisi
             builder.Entity<SearchResult>().HasData(
-                // 1. Arama Sonucu: Elektronik ürünler
-                new SearchResult
-                {
-                    SearchResultId = 1,
-                    SearchQuery = "Elektronik ürünler",
-                    ProductId = 101,  // Ürün A ile ilişkilendir
-                    ServiceId = null,  // Hizmet olmadığı için null
-                    BusinessProfileId = 1,  // Ahmet'in Teknoloji Mağazası ile ilişkilendir
-                    SearchDate = DateTime.Now.AddDays(-2)
-                },
+     new SearchResult
+     {
+         SearchResultId = 1,
+         SearchQuery = "Gaming Laptop",
+         ProductId = 1,
+         BusinessProfileId = 1,
+         SearchDate = DateTime.UtcNow.AddDays(-5)
+     },
+     new SearchResult
+     {
+         SearchResultId = 2,
+         SearchQuery = "Kablosuz Kulaklık",
+         ProductId = 2,
+         BusinessProfileId = 1,
+         SearchDate = DateTime.UtcNow.AddDays(-3)
+     },
+     new SearchResult
+     {
+         SearchResultId = 3,
+         SearchQuery = "Hyaluronik Asit Serum",
+         ProductId = 7,
+         BusinessProfileId = 2,
+         SearchDate = DateTime.UtcNow.AddDays(-2)
+     },
+     new SearchResult
+     {
+         SearchResultId = 4,
+         SearchQuery = "Akıllı Telefon X",
+         ProductId = 5,
+         BusinessProfileId = 1,
+         SearchDate = DateTime.UtcNow.AddDays(-1)
+     }
+ );
 
-                // 2. Arama Sonucu: Moda ürünleri
-                new SearchResult
-                {
-                    SearchResultId = 2,
-                    SearchQuery = "Moda ürünleri",
-                    ProductId = 102,  // Ürün B ile ilişkilendir
-                    ServiceId = null,  // Hizmet olmadığı için null
-                    BusinessProfileId = 2,  // Mehmet'in Moda Mağazası ile ilişkilendir
-                    SearchDate = DateTime.Now.AddDays(-1)
-                },
-
-                // 3. Arama Sonucu: SEO hizmeti
-                new SearchResult
-                {
-                    SearchResultId = 3,
-                    SearchQuery = "SEO hizmeti",
-                    ProductId = null,  // Ürün olmadığı için null
-                    ServiceId = 2,  // SEO hizmeti ile ilişkilendir
-                    BusinessProfileId = 1,  // Ahmet'in Teknoloji Mağazası ile ilişkilendir
-                    SearchDate = DateTime.Now.AddDays(-3)
-                }
-
-               
-            );
             #endregion
 
             #region Ürün Etiket Örnek Verisi
             builder.Entity<ProductTag>().HasData(
-    new ProductTag { ProductId = 101, TagId = 1 },  // Elektronik etiketini ilişkilendiriyoruz
-    new ProductTag { ProductId = 102, TagId = 1 },  // Elektronik etiketini ilişkilendiriyoruz
-    new ProductTag { ProductId = 103, TagId = 2 }  // Moda etiketini ilişkilendiriyoruz
-    
+    new ProductTag { ProductId = 1, TagId = 1 },
+    new ProductTag { ProductId = 1, TagId = 2 },
+    new ProductTag { ProductId = 2, TagId = 3 },
+    new ProductTag { ProductId = 2, TagId = 4 },
+    new ProductTag { ProductId = 3, TagId = 2 },
+    new ProductTag { ProductId = 4, TagId = 5 },
+    new ProductTag { ProductId = 5, TagId = 6 },
+    new ProductTag { ProductId = 6, TagId = 7 },
+    new ProductTag { ProductId = 7, TagId = 8 },
+    new ProductTag { ProductId = 8, TagId = 9 },
+    new ProductTag { ProductId = 9, TagId = 10 },
+    new ProductTag { ProductId = 10, TagId = 11 }
 );
+
 
             #endregion
 
             #region Hizmet Etiket Örnek Verisi
             builder.Entity<ServiceTag>().HasData(
-                // 1. Hizmet: Elektronik etiketini ilişkilendiriyoruz
-                new ServiceTag { ServiceId = 1, TagId = 1 },  // SEO Hizmeti -> Elektronik etiketi
+      new ServiceTag { ServiceId = 1, TagId = 1 },
+      new ServiceTag { ServiceId = 1, TagId = 2 },
+      new ServiceTag { ServiceId = 2, TagId = 3 },
+      new ServiceTag { ServiceId = 2, TagId = 4 },
+      new ServiceTag { ServiceId = 3, TagId = 8 },
+      new ServiceTag { ServiceId = 3, TagId = 9 },
+      new ServiceTag { ServiceId = 4, TagId = 10 },
+      new ServiceTag { ServiceId = 4, TagId = 11 }
+  );
 
-                // 2. Hizmet: SEO etiketini ilişkilendiriyoruz
-                new ServiceTag { ServiceId = 2, TagId = 2 }  // SEO Hizmeti -> SEO etiketi
-
-               
-            );
             #endregion
 
             #region Etiket Örnek Verisi
             builder.Entity<Tag>().HasData(
-                // 1. Etiket: Elektronik
-                new Tag
-                {
-                    TagId = 1,
-                    Name = "Elektronik"
-                },
+      new Tag { TagId = 1, Name = "Gaming" },
+      new Tag { TagId = 2, Name = "Laptop" },
+      new Tag { TagId = 3, Name = "Bluetooth" },
+      new Tag { TagId = 4, Name = "Kulaklık" },
+      new Tag { TagId = 5, Name = "Klavye" },
+      new Tag { TagId = 6, Name = "Akıllı Telefon" },
+      new Tag { TagId = 7, Name = "Aksesuar" },
+      new Tag { TagId = 8, Name = "Cilt Bakımı" },
+      new Tag { TagId = 9, Name = "Serum" },
+      new Tag { TagId = 10, Name = "Makyaj" },
+      new Tag { TagId = 11, Name = "Fondöten" }
+  );
 
-                // 2. Etiket: Moda
-                new Tag
-                {
-                    TagId = 2,
-                    Name = "Moda"
-                },
-
-                // 3. Etiket: Web Tasarım
-                new Tag
-                {
-                    TagId = 3,
-                    Name = "Web Tasarım"
-                },
-
-                // 4. Etiket: SEO
-                new Tag
-                {
-                    TagId = 4,
-                    Name = "SEO"
-                },
-
-                // 5. Etiket: Yeni Ürün
-                new Tag
-                {
-                    TagId = 5,
-                    Name = "Yeni Ürün"
-                },
-
-                // 6. Etiket: Teknoloji
-                new Tag
-                {
-                    TagId = 6,
-                    Name = "Teknoloji"
-                }
-            );
             #endregion
 
 

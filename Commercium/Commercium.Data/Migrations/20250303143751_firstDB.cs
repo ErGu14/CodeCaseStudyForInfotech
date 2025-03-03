@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Commercium.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class mig01 : Migration
+    public partial class firstDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -488,6 +488,7 @@ namespace Commercium.Data.Migrations
                 {
                     ProductId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    imgUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -749,10 +750,10 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "Gender", "LastName", "LockoutEnabled", "LockoutEnd", "MiddleName", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Role", "SecurityStamp", "Status", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", 0, "97a8fc12-481f-49b6-943e-0bef6f72985d", new DateTime(1988, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "ahmetyilmaz41@outlook.com", true, "Ahmet", 5, "Yıldız", false, null, "", "AHMETYILMAZ41@OUTLOOK.COM", null, "AQAAAAIAAYagAAAAEPKcpnu+7waPUjkR7kBaXUTm5QKJ3QHMVF01HGeGf144fF6F3dw5XqN0rtHiEKm6CA==", "5346530901", false, 0, "22f4d212-ab21-4bbb-9ce9-63de6e1d7e86", 0, false, null },
-                    { "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", 0, "9611949c-27f6-4c13-ab21-10da999d594d", new DateTime(1985, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "ayseyilmaz@admin.com", true, "Ayşe", 2, "Yılmaz", false, null, "Fidan", "AYSEYILMAZ@ADMIN.COM", null, "AQAAAAIAAYagAAAAEB+QCp+CjbQ84A8ic/xaYdB242Swv7rS8aKJ10z7ojmK8xe5F7MZzwcGV9NJ/isBwg==", "5327654321", false, 0, "5204ae65-4cd1-4425-bbaf-1575db4fd36c", 0, false, null },
-                    { "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", 0, "a275a1ab-3426-405c-acfc-0e3955173d7b", new DateTime(1990, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "alicelik@business.com", true, "Ali", 1, "Çelik", false, null, "", "ALICELIK@BUSINESS.COM", null, "AQAAAAIAAYagAAAAEGDJIilS+GtfP37h97SBObqSL6zcSTqEK/26Y/uB4lzZOURdw1S+Z0nn4D1yJH1kxw==", "5364567890", false, 0, "7cbe3754-da72-48de-a465-1178a775296c", 0, false, null },
-                    { "f8c9debe-935b-432a-b8a2-7c417f7767b1", 0, "b975cd03-dc05-4559-87cf-f7c9a9b2a2e0", new DateTime(1992, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "mehmetguler@hotmail.com", true, "Mehmet", 1, "Güler", false, null, "", "MEHMETGULER@HOTMAIL.COM", null, "AQAAAAIAAYagAAAAEITo5dzT8SY8Y648tAxM+OL2XQdjoF7WkgNqP4YmehK6kib/EiWiBhk8X/tzDwllOg==", "5551234567", false, 0, "9d3a66eb-80e1-4aca-a13c-9a72afd2631a", 0, false, null }
+                    { "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", 0, "0c841f7e-6380-40da-99c2-290ab4d51ada", new DateTime(1988, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "ahmetyilmaz41@outlook.com", true, "Ahmet", 5, "Yıldız", false, null, "", "AHMETYILMAZ41@OUTLOOK.COM", null, "AQAAAAIAAYagAAAAEFwBGfLoDAKmlbCijLYhoOC3g9siyq3edOrHw2iV+mvHciNXp/WZoljys6jOJbg6vQ==", "5346530901", false, 0, "1c06adda-d363-4ffe-be83-252715041f0f", 0, false, null },
+                    { "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", 0, "5e0859ef-f42d-4f8d-ad6c-3a437d75c813", new DateTime(1985, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "ayseyilmaz@admin.com", true, "Ayşe", 2, "Yılmaz", false, null, "Fidan", "AYSEYILMAZ@ADMIN.COM", null, "AQAAAAIAAYagAAAAEK7jvqyZc7uJt+CVkWUgTHQGLttMlCqsY9x3hhsdstRotVcgob+vWDsy+AKD2w//SA==", "5327654321", false, 0, "3fe5c7dd-e418-41f3-b0de-3f55705f3d83", 0, false, null },
+                    { "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", 0, "9ba4e367-15cf-488f-8e35-fabc832a586d", new DateTime(1990, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "alicelik@business.com", true, "Ali", 1, "Çelik", false, null, "", "ALICELIK@BUSINESS.COM", null, "AQAAAAIAAYagAAAAEFl16tGXciOP49pQuQqh8tI7ds7W+Jh/4m4X9bDXKC82i2wEt9Yfqtr5Fz24a4oHCw==", "5364567890", false, 0, "2d6b6e0e-201e-4bb0-a0e2-37ab363cff4c", 0, false, null },
+                    { "f8c9debe-935b-432a-b8a2-7c417f7767b1", 0, "b5439ad4-2061-4c71-9522-0f8c77e77fba", new DateTime(1992, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "mehmetguler@hotmail.com", true, "Mehmet", 1, "Güler", false, null, "", "MEHMETGULER@HOTMAIL.COM", null, "AQAAAAIAAYagAAAAEB/SuG+XD4eVLWU3BJOCoSFmaGLVMGivaSeMWib5B+wpiEvNuS6M7ydFQhBKhJ8sTw==", "5551234567", false, 0, "37a533c4-fb74-40db-ae96-8201492a886e", 0, false, null }
                 });
 
             migrationBuilder.InsertData(
@@ -760,9 +761,11 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "CategoryId", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Elektronik" },
-                    { 2, "Moda" },
-                    { 3, "Ev & Yaşam" }
+                    { 1, "Teknoloji" },
+                    { 2, "Bilgisayar & Tablet" },
+                    { 3, "Telefon & Aksesuar" },
+                    { 4, "Cilt Bakımı" },
+                    { 5, "Makyaj" }
                 });
 
             migrationBuilder.InsertData(
@@ -770,12 +773,26 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "TagId", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Elektronik" },
-                    { 2, "Moda" },
-                    { 3, "Web Tasarım" },
-                    { 4, "SEO" },
-                    { 5, "Yeni Ürün" },
-                    { 6, "Teknoloji" }
+                    { 1, "Gaming" },
+                    { 2, "Laptop" },
+                    { 3, "Bluetooth" },
+                    { 4, "Kulaklık" },
+                    { 5, "Klavye" },
+                    { 6, "Akıllı Telefon" },
+                    { 7, "Aksesuar" },
+                    { 8, "Cilt Bakımı" },
+                    { 9, "Serum" },
+                    { 10, "Makyaj" },
+                    { 11, "Fondöten" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ActivityLogs",
+                columns: new[] { "ActivityLogId", "ActivityDate", "ActivityType", "Details", "EntityId", "EntityName", "EntityType", "ProductId", "ServiceId", "UserId" },
+                values: new object[,]
+                {
+                    { 4, new DateTime(2025, 2, 21, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4990), 5, "Yeni kullanıcı kaydoldu.", 1, "Ali Çelik", 6, null, null, "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" },
+                    { 5, new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4992), 4, "Ahmet Yıldız giriş yaptı.", 1, "Ahmet Yıldız", 6, null, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" }
                 });
 
             migrationBuilder.InsertData(
@@ -794,8 +811,8 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "BusinessProfileId", "BusinessDescription", "BusinessName", "ClickCount", "ContactInfo", "LikeCount", "Location", "NotificationId", "OwnerId" },
                 values: new object[,]
                 {
-                    { 1, "Yüksek kaliteli elektronik ürünler.", "Ahmet'in Teknoloji Mağazası", 150, "info@ahmetteknoloji.com", 50, "İstanbul, Kadıköy", null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
-                    { 2, "Son trendlere uygun giyim ve aksesuarlar.", "Mehmet'in Moda Mağazası", 100, "info@mehmetmoda.com", 30, "Ankara, Çankaya", null, "f8c9debe-935b-432a-b8a2-7c417f7767b1" }
+                    { 1, "En yeni teknolojik ürünleri bulabileceğiniz mağaza.", "TechWorld", 0, "techworld@business.com - 0212 123 45 67", 0, "İstanbul, Türkiye", null, "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" },
+                    { 2, "Kozmetik ve cilt bakım ürünleri üzerine uzmanlaşmış bir mağaza.", "BeautyGlow", 0, "beautyglow@business.com - 0216 765 43 21", 0, "Ankara, Türkiye", null, "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" }
                 });
 
             migrationBuilder.InsertData(
@@ -803,8 +820,9 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "ConversationId", "LastMessageDate", "ReceiverId", "SenderId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7516), "f8c9debe-935b-432a-b8a2-7c417f7767b1", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
-                    { 2, new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7543), "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" }
+                    { 1, new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5055), "f8c9debe-935b-432a-b8a2-7c417f7767b1", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
+                    { 2, new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5058), "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
+                    { 3, new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5059), "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", "f8c9debe-935b-432a-b8a2-7c417f7767b1" }
                 });
 
             migrationBuilder.InsertData(
@@ -812,8 +830,11 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "MessageId", "Content", "ConversationId", "FileUrl", "IsRead", "ReceiverId", "SenderId", "SentDate" },
                 values: new object[,]
                 {
-                    { 1, "Merhaba, nasıl yardımcı olabilirim?", 1, null, false, "f8c9debe-935b-432a-b8a2-7c417f7767b1", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7746) },
-                    { 2, "Merhaba! Ürün hakkında bilgi almak istiyorum.", 1, null, true, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", "f8c9debe-935b-432a-b8a2-7c417f7767b1", new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7755) }
+                    { 1, "Merhaba, Gaming Laptop hakkında daha fazla bilgi alabilir miyim?", 1, "/images/product.jpg", false, "f8c9debe-935b-432a-b8a2-7c417f7767b1", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5146) },
+                    { 2, "Tabii, Gaming Laptop hakkında her türlü bilgiyi verebilirim. Hangi özelliklere bakıyorsunuz?", 1, "/images/product.jpg", false, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", "f8c9debe-935b-432a-b8a2-7c417f7767b1", new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5150) },
+                    { 3, "Merhaba Ahmet, cilt bakım ürünlerimiz hakkında bilgi almak ister misiniz?", 2, null, true, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5152) },
+                    { 4, "Evet, ilgileniyorum. Hangi ürünleri önerirsiniz?", 2, null, false, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5154) },
+                    { 5, "Merhaba Ayşe, telefon kılıfını almak istiyorum, hangi renkleri önerirsin?", 3, "/images/product.jpg", false, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", "f8c9debe-935b-432a-b8a2-7c417f7767b1", new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5156) }
                 });
 
             migrationBuilder.InsertData(
@@ -821,8 +842,8 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "NotificationId", "BusinessProfileId", "DateCreated", "IsRead", "Message", "NotificationType", "ProductId", "ServiceId", "UserId" },
                 values: new object[,]
                 {
-                    { 4, null, new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7878), true, "Yeni mesajınız var.", 4, null, null, "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" },
-                    { 5, null, new DateTime(2025, 2, 21, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7881), false, "Profiliniz güncellendi.", 5, null, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" }
+                    { 4, null, new DateTime(2025, 3, 2, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5217), true, "Yeni mesajınız var.", 4, null, null, "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" },
+                    { 5, null, new DateTime(2025, 2, 26, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5219), false, "Profiliniz güncellendi.", 5, null, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" }
                 });
 
             migrationBuilder.InsertData(
@@ -830,10 +851,10 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "SearchHistoryId", "SearchDate", "SearchQuery", "UserId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8937), "Elektronik ürünler", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
-                    { 2, new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8940), "Moda ürünleri", "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
-                    { 3, new DateTime(2025, 2, 23, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8942), "SEO hizmeti", "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
-                    { 4, new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8944), "Ev & Yaşam ürünleri", "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" }
+                    { 1, new DateTime(2025, 2, 26, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5777), "Gaming Laptop", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
+                    { 2, new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5780), "Kablosuz Kulaklık", "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
+                    { 3, new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5781), "Hyaluronik Asit Serum", "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
+                    { 4, new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5782), "Akıllı Telefon X", "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" }
                 });
 
             migrationBuilder.InsertData(
@@ -841,10 +862,10 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "FollowedId", "FollowerId" },
                 values: new object[,]
                 {
+                    { "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
                     { "f8c9debe-935b-432a-b8a2-7c417f7767b1", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
-                    { "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
-                    { "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b", "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" },
-                    { "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3", "f8c9debe-935b-432a-b8a2-7c417f7767b1" }
+                    { "f8c9debe-935b-432a-b8a2-7c417f7767b1", "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
+                    { "d04b2879-cff4-4d92-8e3f-97acdc6c0e42", "f8c9debe-935b-432a-b8a2-7c417f7767b1" }
                 });
 
             migrationBuilder.InsertData(
@@ -852,10 +873,10 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "UserProfileCustomizationId", "CustomBackgroundImage", "CustomDescription", "CustomProfileImage", "UserId" },
                 values: new object[,]
                 {
-                    { 1, "https://example.com/background1.jpg", "Ahmet'in özel profil açıklaması.", "https://example.com/profile1.jpg", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
-                    { 2, "https://example.com/background2.jpg", "Mehmet'in özelleştirilmiş profili.", "https://example.com/profile2.jpg", "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
-                    { 3, "https://example.com/background3.jpg", "Ayşe'nin özel açıklaması.", "https://example.com/profile3.jpg", "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
-                    { 4, "https://example.com/background4.jpg", "Ali'nin özel açıklaması.", "https://example.com/profile4.jpg", "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" }
+                    { 1, "/images/businnesBackground.png", "Kişisel teknoloji meraklısı, oyun bilgisayarları ve aksesuarları hakkında bilgi sahibi.", "/images/user1.jpg", "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
+                    { 2, "/images/businnesBackground.png", "Satış uzmanı, kulaklıklar ve telefon aksesuarları konusunda uzman.", "/images/user2.jpg", "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
+                    { 3, "/images/businnesBackground.png", "Cilt bakımına meraklı, makyaj ürünleri ve kişisel bakım konusunda bilgi sahibiyim.", "/images/user4.jpg", "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
+                    { 4, "/images/businnesBackground.png", "İşletme sahibi, teknoloji ürünleri ve kişisel bakım ürünleri satışı yapıyorum.", "/images/user3.jpg", "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" }
                 });
 
             migrationBuilder.InsertData(
@@ -863,19 +884,8 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "BusinessProfileCustomizationId", "BusinessProfileId", "CustomBackgroundImage", "CustomDescription", "CustomProfileImage" },
                 values: new object[,]
                 {
-                    { 1, 1, "https://example.com/businessbackground1.jpg", "Ahmet'in teknoloji mağazası için özel açıklama.", "https://example.com/businessprofile1.jpg" },
-                    { 2, 2, "https://example.com/businessbackground2.jpg", "Mehmet'in moda mağazası için özelleştirilmiş profil.", "https://example.com/businessprofile2.jpg" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "BusinessProfileTags",
-                columns: new[] { "BusinessProfileId", "TagId" },
-                values: new object[,]
-                {
-                    { 1, 1 },
-                    { 1, 2 },
-                    { 2, 3 },
-                    { 2, 4 }
+                    { 1, 1, "/images/businnesBackground.png", "Teknoloji severler için en yeni ürünleri sunuyoruz.", "/images/businnesProfile.png" },
+                    { 2, 2, "/images/businnesBackground.png", "Cilt bakımında en kaliteli ürünleri sizin için seçiyoruz.", "/images/businnesProfile.png" }
                 });
 
             migrationBuilder.InsertData(
@@ -883,23 +893,30 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "CampaignId", "BusinessProfileId", "ClickCount", "Description", "DiscountPercentage", "EndDate", "LikeCount", "StartDate", "Title", "ViewCount" },
                 values: new object[,]
                 {
-                    { 1, 1, 150, "Yaz aylarına özel %20 indirim fırsatı!", 20m, new DateTime(2025, 3, 8, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8681), 50, new DateTime(2025, 2, 21, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8678), "Yaz İndirimi", 200 },
-                    { 2, 2, 100, "Kış sezonu için %15 indirim fırsatları!", 15m, new DateTime(2025, 3, 13, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8699), 30, new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(8697), "Kış İndirimi", 180 }
+                    { 1, 1, 0, "Tüm teknolojik ürünlerde %15 indirim!", 15.00m, new DateTime(2025, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, new DateTime(2025, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Bahar İndirimi", 0 },
+                    { 2, 2, 0, "Seçili cilt bakım ürünlerinde %20 indirim fırsatı!", 20.00m, new DateTime(2025, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, new DateTime(2025, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Cilt Bakım Günleri", 0 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Notifications",
                 columns: new[] { "NotificationId", "BusinessProfileId", "DateCreated", "IsRead", "Message", "NotificationType", "ProductId", "ServiceId", "UserId" },
-                values: new object[] { 3, 1, new DateTime(2025, 2, 23, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7875), false, "Kampanya güncellendi.", 3, null, null, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" });
+                values: new object[] { 3, 1, new DateTime(2025, 2, 28, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5214), false, "Kampanya güncellendi.", 3, null, null, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "ProductId", "BusinessProfileId", "CampaignId", "ClickCount", "CreatedDate", "Description", "FavoriteId", "FavoriteId1", "LikeCount", "Name", "Price", "ViewCount" },
+                columns: new[] { "ProductId", "BusinessProfileId", "CampaignId", "ClickCount", "CreatedDate", "Description", "FavoriteId", "FavoriteId1", "LikeCount", "Name", "Price", "ViewCount", "imgUrl" },
                 values: new object[,]
                 {
-                    { 101, 1, null, 150, new DateTime(2025, 2, 16, 14, 10, 28, 786, DateTimeKind.Local).AddTicks(5697), "Yüksek kaliteli elektronik ürün.", null, null, 80, "Ürün A", 500m, 200 },
-                    { 102, 1, null, 200, new DateTime(2025, 2, 21, 14, 10, 28, 786, DateTimeKind.Local).AddTicks(5790), "Modern teknoloji ile üretilmiş ürün.", null, null, 120, "Ürün B", 750m, 250 },
-                    { 103, 2, null, 110, new DateTime(2025, 2, 19, 14, 10, 28, 786, DateTimeKind.Local).AddTicks(5812), "Yeni nesil moda ürünü.", null, null, 50, "Ürün C", 600m, 100 }
+                    { 1, 1, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8776), "Yüksek performanslı oyuncu laptopu.", null, null, 0, "Gaming Laptop", 25000.00m, 0, "/images/product.jpg" },
+                    { 2, 1, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8781), "Bluetooth bağlantılı yüksek ses kalitesi sunan kulaklık.", null, null, 0, "Kablosuz Kulaklık", 1500.00m, 0, "/images/product.jpg" },
+                    { 3, 1, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8783), "Yüksek çözünürlüklü ekran ve uzun pil ömrü ile profesyonel tablet.", null, null, 0, "Tablet Pro 2025", 12000.00m, 0, "/images/product.jpg" },
+                    { 4, 1, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8786), "RGB ışıklı, mekanik anahtarlı gaming klavye.", null, null, 0, "Mekanik Klavye", 2500.00m, 0, "/images/product.jpg" },
+                    { 5, 1, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8787), "Üst düzey performans sunan en yeni akıllı telefon modeli.", null, null, 0, "Akıllı Telefon X", 18000.00m, 0, "/images/product.jpg" },
+                    { 6, 1, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8789), "Dayanıklı silikon kılıf, farklı renk seçenekleriyle.", null, null, 0, "Telefon Kılıfı", 250.00m, 0, "/images/product.jpg" },
+                    { 7, 2, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8790), "Yoğun nemlendirme sağlayan hyaluronik asit içeren serum.", null, null, 0, "Hyaluronik Asit Serum", 500.00m, 0, "/images/product.jpg" },
+                    { 8, 2, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8792), "Yüksek koruma sağlayan güneş kremi.", null, null, 0, "Güneş Koruyucu Krem SPF 50", 450.00m, 0, "/images/product.jpg" },
+                    { 9, 2, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8793), "Uzun süre kalıcı, mat bitişli likit ruj.", null, null, 0, "Mat Likit Ruj", 300.00m, 0, "/images/product.jpg" },
+                    { 10, 2, null, 0, new DateTime(2025, 3, 3, 14, 37, 50, 977, DateTimeKind.Utc).AddTicks(8795), "Doğal bitişli, cilt tonunu eşitleyen fondöten.", null, null, 0, "Fondöten", 600.00m, 0, "/images/product.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -907,25 +924,31 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "ServiceId", "BusinessProfileId", "ClickCount", "Description", "FavoriteId", "FavoriteId1", "LikeCount", "Price", "ServiceName" },
                 values: new object[,]
                 {
-                    { 1, 1, 150, "Profesyonel web tasarım hizmetleri sunuyoruz.", null, null, 80, 500m, "Web Tasarım Hizmeti" },
-                    { 2, 2, 200, "Web sitenizin SEO analizini yapıyoruz ve iyileştiriyoruz.", null, null, 120, 300m, "SEO Hizmeti" }
+                    { 1, 1, 0, "Her marka laptop için profesyonel teknik servis hizmeti.", null, null, 0, 250.00m, "Laptop Teknik Servisi" },
+                    { 2, 1, 0, "Ekran değişimi, batarya değişimi ve diğer tamir hizmetleri.", null, null, 0, 150.00m, "Telefon Tamiri" },
+                    { 3, 2, 0, "Cilt tipinize uygun bakım önerileri ile analiz hizmeti.", null, null, 0, 100.00m, "Cilt Analizi" },
+                    { 4, 2, 0, "Özel günler için profesyonel makyaj hizmeti.", null, null, 0, 300.00m, "Profesyonel Makyaj" }
                 });
 
             migrationBuilder.InsertData(
                 table: "ActivityLogs",
                 columns: new[] { "ActivityLogId", "ActivityDate", "ActivityType", "Details", "EntityId", "EntityName", "EntityType", "ProductId", "ServiceId", "UserId" },
-                values: new object[] { 1, new DateTime(2025, 2, 26, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7382), 3, "Service viewed", 1, "Web Design Service", 2, null, 1, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" });
+                values: new object[,]
+                {
+                    { 1, new DateTime(2025, 2, 26, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4966), 1, "Gaming Laptop ürününe tıklandı.", 1, "Gaming Laptop", 1, 1, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
+                    { 2, new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4984), 2, "Telefon Kılıfı ürünü beğenildi.", 6, "Telefon Kılıfı", 1, 6, null, "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
+                    { 3, new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(4987), 3, "Hyaluronik Asit Serum görüntülendi.", 7, "Hyaluronik Asit Serum", 1, 7, null, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Favorites",
                 columns: new[] { "FavoriteId", "ProductId", "ServiceId", "UserId" },
                 values: new object[,]
                 {
-                    { 1, 101, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
-                    { 2, null, 1, "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
-                    { 3, 102, 2, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
-                    { 4, null, 2, "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" },
-                    { 5, 103, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" }
+                    { 1, 1, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
+                    { 2, 2, null, "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
+                    { 3, 7, null, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
+                    { 4, 5, null, "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" }
                 });
 
             migrationBuilder.InsertData(
@@ -933,8 +956,8 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "NotificationId", "BusinessProfileId", "DateCreated", "IsRead", "Message", "NotificationType", "ProductId", "ServiceId", "UserId" },
                 values: new object[,]
                 {
-                    { 1, null, new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7862), false, "Ürünün beğenildi.", 1, 101, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
-                    { 2, null, new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7871), true, "Ürüne yorum yapıldı.", 2, 102, null, "f8c9debe-935b-432a-b8a2-7c417f7767b1" }
+                    { 1, null, new DateTime(2025, 3, 1, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5194), false, "Ürünün beğenildi.", 1, 1, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
+                    { 2, null, new DateTime(2025, 3, 2, 17, 37, 51, 228, DateTimeKind.Local).AddTicks(5212), true, "Ürüne yorum yapıldı.", 2, 2, null, "f8c9debe-935b-432a-b8a2-7c417f7767b1" }
                 });
 
             migrationBuilder.InsertData(
@@ -942,9 +965,16 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "CategoryId", "ProductId" },
                 values: new object[,]
                 {
-                    { 1, 101 },
-                    { 1, 102 },
-                    { 2, 103 }
+                    { 1, 1 },
+                    { 1, 2 },
+                    { 2, 3 },
+                    { 2, 4 },
+                    { 3, 5 },
+                    { 3, 6 },
+                    { 4, 7 },
+                    { 4, 8 },
+                    { 5, 9 },
+                    { 5, 10 }
                 });
 
             migrationBuilder.InsertData(
@@ -952,9 +982,18 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "ProductId", "TagId" },
                 values: new object[,]
                 {
-                    { 101, 1 },
-                    { 102, 1 },
-                    { 103, 2 }
+                    { 1, 1 },
+                    { 1, 2 },
+                    { 2, 3 },
+                    { 2, 4 },
+                    { 3, 2 },
+                    { 4, 5 },
+                    { 5, 6 },
+                    { 6, 7 },
+                    { 7, 8 },
+                    { 8, 9 },
+                    { 9, 10 },
+                    { 10, 11 }
                 });
 
             migrationBuilder.InsertData(
@@ -962,9 +1001,13 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "ReviewId", "Comment", "DateCreated", "ProductId", "Rating", "ServiceId", "UserId" },
                 values: new object[,]
                 {
-                    { 1, "Harika ürün, çok memnun kaldım!", new DateTime(2025, 2, 18, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7965), 101, 5, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
-                    { 2, "Fiyat/performans açısından iyi bir ürün.", new DateTime(2025, 2, 21, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7968), 101, 4, null, "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
-                    { 3, "Ürün kaliteli ama biraz pahalı.", new DateTime(2025, 2, 23, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(7971), 102, 4, null, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" }
+                    { 1, "Gaming Laptop gerçekten harika, yüksek performans ve uzun pil ömrü ile çok beğendim!", new DateTime(2025, 2, 26, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5312), 1, 5, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
+                    { 2, "Kablosuz Kulaklık güzel ama biraz daha ses yalıtımı olabilirdi.", new DateTime(2025, 2, 27, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5317), 2, 4, null, "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
+                    { 3, "Tablet Pro 2025 fena değil ancak ekranı biraz daha parlak olabilirdi.", new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5318), 3, 3, null, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
+                    { 4, "Telefon Kılıfı çok sağlam ve şık. Telefonu koruma konusunda çok başarılı.", new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5320), 6, 5, null, "1e5c4d9b-cd72-41f1-b123-57b66ac50f3b" },
+                    { 5, "Cilt bakımında gerçekten iyi sonuçlar aldım, fakat biraz daha nemlendirici olabilir.", new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5322), 7, 4, null, "f8c9debe-935b-432a-b8a2-7c417f7767b1" },
+                    { 6, "Makyaj seti beklediğimi vermedi. Kalıcılığı çok düşük.", new DateTime(2025, 2, 24, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5323), 9, 2, null, "8d1a2c8f-bd5f-48c7-a6fe-bf1a31fe63d3" },
+                    { 7, "Hyaluronik Asit Serum mükemmel. Cildim çok daha parlak ve nemli oldu.", new DateTime(2025, 2, 25, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5374), 7, 5, null, "d04b2879-cff4-4d92-8e3f-97acdc6c0e42" }
                 });
 
             migrationBuilder.InsertData(
@@ -972,9 +1015,10 @@ namespace Commercium.Data.Migrations
                 columns: new[] { "SearchResultId", "BusinessProfileId", "ProductId", "SearchDate", "SearchQuery", "ServiceId" },
                 values: new object[,]
                 {
-                    { 1, 1, 101, new DateTime(2025, 2, 24, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(9002), "Elektronik ürünler", null },
-                    { 2, 2, 102, new DateTime(2025, 2, 25, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(9006), "Moda ürünleri", null },
-                    { 3, 1, null, new DateTime(2025, 2, 23, 14, 10, 29, 345, DateTimeKind.Local).AddTicks(9009), "SEO hizmeti", 2 }
+                    { 1, 1, 1, new DateTime(2025, 2, 26, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5823), "Gaming Laptop", null },
+                    { 2, 1, 2, new DateTime(2025, 2, 28, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5825), "Kablosuz Kulaklık", null },
+                    { 3, 2, 7, new DateTime(2025, 3, 1, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5826), "Hyaluronik Asit Serum", null },
+                    { 4, 1, 5, new DateTime(2025, 3, 2, 14, 37, 51, 228, DateTimeKind.Utc).AddTicks(5828), "Akıllı Telefon X", null }
                 });
 
             migrationBuilder.InsertData(
@@ -983,7 +1027,13 @@ namespace Commercium.Data.Migrations
                 values: new object[,]
                 {
                     { 1, 1 },
-                    { 2, 2 }
+                    { 1, 2 },
+                    { 2, 3 },
+                    { 2, 4 },
+                    { 3, 8 },
+                    { 3, 9 },
+                    { 4, 10 },
+                    { 4, 11 }
                 });
 
             migrationBuilder.CreateIndex(

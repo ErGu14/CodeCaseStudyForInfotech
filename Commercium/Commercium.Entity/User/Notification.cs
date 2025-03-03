@@ -13,12 +13,12 @@ namespace Commercium.Entity.User
     {
         public int NotificationId { get; set; }
 
-        public string UserId { get; set; }  // Hangi kullanıcıya bildirim gidecek
+        public string UserId { get; set; }  
         public AppUser User { get; set; }
 
-        public NotificationType NotificationType { get; set; }  // Bildirim türü (enum'dan)
-        public string Message { get; set; }  // Bildirim mesajı
-        public DateTime DateCreated { get; set; }  // Bildirimin oluşturulma tarihi
+        public NotificationType NotificationType { get; set; }  
+        public string Message { get; set; }  
+        public DateTime DateCreated { get; set; }  
         public bool IsRead { get; set; }  // Bildirim okundu mu?
 
         public int? ProductId { get; set; }  // Ürünle ilgili bildirim varsa

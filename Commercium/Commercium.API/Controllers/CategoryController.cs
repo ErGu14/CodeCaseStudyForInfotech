@@ -18,7 +18,6 @@ namespace Commercium.API.Controllers
             _categoryService = categoryService;
         }
 
-        // Kategori Detaylarını ID ile Getirme - Tüm roller erişebilir
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("{categoryId}")]
         public async Task<IActionResult> GetCategoryById(int categoryId)
@@ -27,7 +26,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Tüm Kategorileri Listeleme - Tüm roller erişebilir
+  
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("all")]
         public async Task<IActionResult> GetAllCategories()
@@ -36,7 +35,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kategori Oluşturma - Yalnızca Admin erişebilir
         [Authorize(Roles = "Admin")]
         [HttpPost("create")]
         public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryRM createCategoryRM)
@@ -45,7 +43,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kategori Güncelleme - Yalnızca Admin erişebilir
+       
         [Authorize(Roles = "Admin")]
         [HttpPut("update")]
         public async Task<IActionResult> UpdateCategory([FromBody] UpdateCategoryRM updateCategoryRM)
@@ -54,7 +52,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kategori Silme - Yalnızca Admin erişebilir
+      
         [Authorize(Roles = "Admin")]
         [HttpDelete("delete/{categoryId}")]
         public async Task<IActionResult> DeleteCategory(int categoryId)
@@ -63,7 +61,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kategoriye Ait Ürünleri Getirme - Tüm roller erişebilir
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("{categoryId}/products")]
         public async Task<IActionResult> GetProductsByCategory(int categoryId)
@@ -72,7 +69,6 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // Kategorilere Göre Ürün Sayısı - Tüm roller erişebilir
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("{categoryId}/product-count")]
         public async Task<IActionResult> GetProductCountByCategory(int categoryId)
@@ -81,7 +77,7 @@ namespace Commercium.API.Controllers
             return CreateReturn(response);
         }
 
-        // En Popüler Kategorileri Getirme - Tüm roller erişebilir
+
         [Authorize(Roles = "Admin, BusinessOwner, SalesRepresentative, User")]
         [HttpGet("top")]
         public async Task<IActionResult> GetTopCategories([FromQuery] int count)
