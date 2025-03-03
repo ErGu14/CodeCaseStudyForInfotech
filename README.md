@@ -3,70 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commercium E-Ticaret Platformu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #333;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    .container {
-      width: 80%;
-      margin: 2rem auto;
-      background-color: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .container h2 {
-      font-size: 2rem;
-      color: #333;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #4CAF50;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-    .btn:hover {
-      background-color: #45a049;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    ul li {
-      margin: 10px 0;
-    }
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-  </style>
+ 
 </head>
 <body>
 
