@@ -1,12 +1,164 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Commercium\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}|..\\Frontend\\CommerciumWeb\\CommerciumWeb.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\frontend\\commerciumweb\\views\\shared\\_navbarpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}|..\\Frontend\\CommerciumWeb\\CommerciumWeb.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\frontend\\commerciumweb\\models\\mainindexmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}|..\\Frontend\\CommerciumWeb\\CommerciumWeb.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\frontend\\commerciumweb\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}|..\\Frontend\\CommerciumWeb\\CommerciumWeb.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\frontend\\commerciumweb\\views\\shared\\_sidebarpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}|..\\Frontend\\CommerciumWeb\\CommerciumWeb.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\frontend\\commerciumweb\\views\\shared\\_scriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}|..\\Frontend\\CommerciumWeb\\CommerciumWeb.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\frontend\\commerciumweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}|..\\Frontend\\CommerciumWeb\\CommerciumWeb.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\frontend\\commerciumweb\\views\\shared\\_headpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}|..\\Frontend\\CommerciumWeb\\CommerciumWeb.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\frontend\\commerciumweb\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3302BED4-FAC1-4244-A2FA-C2ADD6C3AD01}|..\\Frontend\\CommerciumWeb\\CommerciumWeb.csproj|f:\\kodlama\\my projects\\codecasestudy\\codecasestudyforinfotech\\frontend\\commerciumweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "..\\Frontend\\CommerciumWeb\\Controllers\\NotificationController.cs",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "..\\Frontend\\CommerciumWeb\\Controllers\\NotificationController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwEMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T11:02:58.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_NavbarPartial.cshtml",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_NavbarPartial.cshtml",
+              "RelativeDocumentMoniker": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_NavbarPartial.cshtml",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_NavbarPartial.cshtml",
+              "RelativeToolTip": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_NavbarPartial.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-03T10:28:30.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "..\\Frontend\\CommerciumWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "..\\Frontend\\CommerciumWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-03T10:12:08.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "..\\Frontend\\CommerciumWeb\\Views\\_ViewImports.cshtml",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "..\\Frontend\\CommerciumWeb\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-03T10:11:30.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainIndexModel.cs",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Models\\MainIndexModel.cs",
+              "RelativeDocumentMoniker": "..\\Frontend\\CommerciumWeb\\Models\\MainIndexModel.cs",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Models\\MainIndexModel.cs",
+              "RelativeToolTip": "..\\Frontend\\CommerciumWeb\\Models\\MainIndexModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T10:06:49.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_SideBarPartial.cshtml",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_SideBarPartial.cshtml",
+              "RelativeDocumentMoniker": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_SideBarPartial.cshtml",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_SideBarPartial.cshtml",
+              "RelativeToolTip": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_SideBarPartial.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-03T10:00:46.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_HeadPartial.cshtml",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_HeadPartial.cshtml",
+              "RelativeDocumentMoniker": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_HeadPartial.cshtml",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_HeadPartial.cshtml",
+              "RelativeToolTip": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_HeadPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-03T09:52:52.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ScriptsPartial.cshtml",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_ScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_ScriptsPartial.cshtml",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_ScriptsPartial.cshtml",
+              "RelativeToolTip": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_ScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-03T09:50:10.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "F:\\Kodlama\\My Projects\\CodeCaseStudy\\CodeCaseStudyForInfotech\\Frontend\\CommerciumWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "..\\Frontend\\CommerciumWeb\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-03T09:43:48.439Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

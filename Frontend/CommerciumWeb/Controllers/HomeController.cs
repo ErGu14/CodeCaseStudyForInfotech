@@ -1,32 +1,79 @@
 using CommerciumWeb.Models;
+using CommerciumWeb.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace CommerciumWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IProductService _productService;
+        private readonly ICampaignService _campaignService;
+        private readonly IBusinessService _businessService;
+        private readonly IFavoriteService _favoriteService;
+        private readonly INotificationService _notificationService;
+        private readonly IUserFollowService _userFollowService;
+        private readonly IAccountService _userService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IProductService productService,
+                              ICampaignService campaignService,
+                              IBusinessService businessService,
+                              IFavoriteService favoriteService,
+                              INotificationService notificationService,
+                              IUserFollowService userFollowService,
+                              IAccountService userService)
         {
-            _logger = logger;
+            _productService = productService;
+            _campaignService = campaignService;
+            _businessService = businessService;
+            _favoriteService = favoriteService;
+            _notificationService = notificationService;
+            _userFollowService = userFollowService;
+            _userService = userService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
+            try
+            {
+                var userId = User.Identity.Name;
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+                var user = await _userService.GetUserAsync(userId);
+                if (user == null)
+                {
+                    return RedirectToAction("Login", "Auth");
+                }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+                var followingUsers = await _userFollowService.GetFollowingAsync(userId);
+
+                var businessProfiles = await _businessService.GetAllBusinessesAsync();
+
+                var products = await _productService.GetAllProductsAsync();
+
+                var campaigns = await _campaignService.GetAllCampaignsAsync();
+
+                var favorites = await _favoriteService.GetUserFavoritesAsync(userId);
+
+                var notifications = await _notificationService.GetUserNotificationsAsync(userId);
+
+                var model = new MainIndexModel
+                {
+                    User = user.Data,
+                    FollowingUsers = followingUsers.Data,
+                    BusinessProfiles = businessProfiles.Data,
+                    Products = products.Data,
+                    Campaigns = campaigns.Data,
+                    Favorites = favorites.Data,
+                    Notifications = notifications.Data
+                };
+
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                
+                return View("Error", new { errorMessage = ex.Message });
+            }
         }
     }
 }

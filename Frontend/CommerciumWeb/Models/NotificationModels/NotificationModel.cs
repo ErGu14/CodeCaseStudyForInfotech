@@ -1,20 +1,19 @@
-﻿using System;
+﻿using Commercium.Shared.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 public class NotificationModel
 {
-    [JsonPropertyName("id")]
-    public int Id { get; set; }
+    [JsonPropertyName("notificationId")]
+    public int NotificationId { get; set; } // RM ile uyumlu hale getirildi.
 
     [JsonPropertyName("userId")]
     [Required(ErrorMessage = "Kullanıcı ID'si gereklidir.")]
     public string UserId { get; set; }
 
-    [JsonPropertyName("title")]
-    [Required(ErrorMessage = "Bildirim başlığı gereklidir.")]
-    [StringLength(100, ErrorMessage = "Başlık en fazla 100 karakter olabilir.")]
-    public string Title { get; set; }
+    [JsonPropertyName("notificationType")]
+    public NotificationType NotificationType { get; set; } // RM ile uyumlu hale getirildi.
 
     [JsonPropertyName("message")]
     [Required(ErrorMessage = "Bildirim içeriği gereklidir.")]
@@ -24,6 +23,15 @@ public class NotificationModel
     [JsonPropertyName("isRead")]
     public bool IsRead { get; set; } = false;
 
-    [JsonPropertyName("createdAt")]
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    [JsonPropertyName("dateCreated")]
+    public DateTime DateCreated { get; set; } = DateTime.UtcNow; // RM ile uyum sağlandı.
+
+    [JsonPropertyName("productId")]
+    public int? ProductId { get; set; }
+
+    [JsonPropertyName("serviceId")]
+    public int? ServiceId { get; set; }
+
+    [JsonPropertyName("businessProfileId")]
+    public int? BusinessProfileId { get; set; }
 }

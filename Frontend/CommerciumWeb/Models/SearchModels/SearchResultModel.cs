@@ -34,6 +34,7 @@
             [JsonPropertyName("searchDate")]
             public DateTime SearchDate { get; set; }
         }
+
     }
 
 }

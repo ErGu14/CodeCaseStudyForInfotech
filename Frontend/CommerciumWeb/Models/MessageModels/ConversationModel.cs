@@ -23,6 +23,6 @@ namespace CommerciumWeb.Models.MessageModels
         public DateTime LastMessageDate { get; set; } // Son Mesaj Tarihi
 
         [JsonPropertyName("messages")]
-        public IEnumerable<MessageModel> Messages { get; set; } = new List<MessageModel>(); // Mesajlar
+        public IEnumerable<MessageModel> Messages { get; set; } = new List<MessageModel>(); // Varsayılan boş liste atanarak uyum sağlandı.
     }
 }

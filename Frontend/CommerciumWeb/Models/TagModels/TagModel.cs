@@ -1,34 +1,26 @@
-﻿using System;
+﻿using CommerciumWeb.Models.ProductModels;
+using CommerciumWeb.Models.TagModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 public class TagModel
 {
-    [JsonPropertyName("id")]
-    public int Id { get; set; } // Etiket ID
+    [JsonPropertyName("tagId")]
+    public int TagId { get; set; }
 
     [JsonPropertyName("name")]
     [Required(ErrorMessage = "Etiket adı boş olamaz.")]
     [StringLength(100, ErrorMessage = "Etiket adı en fazla 100 karakter olabilir.")]
-    public string Name { get; set; } // Etiket adı
+    public string Name { get; set; }
 
-    [JsonPropertyName("description")]
-    [StringLength(255, ErrorMessage = "Açıklama en fazla 255 karakter olabilir.")]
-    public string? Description { get; set; } // Opsiyonel açıklama
+    [JsonPropertyName("productTags")]
+    public List<ProductTagModel>? ProductTags { get; set; }
 
-    [JsonPropertyName("createdAt")]
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Etiket oluşturulma tarihi
+    [JsonPropertyName("serviceTags")]
+    public List<ServiceTagModel>? ServiceTags { get; set; }
 
-    [JsonPropertyName("updatedAt")]
-    public DateTime? UpdatedAt { get; set; } // Etiket güncellenme tarihi (opsiyonel)
-
-    [JsonPropertyName("products")]
-    public List<ProductModel>? Products { get; set; } // Etiket ile bağlantılı ürünler
-
-    [JsonPropertyName("services")]
-    public List<BusinessServiceModel>? Services { get; set; } // Etiket ile bağlantılı hizmetler
-
-    [JsonPropertyName("businesses")]
-    public List<BusinessProfileModel>? Businesses { get; set; } // Etiket ile bağlantılı işletmeler
+    [JsonPropertyName("businessProfileTags")]
+    public List<BusinessProfileTagModel>? BusinessProfileTags { get; set; }
 }

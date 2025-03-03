@@ -39,7 +39,7 @@ builder.Services.AddScoped<IUserFollowService, UserFollowService>();
 builder
     .Services
     .AddHttpClient(
-        "ECommerceAPI",
+        "CommerciumAPI",
         client => client.BaseAddress = new Uri("http://localhost:5009/api/")
     );
 builder

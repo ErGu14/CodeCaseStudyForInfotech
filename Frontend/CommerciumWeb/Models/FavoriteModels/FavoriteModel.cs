@@ -3,8 +3,8 @@ using System.Text.Json.Serialization;
 
 public class FavoriteModel
 {
-    [JsonPropertyName("id")]
-    public int Id { get; set; }
+    [JsonPropertyName("favoriteId")]
+    public int FavoriteId { get; set; } // RM ile uyumlu hale getirildi.
 
     [JsonPropertyName("userId")]
     [Required(ErrorMessage = "Kullanıcı ID gereklidir.")]
@@ -15,7 +15,4 @@ public class FavoriteModel
 
     [JsonPropertyName("serviceId")]
     public int? ServiceId { get; set; } // Eğer favori hizmetse
-
-    [JsonPropertyName("createdAt")]
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Favoriye eklenme zamanı
 }

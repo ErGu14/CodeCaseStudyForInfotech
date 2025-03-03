@@ -20,7 +20,7 @@ namespace Commercium.Shared.Users.ActivityLogRMs
 
         [Required]
         [StringLength(100, ErrorMessage = "Entity tipi en fazla 100 karakter olabilir.")]
-        public string EntityType { get; set; } // Burada EntityType'ı string olarak ekliyoruz
+        public EntityType EntityType { get; set; } 
 
         [Required]
         public string UserId { get; set; }

@@ -9,6 +9,8 @@ namespace Commercium.Shared.Users.AccountRMs
 {
     public class UpdateUserProfileRM
     {
+        public string UserId { get; set; }
+
         [StringLength(50, ErrorMessage = "Ad en fazla 50 karakter olabilir.")]
         public string? FirstName { get; set; }
 
@@ -20,6 +22,6 @@ namespace Commercium.Shared.Users.AccountRMs
 
         [Phone(ErrorMessage = "Geçerli bir telefon numarası giriniz.")]
         public string? PhoneNumber { get; set; }
-        public string UserId { get; set; }
+        
     }
 }

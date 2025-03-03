@@ -10,5 +10,5 @@ public class ChangeUserRoleModel
 
     [JsonPropertyName("newRole")]
     [Required]
-    public UserRole NewRole { get; set; } // Enum yerine int kullanıyoruz
+    public UserRole NewRole { get; set; } 
 }

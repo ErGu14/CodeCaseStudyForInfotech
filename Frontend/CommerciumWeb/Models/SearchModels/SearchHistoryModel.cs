@@ -10,9 +10,6 @@ namespace CommerciumWeb.Models.SearchModels
         [JsonPropertyName("userId")]
         public string UserId { get; set; }
 
-        [JsonPropertyName("user")]
-        public UserModel User { get; set; }
-
         [JsonPropertyName("searchQuery")]
         public string SearchQuery { get; set; }
 

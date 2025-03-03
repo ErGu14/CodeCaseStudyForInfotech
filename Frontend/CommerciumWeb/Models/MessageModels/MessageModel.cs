@@ -3,16 +3,22 @@ using System.Text.Json.Serialization;
 
 public class MessageModel
 {
-    [JsonPropertyName("id")]
-    public int Id { get; set; }
+    [JsonPropertyName("messageId")]
+    public int MessageId { get; set; } // RM ile uyumlu hale getirildi.
 
     [JsonPropertyName("senderId")]
     [Required(ErrorMessage = "Gönderen kullanıcı ID'si gereklidir.")]
     public string SenderId { get; set; }
 
+    [JsonPropertyName("sender")]
+    public UserModel? Sender { get; set; } // Kullanıcı detaylarını da ekledik.
+
     [JsonPropertyName("receiverId")]
     [Required(ErrorMessage = "Alıcı kullanıcı ID'si gereklidir.")]
     public string ReceiverId { get; set; }
+
+    [JsonPropertyName("receiver")]
+    public UserModel? Receiver { get; set; } // Kullanıcı detaylarını da ekledik.
 
     [JsonPropertyName("conversationId")]
     public int ConversationId { get; set; }
@@ -28,6 +34,7 @@ public class MessageModel
     [JsonPropertyName("isRead")]
     public bool IsRead { get; set; } = false;
 
-    [JsonPropertyName("createdAt")]
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    [JsonPropertyName("sentDate")]
+    public DateTime SentDate { get; set; } = DateTime.UtcNow; // `CreatedAt` yerine `SentDate` kullanıldı.
 }
+

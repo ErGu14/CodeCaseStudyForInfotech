@@ -1,12 +1,13 @@
-﻿using System;
+﻿using CommerciumWeb.Models.ProductModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 public class ProductModel
 {
-    [JsonPropertyName("id")]
-    public int Id { get; set; }
+    [JsonPropertyName("productId")]
+    public int ProductId { get; set; }
 
     [JsonPropertyName("name")]
     [Required(ErrorMessage = "Ürün adı gereklidir.")]
@@ -22,28 +23,24 @@ public class ProductModel
     [Range(0.01, double.MaxValue, ErrorMessage = "Fiyat 0'dan büyük olmalıdır.")]
     public decimal Price { get; set; }
 
-    [JsonPropertyName("imageUrl")]
-    public string? ImageUrl { get; set; }
-
-    [JsonPropertyName("categoryIds")]
-    public List<int>? CategoryIds { get; set; }  // Ürün birden fazla kategoriye ait olabilir
-
-    [JsonPropertyName("tagIds")]
-    public List<int>? TagIds { get; set; }  // Ürün birden fazla etikete sahip olabilir
-
-    [JsonPropertyName("businessProfileId")]
-    [Required(ErrorMessage = "İşletme profili ID'si gereklidir.")]
-    public int BusinessProfileId { get; set; }
-
-    [JsonPropertyName("likeCount")]
-    public int LikeCount { get; set; } = 0;
-
     [JsonPropertyName("clickCount")]
-    public int ClickCount { get; set; } = 0;
+    public int ClickCount { get; set; }
 
     [JsonPropertyName("viewCount")]
-    public int ViewCount { get; set; } = 0;
+    public int ViewCount { get; set; }
 
-    [JsonPropertyName("createdAt")]
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    [JsonPropertyName("likeCount")]
+    public int LikeCount { get; set; }
+
+    [JsonPropertyName("businessProfile")]
+    public BusinessProfileModel BusinessProfile { get; set; }
+
+    [JsonPropertyName("reviews")]
+    public List<ReviewModel>? Reviews { get; set; }
+
+    [JsonPropertyName("productCategories")]
+    public List<ProductCategoryModel> ProductCategories { get; set; }
+
+    [JsonPropertyName("productTags")]
+    public List<ProductModel> ProductTags { get; set; }
 }

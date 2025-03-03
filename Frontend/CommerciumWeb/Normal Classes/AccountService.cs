@@ -137,7 +137,7 @@ namespace CommerciumWeb.Normal_Classes
             try
             {
                 var client = GetHttpClient();
-                var response = await client.PostAsJsonAsync("account/update-profile", updateUserProfileModel);
+                var response = await client.PutAsJsonAsync("account/update-profile", updateUserProfileModel);
                 var responseBody = await response.Content.ReadAsStringAsync();
                 return JsonSerializer.Deserialize<ReturnModel<string>>(responseBody, _jsonSerializerOptions);
             }
